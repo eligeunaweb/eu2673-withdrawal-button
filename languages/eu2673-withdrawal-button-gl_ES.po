@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Exercer o dereito de desistimento"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "A súa solicitude de desistimento foi rexistrada correctamente. Recibirá un correo electrónico de confirmación en breve."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Solicito expresamente o acceso inmediato ao contido dixital e recoñezo que, en canto comece a acceder a el, visualizalo ou descargalo, perderei o dereito de desistimento de 14 días previsto no artigo 16, letra m), da Directiva 2011/83/UE."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "Debes aceptar as condicións sobre contido dixital para completar o teu pedido."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button require que WooCommerce estea activo."
+
+msgid "My withdrawals"
+msgstr "Os meus desistimentos"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Non tes ningunha solicitude de desistimento rexistrada."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Prazo de desistimento: quedan %d días"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Estándar (suxeito ao dereito de desistimento) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Excluído — Excepción art. 16 (sen dereito de desistimento)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Contido dixital — requírese consentimento no checkout (art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Estado de desistimento"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Controla como se aplica o dereito de desistimento a este produto. \"Estándar\" segue a configuración xeral. \"Excluído\" oculta o botón para os pedidos con este produto. \"Contido dixital\" mostra unha caixa obrigatoria no checkout."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Formulario modelo de desistimento (Anexo I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "Directiva UE 2011/83/UE"
+
+msgid "To:"
+msgstr "A:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Polo presente documento, eu/nós (*) comunico/comunicamos o meu/noso (*) desistimento do contrato de venda dos seguintes bens (*)/de prestación do seguinte servizo (*)"
+
+msgid "Ordered on:"
+msgstr "Pedido o:"
+
+msgid "Order number:"
+msgstr "Número de pedido:"
+
+msgid "Name of consumer(s):"
+msgstr "Nome do/s consumidor/es:"
+
+msgid "Address of consumer(s):"
+msgstr "Enderezo do/s consumidor/es:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Eliminar o que non proceda."
+
+msgid "Print this form"
+msgstr "Imprimir este formulario"

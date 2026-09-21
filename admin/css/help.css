@@ -1,0 +1,18 @@
+.wb-help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+.wb-help-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px 22px; }
+.wb-help-card h3 { margin: 0 0 10px; font-size: 13px; color: #1a1a2e; border-bottom: 2px solid #1a1a2e; padding-bottom: 8px; }
+.wb-help-card p, .wb-help-card ul { font-size: 13px; color: #4b5563; line-height: 1.65; margin: 0 0 6px; }
+.wb-help-card ul { padding-left: 18px; }
+.wb-help-card li { margin-bottom: 4px; }
+.wb-help-card code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.wb-help-card a { color: #1a6b4a; }
+.wb-help-card.wb-help-pro { border-color: #2c3e7a; border-top: 3px solid #2c3e7a; }
+.wb-help-card.wb-help-pro h3 { color: #2c3e7a; border-bottom-color: #2c3e7a; }
+.wb-pro-badge { display:inline-block;background:#2c3e7a;color:#fff;font-size:10px;padding:2px 8px;border-radius:20px;margin-bottom:8px;font-weight:600; }
+.wb-lite-badge { display:inline-block;background:#1a6b4a;color:#fff;font-size:10px;padding:2px 8px;border-radius:20px;margin-bottom:8px;font-weight:600; }
+.wb-help-pro-banner { background:linear-gradient(135deg,#1a1a2e 0%,#2c3e7a 100%);border-radius:10px;padding:24px 28px;margin:24px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 4px 12px rgba(44,62,122,0.2); }
+.wb-help-pro-banner h3 { margin:0 0 6px;font-size:16px;font-weight:700;color:#fff; }
+.wb-help-pro-banner p { margin:0;font-size:13px;color:rgba(255,255,255,0.8); }
+.wb-help-pro-banner a { background:#f59e0b;color:#1a1a2e;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:800;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 2px 8px rgba(245,158,11,0.4); }
+@media (max-width: 1100px) { .wb-help-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px)  { .wb-help-grid { grid-template-columns: 1fr; } }

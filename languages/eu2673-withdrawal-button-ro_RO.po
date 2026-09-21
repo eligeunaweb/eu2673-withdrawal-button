@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Exercitați dreptul de retragere"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Cererea dvs. de retragere a fost înregistrată corect. Veți primi în curând un e-mail de confirmare."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Solicit în mod expres accesul imediat la conținutul digital și recunosc că, din momentul în care încep să îl accesez, vizualizez sau descărc, voi pierde dreptul de retragere de 14 zile prevăzut la articolul 16 litera m) din Directiva 2011/83/UE."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "Trebuie să acceptați condițiile privind conținutul digital pentru a finaliza comanda."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button necesită ca WooCommerce să fie activ."
+
+msgid "My withdrawals"
+msgstr "Retragerile mele"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Nu aveți cereri de retragere înregistrate."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Termen de retragere: %d zile rămase"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Standard (dreptul de retragere se aplică) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Exclus — Excepție art. 16 (fără drept de retragere)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Conținut digital — consimțământ necesar la finalizare (art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Stare retragere"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Controlează cum se aplică dreptul de retragere pentru acest produs. \"Standard\" urmează setările generale. \"Exclus\" ascunde butonul pentru comenzile cu acest produs. \"Conținut digital\" afișează o casetă obligatorie la finalizare."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Formular model de retragere (Anexa I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "Directiva UE 2011/83/UE"
+
+msgid "To:"
+msgstr "Către:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Prin prezenta eu/noi (*) vă notificăm retragerea mea/noastră (*) din contractul de vânzare a următoarelor bunuri (*)/pentru furnizarea următorului serviciu (*)"
+
+msgid "Ordered on:"
+msgstr "Comandat la:"
+
+msgid "Order number:"
+msgstr "Număr comandă:"
+
+msgid "Name of consumer(s):"
+msgstr "Numele consumatorului/consumatorilor:"
+
+msgid "Address of consumer(s):"
+msgstr "Adresa consumatorului/consumatorilor:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Ștergeți mențiunea inutilă."
+
+msgid "Print this form"
+msgstr "Tipăriți acest formular"

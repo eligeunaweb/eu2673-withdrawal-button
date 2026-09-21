@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "ممارسة حق الانسحاب"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "تم تسجيل طلب الانسحاب الخاص بك بنجاح. ستتلقى رسالة تأكيد بالبريد الإلكتروني قريبًا."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "أطلب صراحةً الوصول الفوري إلى المحتوى الرقمي وأقرّ بأنه بمجرد بدء الوصول إليه أو مشاهدته أو تنزيله، سأفقد حق الانسحاب البالغ 14 يومًا المنصوص عليه في المادة 16(م) من التوجيه 2011/83/EU."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "يجب قبول شروط المحتوى الرقمي لإتمام طلبك."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "يتطلب Withdrawal Button أن يكون WooCommerce نشطًا."
+
+msgid "My withdrawals"
+msgstr "طلبات الانسحاب الخاصة بي"
+
+msgid "You have no withdrawal requests registered."
+msgstr "ليس لديك طلبات انسحاب مسجلة."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "الموعد النهائي للانسحاب: %d أيام متبقية"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— قياسي (يخضع لحق الانسحاب) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "مستثنى — استثناء المادة 16 (لا يوجد حق انسحاب)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "محتوى رقمي — يتطلب الموافقة عند الدفع (المادة 16م)"
+
+msgid "Withdrawal status"
+msgstr "حالة الانسحاب"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "يتحكم في كيفية تطبيق حق الانسحاب على هذا المنتج. \"قياسي\" يتبع الإعدادات العامة. \"مستثنى\" يخفي الزر للطلبات التي تحتوي على هذا المنتج. \"محتوى رقمي\" يعرض مربع موافقة إلزامي عند الدفع."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "نموذج الانسحاب (الملحق I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "توجيه الاتحاد الأوروبي 2011/83/UE"
+
+msgid "To:"
+msgstr "إلى:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "بموجب هذا، أخطركم/نخطركم (*) بانسحابي/انسحابنا (*) من عقد بيع البضائع التالية (*)/تقديم الخدمة التالية (*)"
+
+msgid "Ordered on:"
+msgstr "تاريخ الطلب:"
+
+msgid "Order number:"
+msgstr "رقم الطلب:"
+
+msgid "Name of consumer(s):"
+msgstr "اسم المستهلك/المستهلكين:"
+
+msgid "Address of consumer(s):"
+msgstr "عنوان المستهلك/المستهلكين:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) احذف ما لا ينطبق."
+
+msgid "Print this form"
+msgstr "طباعة هذا النموذج"

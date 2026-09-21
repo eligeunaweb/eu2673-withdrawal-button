@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Herroepingsrecht uitoefenen"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Uw herroepingsverzoek is correct geregistreerd. U ontvangt binnenkort een bevestigingsmail."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Ik verzoek uitdrukkelijk om onmiddellijke toegang tot de digitale inhoud en erken dat zodra ik toegang krijg, deze bekijk of download, ik het herroepingsrecht van 14 dagen verlies zoals bepaald in artikel 16, onder m), van Richtlijn 2011/83/EU."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "U moet de voorwaarden voor digitale inhoud accepteren om uw bestelling te voltooien."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button vereist dat WooCommerce actief is."
+
+msgid "My withdrawals"
+msgstr "Mijn herroepingen"
+
+msgid "You have no withdrawal requests registered."
+msgstr "U heeft geen geregistreerde herroepingsverzoeken."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Herroepingstermijn: nog %d dagen"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Standaard (herroepingsrecht van toepassing) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Uitgesloten — Art. 16 uitzondering (geen herroepingsrecht)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Digitale inhoud — toestemming vereist bij afrekenen (art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Herroepingsstatus"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Bepaalt hoe het herroepingsrecht van toepassing is op dit product. \"Standaard\" volgt de algemene instellingen. \"Uitgesloten\" verbergt de knop voor bestellingen met dit product. \"Digitale inhoud\" toont een verplicht selectievakje bij het afrekenen."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Modelformulier voor herroeping (Bijlage I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU-richtlijn 2011/83/EU"
+
+msgid "To:"
+msgstr "Aan:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Hierbij deel ik/delen wij (*) u mede dat ik/wij (*) onze overeenkomst betreffende de verkoop van de volgende goederen (*)/levering van de volgende dienst (*) herroep/herroepen"
+
+msgid "Ordered on:"
+msgstr "Besteld op:"
+
+msgid "Order number:"
+msgstr "Bestelnummer:"
+
+msgid "Name of consumer(s):"
+msgstr "Naam van de consument(en):"
+
+msgid "Address of consumer(s):"
+msgstr "Adres van de consument(en):"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Doorhalen wat niet van toepassing is."
+
+msgid "Print this form"
+msgstr "Dit formulier afdrukken"

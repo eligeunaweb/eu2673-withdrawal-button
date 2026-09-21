@@ -1,0 +1,159 @@
+/* Withdrawal Button Lite - Frontend Styles */
+
+.wb-withdrawal-section {
+    background: #f8f9ff;
+    border: 1px solid #dde3f5;
+    border-left: 4px solid #2c3e7a;
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.wb-withdrawal-btn {
+    background: #2c3e7a !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.1s ease;
+    text-decoration: none !important;
+}
+
+.wb-withdrawal-btn:hover {
+    background: #1a2654 !important;
+    transform: translateY(-1px);
+}
+
+.wb-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 99999;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    backdrop-filter: blur(3px);
+    animation: wbFadeIn 0.2s ease;
+}
+
+@keyframes wbFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.wb-modal {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: wbSlideUp 0.25s ease;
+    overflow: hidden;
+}
+
+@keyframes wbSlideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.wb-modal-header {
+    background: #2c3e7a;
+    color: #fff;
+    padding: 24px 28px 20px;
+    text-align: center;
+}
+
+.wb-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+}
+
+.wb-modal-body { padding: 22px 28px; }
+
+.wb-modal-info {
+    background: #f8f9ff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+.wb-modal-info p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.wb-modal-info p:last-child { margin-bottom: 0; }
+
+.wb-message { padding: 12px 16px; border-radius: 6px; font-size: 14px; margin-top: 12px; }
+.wb-message.success { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+.wb-message.error   { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+
+.wb-modal-footer {
+    padding: 4px 28px 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.wb-btn { padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
+.wb-btn-secondary { background: #f0f0f0; color: #555; }
+.wb-btn-secondary:hover { background: #e0e0e0; }
+.wb-btn-primary { background: #2c3e7a; color: #fff; }
+.wb-btn-primary:hover { background: #1a2654; }
+.wb-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+#wbdesist-overlay button:focus-visible {
+    outline: 3px solid #FFD24D !important;
+    outline-offset: 3px !important;
+}
+
+/* Mi cuenta */
+.wb-myaccount-withdrawals h2 { font-size: 18px; margin-bottom: 16px; }
+.wb-myaccount-empty { color: #666; font-size: 14px; padding: 20px 0; }
+.wb-myaccount-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.wb-myaccount-table th { background: #f8f9ff; padding: 10px 14px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #dde3f5; }
+.wb-myaccount-table td { padding: 12px 14px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.wb-myaccount-table tr:last-child td { border-bottom: none; }
+.wb-myaccount-table a { color: #2c3e7a; font-weight: 600; text-decoration: none; }
+
+.wb-myaccount-status { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.wb-myaccount-status--pending   { background: #fff8e1; color: #f39c12; }
+.wb-myaccount-status--approved  { background: #e8f5e9; color: #27ae60; }
+.wb-myaccount-status--rejected  { background: #ffebee; color: #e74c3c; }
+.wb-myaccount-status--completed { background: #e3f2fd; color: #2980b9; }
+
+@media (max-width: 480px) {
+    .wb-withdrawal-section { flex-direction: column; align-items: flex-start; }
+    .wb-withdrawal-btn { width: 100%; text-align: center; }
+    .wb-modal-footer { flex-direction: column-reverse; }
+    .wb-btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .wb-myaccount-table thead { display: none; }
+    .wb-myaccount-table td { display: block; padding: 8px 0; border-bottom: none; }
+    .wb-myaccount-table td::before { content: attr(data-title) ": "; font-weight: 600; color: #666; }
+    .wb-myaccount-table tr { display: block; border-bottom: 1px solid #eee; padding: 12px 0; }
+}
+
+/* Modal accessibility focus style */
+#wbdesist-overlay button:focus-visible {
+    outline: 3px solid #FFD24D !important;
+    outline-offset: 3px !important;
+}

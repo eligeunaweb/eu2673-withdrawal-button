@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Widerrufsrecht ausüben"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Ihr Widerrufsantrag wurde erfolgreich registriert. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Ich beantrage ausdrücklich den sofortigen Zugang zu den digitalen Inhalten und erkenne an, dass ich mit dem Zugriff, der Anzeige oder dem Herunterladen das 14-tägige Widerrufsrecht gemäß Artikel 16 Buchstabe m der Richtlinie 2011/83/EU verliere."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "Sie müssen die Bedingungen für digitale Inhalte akzeptieren, um Ihre Bestellung abzuschließen."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button erfordert, dass WooCommerce aktiv ist."
+
+msgid "My withdrawals"
+msgstr "Meine Widerrufe"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Sie haben keine registrierten Widerrufsanträge."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Widerrufsfrist: noch %d Tage"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Standard (Widerrufsrecht gilt) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Ausgeschlossen — Art. 16 Ausnahme (kein Widerrufsrecht)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Digitale Inhalte — Zustimmung beim Checkout erforderlich (Art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Widerrufsstatus"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Steuert, wie das Widerrufsrecht für dieses Produkt gilt. \"Standard\" folgt den allgemeinen Einstellungen. \"Ausgeschlossen\" blendet die Schaltfläche für Bestellungen mit diesem Produkt aus. \"Digitale Inhalte\" zeigt eine Pflichtbestätigung beim Checkout."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Muster-Widerrufsformular (Anhang I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU-Richtlinie 2011/83/EU"
+
+msgid "To:"
+msgstr "An:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)"
+
+msgid "Ordered on:"
+msgstr "Bestellt am:"
+
+msgid "Order number:"
+msgstr "Bestellnummer:"
+
+msgid "Name of consumer(s):"
+msgstr "Name des/der Verbraucher(s):"
+
+msgid "Address of consumer(s):"
+msgstr "Anschrift des/der Verbraucher(s):"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Unzutreffendes streichen."
+
+msgid "Print this form"
+msgstr "Dieses Formular drucken"

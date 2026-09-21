@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Atzera egiteko eskubidea erabili"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Zure atzera egiteko eskaera behar bezala erregistratu da. Laster jasoko duzu berrespena posta elektronikoz."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Berariaz eskatzen dut eduki digitalerako berehalako sarbidea eta onartzen dut, bertan sartzen, ikusten edo deskargatzen hasten naizenean, 2011/83/EB Zuzentarauaren 16. artikuluko m) letran aurreikusitako 14 eguneko atzera egiteko eskubidea galduko dudala."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "Eduki digitalari buruzko baldintzak onartu behar dituzu zure eskaera osatzeko."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button-ek WooCommerce aktibo egotea behar du."
+
+msgid "My withdrawals"
+msgstr "Nire atzerakadak"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Ez duzu atzera egiteko eskaera erregistraturik."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Atzera egiteko epea: %d egun geratzen dira"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Estandarra (atzera egiteko eskubidea aplikatzen da) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Baztertua — 16. art. salbuespena (atzera egiteko eskubiderik ez)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Eduki digitala — adostasuna behar da ordaintzean (16m art.)"
+
+msgid "Withdrawal status"
+msgstr "Atzera egitearen egoera"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Produktu honentzako atzera egiteko eskubidea nola aplikatzen den kontrolatzen du. \"Estandarra\" ezarpen orokorrak jarraitzen ditu. \"Baztertua\" botoia ezkutatzen du produktu hau duten eskaeretan. \"Eduki digitala\" nahitaezko laukitxoa erakusten du ordaintzean."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Atzera egiteko eredu-formularioa (I.B eranskina)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EBko 2011/83/EB Zuzentaraua"
+
+msgid "To:"
+msgstr "Nori:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Honekin, ni/guk (*) jakinarazten dizut/dizuegu ondorengo ondasunen (*)/zerbitzuaren (*) salmenta-kontratuari atzera egiten diodala/diogula (*)"
+
+msgid "Ordered on:"
+msgstr "Eskatua:"
+
+msgid "Order number:"
+msgstr "Eskaera-zenbakia:"
+
+msgid "Name of consumer(s):"
+msgstr "Kontsumitzaile(en) izena:"
+
+msgid "Address of consumer(s):"
+msgstr "Kontsumitzaile(en) helbidea:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Ezabatu dagokiona."
+
+msgid "Print this form"
+msgstr "Inprimatu formulario hau"

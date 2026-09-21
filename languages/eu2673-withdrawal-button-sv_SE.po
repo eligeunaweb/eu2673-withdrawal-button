@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "Utöva ångerrätten"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Din begäran om ångerrätt har registrerats korrekt. Du kommer snart att få ett bekräftelsemail."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "Jag begär uttryckligen omedelbar tillgång till det digitala innehållet och erkänner att så snart jag börjar komma åt, visa eller ladda ner det förlorar jag ångerrätten på 14 dagar enligt artikel 16 m i direktiv 2011/83/EU."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "Du måste acceptera villkoren för digitalt innehåll för att slutföra din beställning."
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button kräver att WooCommerce är aktivt."
+
+msgid "My withdrawals"
+msgstr "Mina ångerärenden"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Du har inga registrerade ångerärenden."
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "Ångerfrist: %d dagar kvar"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Standard (ångerrätt gäller) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Undantagen — Art. 16 undantag (ingen ångerrätt)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Digitalt innehåll — samtycke krävs vid kassan (art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Ångerstatus"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Styr hur ångerrätten gäller för denna produkt. \"Standard\" följer de allmänna inställningarna. \"Undantagen\" döljer knappen för beställningar med denna produkt. \"Digitalt innehåll\" visar en obligatorisk kryssruta vid kassan."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Standardformulär för ångerrätt (Bilaga I.B)"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU-direktiv 2011/83/EU"
+
+msgid "To:"
+msgstr "Till:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Jag/Vi (*) meddelar härmed att jag/vi (*) frånträder mitt/vårt (*) köpeavtal avseende följande varor (*)/tillhandahållande av följande tjänst (*)"
+
+msgid "Ordered on:"
+msgstr "Beställd:"
+
+msgid "Order number:"
+msgstr "Ordernummer:"
+
+msgid "Name of consumer(s):"
+msgstr "Konsumentens/konsumenternas namn:"
+
+msgid "Address of consumer(s):"
+msgstr "Konsumentens/konsumenternas adress:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Stryk det som inte är tillämpligt."
+
+msgid "Print this form"
+msgstr "Skriv ut detta formulär"

@@ -1,0 +1,14 @@
+.wb-upgrade-wrap { max-width: 780px; margin-top: 20px; }
+.wb-upgrade-hero { background: linear-gradient(135deg, #1a1a2e 0%, #1a6b4a 100%); color: #fff; border-radius: 10px; padding: 36px 40px; margin-bottom: 28px; }
+.wb-upgrade-hero h2 { margin: 0 0 10px; font-size: 24px; color: #fff; }
+.wb-upgrade-hero p { margin: 0; font-size: 15px; opacity: .9; }
+.wb-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; }
+.wb-feature-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px 20px; }
+.wb-feature-card h3 { margin: 0 0 8px; font-size: 13px; color: #1a1a2e; }
+.wb-feature-card p { margin: 0; font-size: 12px; color: #6b7280; line-height: 1.6; }
+.wb-feature-card .wb-badge { display: inline-block; background: #1a6b4a; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px; }
+.wb-upgrade-cta { text-align: center; background: #fff; border: 2px solid #1a6b4a; border-radius: 10px; padding: 30px; }
+.wb-upgrade-cta .price { font-size: 36px; font-weight: 700; color: #1a1a2e; }
+.wb-upgrade-cta .price span { font-size: 16px; font-weight: 400; color: #6b7280; }
+.wb-upgrade-cta .button-hero { background: #1a6b4a; color: #fff; border-color: #1a6b4a; font-size: 16px; padding: 10px 32px; height: auto; line-height: 1.6; margin-top: 12px; }
+.wb-upgrade-cta .button-hero:hover { background: #145a3d; border-color: #145a3d; color: #fff; }

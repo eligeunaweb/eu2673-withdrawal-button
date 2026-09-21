@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "撤回権を行使する"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "撤回申請が正常に登録されました。まもなく確認メールが届きます。"
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "私はデジタルコンテンツへの即時アクセスを明示的に要求し、アクセス、閲覧またはダウンロードを開始した時点で、指令2011/83/EU第16条m項に規定される14日間の撤回権を失うことを認めます。"
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "注文を完了するには、デジタルコンテンツに関する条件に同意する必要があります。"
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal ButtonはWooCommerceが有効である必要があります。"
+
+msgid "My withdrawals"
+msgstr "私の撤回申請"
+
+msgid "You have no withdrawal requests registered."
+msgstr "登録された撤回申請はありません。"
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "撤回期限：残り%d日"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— 標準（撤回権の対象）—"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "除外 — 第16条の例外（撤回権なし）"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "デジタルコンテンツ — チェックアウト時に同意が必要（第16条m項）"
+
+msgid "Withdrawal status"
+msgstr "撤回ステータス"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "この商品への撤回権の適用方法を制御します。「標準」は一般的なプラグイン設定に従います。「除外」はこの商品を含む注文の撤回ボタンを非表示にします。「デジタルコンテンツ」はチェックアウト時に必須の同意チェックボックスを表示します。"
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "撤回モデルフォーム（附属書I.B）"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU指令2011/83/EU"
+
+msgid "To:"
+msgstr "宛先:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "私/私たちは（*）、以下の商品の販売（*）/以下のサービスの提供（*）に関する契約から撤回することを通知します"
+
+msgid "Ordered on:"
+msgstr "注文日:"
+
+msgid "Order number:"
+msgstr "注文番号:"
+
+msgid "Name of consumer(s):"
+msgstr "消費者名:"
+
+msgid "Address of consumer(s):"
+msgstr "消費者住所:"
+
+msgid "(*) Delete as appropriate."
+msgstr "（*）不要な項目を削除してください。"
+
+msgid "Print this form"
+msgstr "このフォームを印刷"

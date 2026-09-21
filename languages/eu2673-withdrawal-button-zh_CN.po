@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ejercer derecho de desistimiento"
+msgstr "行使撤回权"
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "您的撤回申请已成功注册。您将很快收到确认电子邮件。"
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "我明确要求立即访问数字内容，并承认一旦我开始访问、查看或下载该内容，我将失去《指令2011/83/EU》第16条m款规定的14天撤回权。"
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "您必须接受有关数字内容的条款才能完成订单。"
+
+msgid "Withdrawal Button requires WooCommerce to be active."
+msgstr "Withdrawal Button需要WooCommerce处于激活状态。"
+
+msgid "My withdrawals"
+msgstr "我的撤回申请"
+
+msgid "You have no withdrawal requests registered."
+msgstr "您没有已注册的撤回申请。"
+
+msgid "Withdrawal deadline: %d days remaining"
+msgstr "撤回期限：剩余%d天"
+
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— 标准（适用撤回权）—"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "排除 — 第16条例外（无撤回权）"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "数字内容 — 结账时需要同意（第16条m款）"
+
+msgid "Withdrawal status"
+msgstr "撤回状态"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "控制撤回权如何适用于此产品。\"标准\"遵循一般插件设置。\"排除\"对包含此产品的订单隐藏撤回按钮。\"数字内容\"在结账时显示强制同意复选框。"
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "撤回权模型表格（附件I.B）"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "欧盟指令2011/83/EU"
+
+msgid "To:"
+msgstr "致:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "本人/我们（*）特此通知撤回本人/我们（*）关于以下商品销售（*）/以下服务提供（*）的合同"
+
+msgid "Ordered on:"
+msgstr "订购日期:"
+
+msgid "Order number:"
+msgstr "订单号:"
+
+msgid "Name of consumer(s):"
+msgstr "消费者姓名:"
+
+msgid "Address of consumer(s):"
+msgstr "消费者地址:"
+
+msgid "(*) Delete as appropriate."
+msgstr "（*）删除不适用项。"
+
+msgid "Print this form"
+msgstr "打印此表格"
