@@ -50,7 +50,7 @@ A more advanced commercial edition is also available separately. Commercial/Pro-
 
 ## Repository status
 
-The public GitHub repository is being prepared as a clean source mirror and developer-facing portfolio for the WordPress.org edition. The authoritative distributable package remains the official WordPress.org release until the source import is completed here.
+This repository contains the public source for the free WordPress edition and serves as a developer-facing mirror and portfolio project. For end-user installation and official releases, use the WordPress.org plugin directory.
 
 ## License
 
