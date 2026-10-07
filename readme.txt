@@ -3,13 +3,13 @@ Contributors: adaptatuweb
 Author: Álvaro Martínez - AdaptaTuWeb.com
 Tags: withdrawal, woocommerce, ecommerce, eu-directive, desistimiento
 Requires at least: 5.8
-Tested up to: 6.8
-Stable tag: 1.1.2
+Tested up to: 7.1
+Stable tag: 1.1.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Legal withdrawal button for WooCommerce. EU Directive 2023/2673 compliant. Works for registered customers and guests. 1 click, automatic acknowledgement.
+Legal withdrawal button for WooCommerce. EU Directive 2023/2673 compliant. Works for registered customers and guests. 1-click acknowledgement.
 
 == Description ==
 
@@ -128,6 +128,14 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 10. Pro upgrade page
 
 == Changelog ==
+
+= 1.1.3 =
+* Added review request notice after 14 days of active use
+* Added Pro upsell notice in the requests panel
+* Updated Tested up to 7.1
+
+= 1.1.2 =
+* Fixed short description length for WordPress.org
 
 = 1.1.1 =
 * Added admin notice with review request and Pro upgrade prompt
