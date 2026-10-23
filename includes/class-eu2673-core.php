@@ -17,6 +17,7 @@ class EU2673_Core {
         if ( ! $this->woocommerce_active() ) {
             add_action( 'admin_notices', [ $this, 'notice_woocommerce_missing' ] );
             add_action( 'admin_notices', [ $this, 'notice_review_request' ] );
+            $this->maybe_migrate();
             add_action( 'admin_notices', [ $this, 'notice_pro_upsell' ] );
             add_action( 'wp_ajax_eu2673_dismiss_notice', [ $this, 'ajax_dismiss_notice' ] );
             return;
@@ -35,11 +36,28 @@ class EU2673_Core {
     }
 
     private function load_textdomain() {
-        // WordPress 4.6+ loads translations automatically for plugins hosted on WordPress.org
+        load_plugin_textdomain(
+            'eu2673-withdrawal-button',
+            false,
+            dirname( plugin_basename( EU2673_PLUGIN_FILE ) ) . '/languages/'
+        );
     }
 
     private function woocommerce_active() {
         return class_exists( 'WooCommerce' );
+    }
+
+    public function maybe_migrate() {
+        // v1.2.0 — forzar desactivación del cambio automático de estado
+        // si el valor es el antiguo 'wc-refunded' o '1'
+        if ( get_option( 'eu2673_new_order_status' ) === 'wc-refunded' ) {
+            delete_option( 'eu2673_new_order_status' );
+            add_option( 'eu2673_new_order_status', 'wc-on-hold' );
+        }
+        if ( get_option( 'eu2673_change_order_status' ) === '1' ) {
+            delete_option( 'eu2673_change_order_status' );
+            add_option( 'eu2673_change_order_status', '0' );
+        }
     }
 
     public function ajax_dismiss_notice() {

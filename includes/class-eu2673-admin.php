@@ -375,7 +375,7 @@ class EU2673_Admin {
         ?>
         <div class="wrap">
             <h1><?php esc_html_e( 'Withdrawal Button — Help', 'eu2673-withdrawal-button' ); ?></h1>
-            <?php require_once dirname( __FILE__, 2 ) . '/admin/partials/page-help.php'; ?>
+            <?php require_once dirname( __FILE__, 2 ) . '/admin/page-help.php'; ?>
         </div>
         <?php
     }

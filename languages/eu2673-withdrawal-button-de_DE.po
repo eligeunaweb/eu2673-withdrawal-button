@@ -74,3 +74,32 @@ msgstr "(*) Unzutreffendes streichen."
 
 msgid "Print this form"
 msgstr "Dieses Formular drucken"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Widerrufsfenster schließen"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "Gemäß der EU-Richtlinie 2023/2673 haben Sie das Recht, diesen Vertrag innerhalb von 14 Kalendertagen ohne Angabe von Gründen zu widerrufen."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "Nach der Bestätigung erhalten Sie eine Bestätigungs-E-Mail und unser Team wird die Rückerstattung innerhalb von maximal 14 Kalendertagen bearbeiten."
+
+msgid "Cancelar"
+msgstr "Abbrechen"
+
+msgid "Confirmar desistimiento"
+msgstr "Widerruf bestätigen"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Widerruf ausgeübt"
+
+msgid "Cerrar"
+msgstr "Schließen"
+
+msgid "Error desconocido."
+msgstr "Unbekannter Fehler."
+
+msgid "Error de conexión."
+msgstr "Verbindungsfehler."

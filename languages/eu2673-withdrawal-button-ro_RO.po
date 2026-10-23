@@ -74,3 +74,32 @@ msgstr "(*) Ștergeți mențiunea inutilă."
 
 msgid "Print this form"
 msgstr "Tipăriți acest formular"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Închide fereastra de retragere"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "Conform Directivei UE 2023/2673, aveți dreptul de a vă retrage din acest contract în termen de 14 zile calendaristice fără a fi necesară nicio justificare."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "La confirmare, veți primi un e-mail de confirmare și echipa noastră va procesa rambursarea în maximum 14 zile calendaristice."
+
+msgid "Cancelar"
+msgstr "Anulați"
+
+msgid "Confirmar desistimiento"
+msgstr "Confirmați retragerea"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Retragere exercitată"
+
+msgid "Cerrar"
+msgstr "Închide"
+
+msgid "Error desconocido."
+msgstr "Eroare necunoscută."
+
+msgid "Error de conexión."
+msgstr "Eroare de conexiune."

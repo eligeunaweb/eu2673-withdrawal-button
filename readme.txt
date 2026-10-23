@@ -4,7 +4,7 @@ Author: Álvaro Martínez - AdaptaTuWeb.com
 Tags: withdrawal, woocommerce, ecommerce, eu-directive, desistimiento
 Requires at least: 5.8
 Tested up to: 7.1
-Stable tag: 1.1.3
+Stable tag: 1.2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -128,6 +128,34 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 10. Pro upgrade page
 
 == Changelog ==
+
+= 1.2.1 =
+* Fixed automatic order status change to Refunded regardless of saved settings
+
+= 1.2.0 =
+* Fixed settings migration running too late — now runs immediately on plugin load
+* Automatic order status change is now disabled on all existing installations
+
+= 1.1.9 =
+* Fixed automatic order status change persisting after update — now migrates existing settings on plugin load
+* Changed default order status from Refunded to On Hold
+* Changed default for automatic status change to disabled
+
+= 1.1.8 =
+* Fixed order status default changed from Refunded to On Hold to prevent automatic payment refund
+* Fixed missing translations for button status and error messages in all languages
+
+= 1.1.7 =
+* Added missing translations for modal texts in all supported languages (FR, DE, IT, NL, PT, PL, RO, SV, CA, EU, GL)
+
+= 1.1.6 =
+* Fixed translations not loading on frontend (French and other languages now display correctly in the modal)
+
+= 1.1.5 =
+* Fixed translations not loading on frontend (French and other languages now display correctly in the modal)
+
+= 1.1.4 =
+* Fixed critical error on Help page (incorrect file path)
 
 = 1.1.3 =
 * Added review request notice after 14 days of active use

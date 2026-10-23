@@ -6,7 +6,18 @@ class EU2673_Activator {
     public static function activate() {
         self::create_tables();
         self::set_defaults();
+        self::migrate();
         flush_rewrite_rules();
+    }
+
+    public static function migrate() {
+        // v1.1.8 — cambiar estado por defecto de wc-refunded a wc-on-hold
+        if ( get_option( 'eu2673_new_order_status' ) === 'wc-refunded' ) {
+            update_option( 'eu2673_new_order_status', 'wc-on-hold' );
+        }
+        if ( get_option( 'eu2673_change_order_status' ) === '1' ) {
+            update_option( 'eu2673_change_order_status', '0' );
+        }
     }
 
     public static function deactivate() {
@@ -51,8 +62,8 @@ class EU2673_Activator {
             'eu2673_button_position'        => 'order_details',
             'eu2673_send_customer_email'    => '1',
             'eu2673_send_admin_email'       => '1',
-            'eu2673_change_order_status'    => '1',
-            'eu2673_new_order_status'       => 'wc-refunded',
+            'eu2673_change_order_status'    => '0',
+            'eu2673_new_order_status'       => 'wc-on-hold',
             'eu2673_require_reason'         => '0',
             'eu2673_admin_email'            => get_option( 'admin_email' ),
             'eu2673_email_subject_customer' => __( 'Confirmación de desistimiento - Pedido #{order_id}', 'eu2673-withdrawal-button' ),

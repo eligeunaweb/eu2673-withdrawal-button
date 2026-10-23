@@ -74,3 +74,32 @@ msgstr "(*) Ezabatu dagokiona."
 
 msgid "Print this form"
 msgstr "Inprimatu formulario hau"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Itxi atzerapenaren leihoa"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "EU 2023/2673 Zuzentarauaren arabera, kontratu honetatik 14 egun naturaleko epean atzera egiteko eskubidea duzu, justifikaziorik eman gabe."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "Berrestean, harrera-agiria jasoko duzu posta elektronikoz eta gure taldeak gehienez 14 egun naturaleko epean tramitatu egingo du itzulketa."
+
+msgid "Cancelar"
+msgstr "Utzi"
+
+msgid "Confirmar desistimiento"
+msgstr "Atzerapena berretsi"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Atzerapena gauzatua"
+
+msgid "Cerrar"
+msgstr "Itxi"
+
+msgid "Error desconocido."
+msgstr "Errore ezezaguna."
+
+msgid "Error de conexión."
+msgstr "Konexio errorea."

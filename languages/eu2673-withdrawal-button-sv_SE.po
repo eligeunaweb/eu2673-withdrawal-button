@@ -74,3 +74,32 @@ msgstr "(*) Stryk det som inte är tillämpligt."
 
 msgid "Print this form"
 msgstr "Skriv ut detta formulär"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Stäng ångerfönstret"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "Enligt EU-direktiv 2023/2673 har du rätt att ångra detta avtal inom 14 kalenderdagar utan att behöva ange någon anledning."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "Vid bekräftelse får du ett bekräftelsemail och vårt team kommer att behandla återbetalningen inom maximalt 14 kalenderdagar."
+
+msgid "Cancelar"
+msgstr "Avbryt"
+
+msgid "Confirmar desistimiento"
+msgstr "Bekräfta ångran"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Ångerrätt utövad"
+
+msgid "Cerrar"
+msgstr "Stäng"
+
+msgid "Error desconocido."
+msgstr "Okänt fel."
+
+msgid "Error de conexión."
+msgstr "Anslutningsfel."

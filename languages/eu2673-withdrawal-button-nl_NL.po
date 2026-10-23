@@ -74,3 +74,32 @@ msgstr "(*) Doorhalen wat niet van toepassing is."
 
 msgid "Print this form"
 msgstr "Dit formulier afdrukken"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Herroepingsvenster sluiten"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "Conform EU-richtlijn 2023/2673 heeft u het recht om dit contract binnen 14 kalenderdagen te herroepen zonder opgave van redenen."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "Na bevestiging ontvangt u een bevestigings-e-mail en zal ons team de terugbetaling binnen maximaal 14 kalenderdagen verwerken."
+
+msgid "Cancelar"
+msgstr "Annuleren"
+
+msgid "Confirmar desistimiento"
+msgstr "Herroeping bevestigen"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Herroeping uitgeoefend"
+
+msgid "Cerrar"
+msgstr "Sluiten"
+
+msgid "Error desconocido."
+msgstr "Onbekende fout."
+
+msgid "Error de conexión."
+msgstr "Verbindingsfout."

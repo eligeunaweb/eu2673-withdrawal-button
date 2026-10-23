@@ -68,9 +68,11 @@ class EU2673_Ajax {
         );
 
         // 3. Cambiar estado del pedido
-        if ( get_option( 'eu2673_change_order_status', '1' ) ) {
-            $new_status = get_option( 'eu2673_new_order_status', 'wc-refunded' );
-            $new_status = str_replace( 'wc-', '', $new_status );
+        $change_status = get_option( 'eu2673_change_order_status', '0' );
+        $new_status_val = get_option( 'eu2673_new_order_status', 'wc-on-hold' );
+        // Nunca cambiar a wc-refunded automaticamente
+        if ( $change_status && $new_status_val !== 'wc-refunded' ) {
+            $new_status = str_replace( 'wc-', '', $new_status_val );
             $order->update_status( $new_status, __( 'Estado cambiado automáticamente por solicitud de desistimiento.', 'eu2673-withdrawal-button' ) );
         }
 

@@ -74,3 +74,32 @@ msgstr "(*) Riscar o que não interessa."
 
 msgid "Print this form"
 msgstr "Imprimir este formulário"
+
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Fechar janela de desistência"
+
+msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
+msgstr "De acordo com a Diretiva UE 2023/2673, tem o direito de desistir deste contrato no prazo de 14 dias de calendário sem necessidade de justificação."
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "Ao confirmar, receberá um e-mail de confirmação e a nossa equipa processará o reembolso num prazo máximo de 14 dias de calendário."
+
+msgid "Cancelar"
+msgstr "Cancelar"
+
+msgid "Confirmar desistimiento"
+msgstr "Confirmar desistência"
+
+
+msgid "Desistimiento ejercido"
+msgstr "Desistência exercida"
+
+msgid "Cerrar"
+msgstr "Fechar"
+
+msgid "Error desconocido."
+msgstr "Erro desconhecido."
+
+msgid "Error de conexión."
+msgstr "Erro de ligação."
