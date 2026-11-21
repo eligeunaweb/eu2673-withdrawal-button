@@ -3,7 +3,7 @@
  * Plugin Name: EU2673 Withdrawal Button
  * Plugin URI:  https://adaptatuweb.com/en-gb/withdrawal-button/
  * Description: Añade un botón de desistimiento legal a tu tienda WooCommerce. Cumple con la Directiva UE 2023/2673 (obligatoria desde el 19 de junio de 2026). El cliente puede ejercer su derecho de desistimiento en 1 clic, con acuse de recibo automático por email.
- * Version:     1.2.3
+ * Version:     1.2.4
  * Author:      Álvaro Martínez - AdaptaTuWeb.com
  * Author URI:  https://adaptatuweb.com
  * License:     GPL-2.0+
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'EU2673_VERSION', '1.2.3' );
+define( 'EU2673_VERSION', '1.2.4' );
 define( 'EU2673_PLUGIN_FILE', __FILE__ );
 define( 'EU2673_PLUGIN_DIR',  plugin_dir_path( __FILE__ ) );
 define( 'EU2673_PLUGIN_URL',  plugin_dir_url( __FILE__ ) );

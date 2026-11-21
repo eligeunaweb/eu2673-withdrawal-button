@@ -36,6 +36,7 @@ class EU2673_Core {
         add_action( 'wp_footer', [ $this, 'render_footer_link' ], 5 );
         add_action( 'woocommerce_email_after_order_table', [ $this, 'render_email_link' ], 20, 4 );
         add_action( 'init', [ $this, 'maybe_flush_rewrite_rules' ], 99 );
+        add_action( 'save_post_page', [ __CLASS__, 'forget_missing_page' ] );
     }
 
     /* ── Idioma ─────────────────────────────────────────────────────────── */
@@ -149,11 +150,19 @@ class EU2673_Core {
      * Los compradores sin cuenta necesitan una forma permanente de desistir
      * durante todo el plazo (art. 11 bis.1 de la Directiva 2011/83/UE).
      */
-    public static function withdrawal_page_id() {
+    public static function withdrawal_page_id( $fresh = false ) {
+        static $cached = null;
+        if ( null !== $cached && ! $fresh ) return $cached;
+
         $id   = (int) get_option( 'eu2673_withdrawal_page_id', 0 );
         $page = $id ? get_post( $id ) : null;
         if ( $page && 'publish' === $page->post_status && has_shortcode( $page->post_content, self::SHORTCODE ) ) {
-            return $id;
+            return $cached = $id;
+        }
+        // Sin página: no repetir la búsqueda de texto en cada visita. Se vuelve a buscar
+        // pasada una hora o en cuanto se guarda una página (forget_missing_page).
+        if ( ! $fresh && get_transient( 'eu2673_no_withdrawal_page' ) ) {
+            return $cached = 0;
         }
         $found = get_posts( [
             'post_type'      => 'page',
@@ -165,15 +174,22 @@ class EU2673_Core {
         foreach ( $found as $page_id ) {
             if ( has_shortcode( get_post_field( 'post_content', $page_id ), self::SHORTCODE ) ) {
                 update_option( 'eu2673_withdrawal_page_id', (int) $page_id );
-                return (int) $page_id;
+                delete_transient( 'eu2673_no_withdrawal_page' );
+                return $cached = (int) $page_id;
             }
         }
-        return 0;
+        set_transient( 'eu2673_no_withdrawal_page', 1, HOUR_IN_SECONDS );
+        return $cached = 0;
+    }
+
+    /** Al guardar una página, volver a buscar la de desistimiento en la siguiente carga. */
+    public static function forget_missing_page() {
+        delete_transient( 'eu2673_no_withdrawal_page' );
     }
 
     /** Crea la página pública con el formulario. Devuelve su ID o 0. */
     public static function create_withdrawal_page() {
-        $existing = self::withdrawal_page_id();
+        $existing = self::withdrawal_page_id( true );
         if ( $existing ) return $existing;
         // El título se escribe en el idioma de la tienda, no en el del administrador.
         $switched = ! empty( $GLOBALS['wp_locale_switcher'] ) && switch_to_locale( get_locale() );
@@ -189,6 +205,7 @@ class EU2673_Core {
         ] );
         if ( is_wp_error( $id ) || ! $id ) return 0;
         update_option( 'eu2673_withdrawal_page_id', (int) $id );
+        delete_transient( 'eu2673_no_withdrawal_page' );
         return (int) $id;
     }
 

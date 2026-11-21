@@ -85,7 +85,7 @@ class EU2673_Guest {
                 <form method="post" action="<?php echo esc_url( get_permalink() ); ?>">
                     <div class="eu2673-guest-field">
                         <label for="eu2673-guest-order"><?php esc_html_e( 'Order number', 'eu2673-withdrawal-button' ); ?> <span aria-hidden="true">*</span></label>
-                        <input type="text" id="eu2673-guest-order" name="eu_order" required inputmode="numeric" autocomplete="off" value="<?php echo esc_attr( $order_value ); ?>">
+                        <input type="text" id="eu2673-guest-order" name="eu_order" required autocomplete="off" value="<?php echo esc_attr( $order_value ); ?>">
                     </div>
                     <div class="eu2673-guest-field">
                         <label for="eu2673-guest-email"><?php esc_html_e( 'Email address used to purchase', 'eu2673-withdrawal-button' ); ?> <span aria-hidden="true">*</span></label>
