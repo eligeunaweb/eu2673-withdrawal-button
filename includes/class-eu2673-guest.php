@@ -3,189 +3,125 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * EU2673_Guest
- * Página pública de desistimiento para compradores sin cuenta.
+ * Página pública de desistimiento para compradores sin cuenta (art. 11 bis.1: la función
+ * de desistimiento debe estar disponible durante todo el plazo).
  * Shortcode: [eu2673_withdrawal_form]
  */
 class EU2673_Guest {
 
     public function __construct() {
-        add_shortcode( 'eu2673_withdrawal_form', [ $this, 'render_shortcode' ] );
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
-        add_action( 'wp_footer', [ $this, 'maybe_render_modal' ] );
-    }
-
-    public function maybe_render_modal(): void {
-        if ( ! $this->is_withdrawal_page() ) return;
-        $step = isset( $_GET['eu_step'] ) ? sanitize_text_field( $_GET['eu_step'] ) : 'form';
-        if ( $step !== 'verify' ) return;
-        $frontend = new EU2673_Frontend();
-        $frontend->render_modal();
-    }
-
-    public function enqueue_assets(): void {
-        if ( ! $this->is_withdrawal_page() ) return;
-        wp_enqueue_style(
-            'eu2673-frontend',
-            plugin_dir_url( EU2673_PLUGIN_FILE ) . 'public/css/frontend.css',
-            [],
-            EU2673_VERSION
-        );
-        wp_enqueue_script(
-            'eu2673-frontend',
-            plugin_dir_url( EU2673_PLUGIN_FILE ) . 'public/js/frontend.js',
-            [ 'jquery' ],
-            EU2673_VERSION,
-            true
-        );
-        wp_localize_script( 'eu2673-frontend', 'WB', [
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'nonce'    => wp_create_nonce( 'eu2673_withdrawal_nonce' ),
-        ] );
-    }
-
-    private function is_withdrawal_page(): bool {
-        global $post;
-        return $post && has_shortcode( $post->post_content, 'eu2673_withdrawal_form' );
+        add_shortcode( EU2673_Core::SHORTCODE, [ $this, 'render_shortcode' ] );
     }
 
     public function render_shortcode( $atts ): string {
         ob_start();
-        $step     = isset( $_GET['eu_step'] ) ? sanitize_text_field( $_GET['eu_step'] ) : 'form';
-        $order_id = isset( $_GET['eu_order'] ) ? absint( $_GET['eu_order'] ) : 0;
-        $email    = isset( $_GET['eu_email'] ) ? sanitize_email( $_GET['eu_email'] ) : '';
-        $token    = isset( $_GET['eu_token'] ) ? sanitize_text_field( $_GET['eu_token'] ) : '';
-        $error    = isset( $_GET['eu_error'] ) ? sanitize_text_field( $_GET['eu_error'] ) : '';
-
-        if ( $step === 'verify' && $order_id && $email && $token ) {
-            $this->render_verify( $order_id, $email, $token );
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- se verifica en lookup()
+        if ( isset( $_POST['eu2673_guest_lookup'] ) ) {
+            $result = $this->lookup();
+            if ( $result instanceof WC_Order ) {
+                $this->render_verified( $result );
+            } else {
+                $this->render_form( $result );
+            }
         } else {
-            $this->render_form( $error );
+            $this->render_form( '' );
         }
         return ob_get_clean();
     }
 
-    private function render_form( string $error = '' ): void {
-        $action = esc_url( get_permalink() );
+    /** Devuelve el pedido verificado o un código de error. */
+    private function lookup() {
+        $nonce = sanitize_text_field( wp_unslash( $_POST['eu2673_guest_nonce'] ?? '' ) );
+        if ( ! wp_verify_nonce( $nonce, 'eu2673_guest_lookup' ) ) {
+            return 'invalid';
+        }
+        $order_ref = sanitize_text_field( wp_unslash( $_POST['eu_order'] ?? '' ) );
+        $email     = sanitize_email( wp_unslash( $_POST['eu_email'] ?? '' ) );
+        $order     = $this->find_order( $order_ref );
+        if ( ! $order || ! $email || strtolower( $order->get_billing_email() ) !== strtolower( $email ) ) {
+            return 'not_found';
+        }
+        if ( $order->get_meta( '_eu2673_withdrawal_done' ) ) {
+            return 'done';
+        }
+        $frontend = new EU2673_Frontend( false );
+        if ( ! $frontend->order_is_eligible( $order ) ) {
+            return 'expired';
+        }
+        return $order;
+    }
+
+    /**
+     * Busca el pedido por el número que ve el cliente. Usa el mismo filtro que el
+     * seguimiento de pedidos de WooCommerce, que respetan los plugins de numeración propia.
+     */
+    private function find_order( $ref ) {
+        $ref = ltrim( trim( (string) $ref ), '#' );
+        if ( '' === $ref ) return null;
+        $order_id = absint( apply_filters( 'woocommerce_shortcode_order_tracking_order_id', $ref ) );
+        $order    = $order_id ? wc_get_order( $order_id ) : null;
+        return $order instanceof WC_Order ? $order : null;
+    }
+
+    private function render_form( $error ): void {
+        $messages = [
+            'not_found' => __( 'We could not find an order with those details.', 'eu2673-withdrawal-button' ),
+            'expired'   => __( 'The withdrawal period for this order has expired (14 calendar days).', 'eu2673-withdrawal-button' ),
+            'done'      => __( 'You have already exercised the right of withdrawal for this order.', 'eu2673-withdrawal-button' ),
+            'invalid'   => __( 'An error occurred. Please try again.', 'eu2673-withdrawal-button' ),
+        ];
+        // phpcs:disable WordPress.Security.NonceVerification.Missing -- solo para volver a rellenar el formulario
+        $order_value = sanitize_text_field( wp_unslash( $_POST['eu_order'] ?? '' ) );
+        $email_value = sanitize_email( wp_unslash( $_POST['eu_email'] ?? '' ) );
+        // phpcs:enable
         ?>
-        <div class="eu2673-guest-wrap" style="max-width:480px;margin:0 auto;">
-            <div style="background:#f8f9ff;border:1px solid #e0e0e0;border-radius:8px;padding:28px 32px;">
-                <h2 style="margin:0 0 8px;font-size:20px;color:#1a1a2e;">
-                    <?php esc_html_e( 'Exercise your right of withdrawal', 'eu2673-withdrawal-button' ); ?>
-                </h2>
-                <p style="margin:0 0 20px;font-size:14px;color:#555;">
-                    <?php esc_html_e( 'Enter your order number and email address to check your eligibility.', 'eu2673-withdrawal-button' ); ?>
-                </p>
+        <div class="eu2673-guest-wrap">
+            <div class="eu2673-guest-box">
+                <h2><?php esc_html_e( 'Exercise your right of withdrawal', 'eu2673-withdrawal-button' ); ?></h2>
+                <p><?php esc_html_e( 'Enter your order number and email address to check your eligibility.', 'eu2673-withdrawal-button' ); ?></p>
                 <?php if ( $error ) : ?>
-                <div style="background:#ffebee;border-left:4px solid #c62828;padding:12px 16px;border-radius:4px;margin-bottom:16px;font-size:14px;color:#c62828;">
-                    <?php
-                    switch ( $error ) {
-                        case 'not_found':
-                            esc_html_e( 'We could not find an order with those details.', 'eu2673-withdrawal-button' );
-                            break;
-                        case 'expired':
-                            esc_html_e( 'The withdrawal period for this order has expired (14 calendar days).', 'eu2673-withdrawal-button' );
-                            break;
-                        case 'done':
-                            esc_html_e( 'You have already exercised the right of withdrawal for this order.', 'eu2673-withdrawal-button' );
-                            break;
-                        default:
-                            esc_html_e( 'An error occurred. Please try again.', 'eu2673-withdrawal-button' );
-                    }
-                    ?>
-                </div>
+                <div class="eu2673-guest-error" role="alert"><?php echo esc_html( $messages[ $error ] ?? $messages['invalid'] ); ?></div>
                 <?php endif; ?>
-                <form method="GET" action="<?php echo $action; ?>">
-                    <input type="hidden" name="eu_step" value="verify">
-                    <div style="margin-bottom:16px;">
-                        <label style="display:block;font-size:13px;font-weight:600;color:#333;margin-bottom:6px;">
-                            <?php esc_html_e( 'Order number', 'eu2673-withdrawal-button' ); ?> <span style="color:#e2401c;">*</span>
-                        </label>
-                        <input type="number" name="eu_order" required min="1"
-                            style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;">
+                <form method="post" action="<?php echo esc_url( get_permalink() ); ?>">
+                    <div class="eu2673-guest-field">
+                        <label for="eu2673-guest-order"><?php esc_html_e( 'Order number', 'eu2673-withdrawal-button' ); ?> <span aria-hidden="true">*</span></label>
+                        <input type="text" id="eu2673-guest-order" name="eu_order" required inputmode="numeric" autocomplete="off" value="<?php echo esc_attr( $order_value ); ?>">
                     </div>
-                    <div style="margin-bottom:20px;">
-                        <label style="display:block;font-size:13px;font-weight:600;color:#333;margin-bottom:6px;">
-                            <?php esc_html_e( 'Email address used to purchase', 'eu2673-withdrawal-button' ); ?> <span style="color:#e2401c;">*</span>
-                        </label>
-                        <input type="email" name="eu_email" required
-                            style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;box-sizing:border-box;">
+                    <div class="eu2673-guest-field">
+                        <label for="eu2673-guest-email"><?php esc_html_e( 'Email address used to purchase', 'eu2673-withdrawal-button' ); ?> <span aria-hidden="true">*</span></label>
+                        <input type="email" id="eu2673-guest-email" name="eu_email" required autocomplete="email" value="<?php echo esc_attr( $email_value ); ?>">
                     </div>
-                    <?php wp_nonce_field( 'eu2673_guest_lookup', 'eu_token' ); ?>
-                    <button type="submit"
-                        style="width:100%;padding:12px;background:#2c3e7a;color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;">
-                        <?php esc_html_e( 'Check my order', 'eu2673-withdrawal-button' ); ?>
-                    </button>
+                    <?php wp_nonce_field( 'eu2673_guest_lookup', 'eu2673_guest_nonce' ); ?>
+                    <button type="submit" name="eu2673_guest_lookup" value="1" class="eu2673-guest-submit"><?php esc_html_e( 'Check my order', 'eu2673-withdrawal-button' ); ?></button>
                 </form>
             </div>
         </div>
         <?php
     }
 
-    private function render_verify( int $order_id, string $email, string $token ): void {
-        if ( ! wp_verify_nonce( $token, 'eu2673_guest_lookup' ) ) {
-            $this->redirect_with_error( 'invalid' );
-            return;
-        }
-        $order = wc_get_order( $order_id );
-        if ( ! $order ) {
-            $this->redirect_with_error( 'not_found' );
-            return;
-        }
-        if ( strtolower( $order->get_billing_email() ) !== strtolower( $email ) ) {
-            $this->redirect_with_error( 'not_found' );
-            return;
-        }
-        if ( $order->get_meta( '_eu2673_withdrawal_done' ) ) {
-            $this->redirect_with_error( 'done' );
-            return;
-        }
-        $frontend = new EU2673_Frontend();
-        if ( ! $frontend->order_is_eligible( $order ) ) {
-            $this->redirect_with_error( 'expired' );
-            return;
-        }
-        $days_left  = $frontend->get_days_remaining( $order );
-        $nonce      = wp_create_nonce( 'eu2673_withdrawal_' . $order_id );
-        $order_key  = $order->get_order_key();
-        $btn_text   = get_option( 'eu2673_button_text', __( 'Exercise right of withdrawal', 'eu2673-withdrawal-button' ) );
-        $ajax_url   = admin_url( 'admin-ajax.php' );
-        $order_total = wc_price( $order->get_total() );
-        $order_date  = wc_format_datetime( $order->get_date_created() );
-        $page_url   = remove_query_arg( [ 'eu_step', 'eu_order', 'eu_email', 'eu_token' ] );
+    private function render_verified( WC_Order $order ): void {
+        $frontend = new EU2673_Frontend( false );
         ?>
-        <div class="eu2673-guest-wrap" style="max-width:580px;margin:0 auto;">
-            <div style="background:#f0f7f4;border-left:4px solid #1A6B4A;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:20px;">
-                <p style="margin:0;font-size:14px;color:#1A6B4A;font-weight:600;">
-                    <?php printf( esc_html__( 'Order #%1$s verified. You have %2$d day(s) remaining.', 'eu2673-withdrawal-button' ), esc_html( $order_id ), (int) $days_left ); ?>
-                </p>
+        <div class="eu2673-guest-wrap">
+            <div class="eu2673-guest-ok" role="status">
+                <?php
+                /* translators: %s: order number */
+                printf( esc_html__( 'Pedido #%s verificado.', 'eu2673-withdrawal-button' ), esc_html( $order->get_order_number() ) );
+                echo ' ' . esc_html( $frontend->deadline_text( $order ) );
+                ?>
             </div>
-            <div style="background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:20px 24px;margin-bottom:16px;">
-                <table style="width:100%;font-size:14px;border-collapse:collapse;">
-                    <tr><td style="padding:6px 0;color:#555;width:140px;"><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></td><td style="padding:6px 0;font-weight:600;">#<?php echo esc_html( $order_id ); ?></td></tr>
-                    <tr><td style="padding:6px 0;color:#555;"><?php esc_html_e( 'Date', 'eu2673-withdrawal-button' ); ?></td><td style="padding:6px 0;"><?php echo esc_html( $order_date ); ?></td></tr>
-                    <tr><td style="padding:6px 0;color:#555;"><?php esc_html_e( 'Total', 'eu2673-withdrawal-button' ); ?></td><td style="padding:6px 0;"><?php echo wp_kses_post( $order_total ); ?></td></tr>
-                </table>
-            </div>
-            <button type="button"
-                class="wb-withdrawal-btn"
-                data-order-id="<?php echo esc_attr( $order_id ); ?>"
-                data-nonce="<?php echo esc_attr( $nonce ); ?>"
-                data-order-key="<?php echo esc_attr( $order_key ); ?>"
-                data-ajax-url="<?php echo esc_attr( $ajax_url ); ?>"
-                style="display:block;width:100%;padding:14px;background:#2c3e7a;color:#fff;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;text-align:center;">
-                <?php echo esc_html( $btn_text ); ?>
-            </button>
-            <p style="margin:12px 0 0;font-size:12px;color:#888;text-align:center;">
-                <a href="<?php echo esc_url( $page_url ); ?>" style="color:#2c3e7a;">&larr; <?php esc_html_e( 'Check a different order', 'eu2673-withdrawal-button' ); ?></a>
-            </p>
+            <table class="eu2673-guest-table">
+                <tr><th scope="row"><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></th><td>#<?php echo esc_html( $order->get_order_number() ); ?></td></tr>
+                <tr><th scope="row"><?php esc_html_e( 'Date', 'eu2673-withdrawal-button' ); ?></th><td><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></td></tr>
+                <tr><th scope="row"><?php esc_html_e( 'Total', 'eu2673-withdrawal-button' ); ?></th><td><?php echo wp_kses_post( $order->get_formatted_order_total() ); ?></td></tr>
+            </table>
+            <?php
+            // El visitante ha demostrado conocer el pedido y su correo: el botón lleva la clave del pedido.
+            echo $frontend->button_html( $order, true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escapado en button_html()
+            $frontend->render_annex_ib( $order );
+            ?>
+            <p><a href="<?php echo esc_url( get_permalink() ); ?>">&larr; <?php esc_html_e( 'Check a different order', 'eu2673-withdrawal-button' ); ?></a></p>
         </div>
         <?php
-        $frontend->render_modal();
-    }
-
-    private function redirect_with_error( string $error ): void {
-        $url = add_query_arg( 'eu_error', $error, remove_query_arg( [ 'eu_step', 'eu_token', 'eu_error' ] ) );
-        wp_safe_redirect( $url );
-        exit;
     }
 }

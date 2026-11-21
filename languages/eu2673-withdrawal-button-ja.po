@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - ja
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "撤回権を行使する"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — ヘルプ"
+
+msgid "What the law requires"
+msgstr "法律の要件"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "指令 (EU) 2023/2673 により追加された指令 2011/83/EU 第11a条は、2026年6月19日から、オンラインインターフェースを通じて締結される遠隔契約に適用されます。ストアは次の条件を満たす撤回機能を提供する必要があります。"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "「ここで契約を撤回する」または同等の明確な表現で表示され、目立つ場所にあり、撤回期間中いつでも利用できること。"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "消費者が氏名、契約、確認の送付先メールアドレスを入力または確認できること。"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "「撤回を確定する」または同等の表示のボタンで確認を求めること。"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "撤回の内容・日付・時刻を記載した受領確認を、永続的媒体で送付すること。"
+
+msgid "Where customers find the button"
+msgstr "お客様がボタンを見つける場所"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "マイアカウント → 注文の詳細、および「撤回履歴」セクション。"
+
+msgid "The order received page, right after buying."
+msgstr "購入直後の注文受付ページ。"
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "アカウントのないお客様向けの公開撤回ページ。注文番号とメールアドレスを入力します。"
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "ストアの最下部と WooCommerce の注文メールに、そのページへのリンク（任意）。"
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "期間が終了したとき、注文が除外ステータスのとき、または注文内のすべての商品が除外に設定されているときは、ボタンは表示されません。"
+
+msgid "What happens when the customer withdraws"
+msgstr "お客様が撤回したときの流れ"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "氏名・注文・メールアドレスが表示されたウィンドウで、お客様が確定します。"
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "申請が保存され、「撤回 → 申請」に表示されます。"
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "お客様には受領確認が、ストアには通知が届きます。"
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "注文は自動で返金されません。内容を確認し、WooCommerce で返金してください。"
+
+msgid "Managing requests"
+msgstr "申請の管理"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "「撤回 → 申請」で各申請のステータスを変更します。ステータスメールが有効な場合、お客様に新しいステータスとメモが届きます。"
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "事業者は、撤回の通知を受けた日から遅滞なく、遅くとも14日以内に受領した支払いを返金しなければなりません。商品の場合、商品の返送を受けるか、消費者が返送の証拠を提出するまで返金を保留できます（指令 2011/83/EU 第13条）。"
+
+msgid "Products without a right of withdrawal"
+msgstr "撤回権のない商品"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "各商品の「一般」タブの「撤回ステータス」で、第16条の例外に該当する商品を「除外」に、デジタルコンテンツを「決済時に同意が必要」に設定します。同意チェックボックスは従来のチェックアウトとチェックアウトブロックの両方で機能します。"
+
+msgid "Emails"
+msgstr "メール"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "メールは WooCommerce → 設定 → メールで設定された送信者名とアドレスで送信されます。確実に届けるには、実際のメールサーバーと SMTP プラグインを使用してください。"
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "無料版のサポート：WordPress.org のサポートフォーラム。"
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "撤回"
+
+msgid "Withdrawal requests"
+msgstr "撤回申請"
+
+msgid "Requests"
+msgstr "申請"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Help"
+msgstr "ヘルプ"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button：公開撤回ページがありません。"
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "アカウントなしで購入したお客様には、撤回期間中いつでも撤回できるページが必要です（指令 2011/83/EU 第11a条第1項）。"
+
+msgid "Create the withdrawal page"
+msgstr "撤回ページを作成"
+
+msgid "You do not have permission to do this."
+msgstr "この操作を行う権限がありません。"
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Withdrawal Button はお役に立っていますか？WordPress.org での短いレビューが、他のストアが見つける助けになります。"
+
+msgid "Leave a review on WordPress.org"
+msgstr "WordPress.org でレビューを書く"
+
+msgid "Rate"
+msgstr "評価する"
+
+msgid "Upgrade to Pro"
+msgstr "Pro にアップグレード"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "お客様へのメールに添付される PDF の受領確認、各申請の SHA-256 ハッシュ、正確な時刻付きのメール記録、不正検知アラート、注文ステータスとの同期。"
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Pro を入手 — 1回払い 39 €"
+
+msgid "The request could not be updated."
+msgstr "申請を更新できませんでした。"
+
+msgid "Request #%d updated."
+msgstr "申請 #%d を更新しました。"
+
+msgid "The customer has been notified by email."
+msgstr "お客様にメールで通知しました。"
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "お客様へのメールを送信できませんでした。メール設定を確認してください。"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Ref."
+msgstr "番号"
+
+msgid "Order"
+msgstr "注文"
+
+msgid "Customer"
+msgstr "お客様"
+
+msgid "Reason"
+msgstr "理由"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Status"
+msgstr "ステータス"
+
+msgid "Change status"
+msgstr "ステータスを変更"
+
+msgid "No requests found."
+msgstr "申請はありません。"
+
+msgid "New status for request #%d"
+msgstr "申請 #%d の新しいステータス"
+
+msgid "Note for the customer (optional)"
+msgstr "お客様へのメモ（任意）"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "ステータスを「承認」「却下」「完了」に変更すると、お客様に新しいステータスとメモを記載したメールが届きます。"
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "撤回申請 #%1$d を %2$s に設定しました。"
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — 設定"
+
+msgid "Settings saved."
+msgstr "設定を保存しました。"
+
+msgid "The withdrawal page has been created."
+msgstr "撤回ページを作成しました。"
+
+msgid "View page"
+msgstr "ページを表示"
+
+msgid "The withdrawal page could not be created."
+msgstr "撤回ページを作成できませんでした。"
+
+msgid "Withdrawal period"
+msgstr "撤回期間"
+
+msgid "Withdrawal period (days)"
+msgstr "撤回期間（日数）"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "法定の最短期間は暦日で14日です。より長くすることもできます。"
+
+msgid "Grace days (optional)"
+msgstr "猶予日数（任意）"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "法定期間に追加する日数。"
+
+msgid "Start deadline from"
+msgstr "期間の起算日"
+
+msgid "Delivery date (when order is completed)"
+msgstr "配達日（注文が完了したとき）"
+
+msgid "Order date"
+msgstr "注文日"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "商品の場合、期間はお客様が受け取った時点から始まります（指令 2011/83/EU 第9条第2項(b)）。配達時に注文を「完了」にしてください。それまではボタンが表示され続けます。注文日は、サービスやデジタルコンテンツを販売する場合にのみ使用してください。"
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "次のステータスの注文にはボタンを表示しない"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "「完了」は除外しないでください。お客様は通常、注文を受け取った後に撤回します。"
+
+msgid "Where the button appears"
+msgstr "ボタンの表示場所"
+
+msgid "Button text"
+msgstr "ボタンのテキスト"
+
+msgid "Desistir del contrato aquí"
+msgstr "ここで契約を撤回する"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "空欄にすると、指令の表現（「ここで契約を撤回する」）をストアの言語で使用します。"
+
+msgid "Public withdrawal page"
+msgstr "公開撤回ページ"
+
+msgid "— None —"
+msgstr "— なし —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "ショートコード [eu2673_withdrawal_form] を含むページ。アカウントなしで購入したお客様は、注文番号とメールアドレスでここから撤回します。"
+
+msgid "Links to the withdrawal page"
+msgstr "撤回ページへのリンク"
+
+msgid "Show a link at the bottom of every page"
+msgstr "すべてのページの最下部にリンクを表示する"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "お客様に送る WooCommerce の注文メールにリンクを追加する"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "撤回機能は目立つように表示し、撤回期間中いつでも利用できるようにする必要があります（第11a条第1項）。"
+
+msgid "Order received page"
+msgstr "注文受付ページ"
+
+msgid "Show the button on the order received page"
+msgstr "注文受付ページにボタンを表示する"
+
+msgid "Show an optional reason field"
+msgstr "任意の理由入力欄を表示する"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "お客様が理由を述べる必要はありません。入力欄は常に任意です。"
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "第11a条第4項に従い、受領確認は常にお客様に送信されます。"
+
+msgid "Customer email subject"
+msgstr "お客様へのメールの件名"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "空欄にするとストアの言語の既定の文面を使用します。{order_id} と {customer_name} を使用できます。"
+
+msgid "Status updates"
+msgstr "ステータスの変更"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "申請のステータスを変更したときにお客様へメールを送る"
+
+msgid "Store notification"
+msgstr "ストアへの通知"
+
+msgid "Email the store when a customer withdraws"
+msgstr "お客様が撤回したときにストアへメールを送る"
+
+msgid "Admin email"
+msgstr "管理者のメールアドレス"
+
+msgid "Store email subject"
+msgstr "ストアへのメールの件名"
+
+msgid "Order status"
+msgstr "注文ステータス"
+
+msgid "Change order status automatically"
+msgstr "注文ステータスを自動で変更する"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "お客様が撤回したときに注文ステータスを変更する"
+
+msgid "New order status"
+msgstr "新しい注文ステータス"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "返金が自動で行われることはありません。確認後に WooCommerce で返金してください。"
+
+msgid "Save settings"
+msgstr "設定を保存"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "無効なリクエストです（nonce）。"
+
+msgid "Pedido no encontrado."
+msgstr "注文が見つかりません。"
+
+msgid "No tienes permiso para esta acción."
+msgstr "この操作を行う権限がありません。"
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "この注文はすでに撤回されています。"
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "この注文は撤回の対象外です。"
+
+msgid "Error desconocido."
+msgstr "不明なエラーです。"
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "顧客が撤回権を行使しました。申請ID：%1$d。理由：%2$s"
+
+msgid "Not provided"
+msgstr "記載なし"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "撤回申請によりステータスが自動的に変更されました。"
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "撤回申請が正常に登録されました。まもなく確認メールが届きます。"
@@ -17,36 +363,68 @@ msgstr "私はデジタルコンテンツへの即時アクセスを明示的に
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "注文を完了するには、デジタルコンテンツに関する条件に同意する必要があります。"
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "撤回の確認 - 注文番号{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "［撤回］注文番号{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "法的根拠：指令(EU)2023/2673により追加された指令2011/83/EU第11a条"
+
+msgid "Desistimiento del contrato"
+msgstr "契約の撤回"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "この注文を撤回したい場合は、オンラインで手続きできます："
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal ButtonはWooCommerceが有効である必要があります。"
 
-msgid "My withdrawals"
-msgstr "私の撤回申請"
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "［撤回承認］注文番号{order_id}"
 
-msgid "You have no withdrawal requests registered."
-msgstr "登録された撤回申請はありません。"
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "［撤回却下］注文番号{order_id}"
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "撤回期限：残り%d日"
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "［撤回完了］注文番号{order_id}"
 
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "［撤回］注文番号{order_id}"
 
-msgid "— Standard (subject to withdrawal right) —"
-msgstr "— 標準（撤回権の対象）—"
+msgid "Confirmar desistimiento"
+msgstr "撤回を確定する"
 
-msgid "Excluded — Art. 16 exception (no withdrawal right)"
-msgstr "除外 — 第16条の例外（撤回権なし）"
+msgid "Cancelar"
+msgstr "キャンセル"
 
-msgid "Digital content — requires consent at checkout (Art. 16m)"
-msgstr "デジタルコンテンツ — チェックアウト時に同意が必要（第16条m項）"
+msgid "Cerrar"
+msgstr "閉じる"
 
-msgid "Withdrawal status"
-msgstr "撤回ステータス"
+msgid "Procesando..."
+msgstr "処理中..."
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "この商品への撤回権の適用方法を制御します。「標準」は一般的なプラグイン設定に従います。「除外」はこの商品を含む注文の撤回ボタンを非表示にします。「デジタルコンテンツ」はチェックアウト時に必須の同意チェックボックスを表示します。"
+msgid "Desistimiento ejercido"
+msgstr "撤回済み"
+
+msgid "Error de conexión."
+msgstr "接続エラーです。"
 
 msgid "Model withdrawal form (Annex I.B)"
 msgstr "撤回モデルフォーム（附属書I.B）"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "撤回期間は注文を受け取った時点から始まります。"
+
+msgid "Puedes desistir hasta el %s."
+msgstr "%s まで撤回できます。"
+
+msgid "Withdrawal successfully exercised"
+msgstr "撤回が完了しました"
+
+msgid "Request ref."
+msgstr "申請番号"
 
 msgid "EU Directive 2011/83/UE"
 msgstr "EU指令2011/83/EU"
@@ -69,8 +447,210 @@ msgstr "消費者名:"
 msgid "Address of consumer(s):"
 msgstr "消費者住所:"
 
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "消費者の署名（本書式を紙で通知する場合のみ）："
+
+msgid "Date:"
+msgstr "日付："
+
 msgid "(*) Delete as appropriate."
 msgstr "（*）不要な項目を削除してください。"
 
 msgid "Print this form"
 msgstr "このフォームを印刷"
+
+msgid "My withdrawal requests"
+msgstr "撤回申請の一覧"
+
+msgid "My withdrawals"
+msgstr "私の撤回申請"
+
+msgid "You have no withdrawal requests registered."
+msgstr "登録された撤回申請はありません。"
+
+msgid "Pending"
+msgstr "保留中"
+
+msgid "Approved"
+msgstr "承認済み"
+
+msgid "Rejected"
+msgstr "却下"
+
+msgid "Completed"
+msgstr "完了"
+
+msgid "We could not find an order with those details."
+msgstr "入力された情報に一致する注文が見つかりませんでした。"
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "この注文の撤回期間は終了しました（暦日14日）。"
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "この注文についてはすでに撤回権を行使しています。"
+
+msgid "An error occurred. Please try again."
+msgstr "エラーが発生しました。もう一度お試しください。"
+
+msgid "Exercise your right of withdrawal"
+msgstr "撤回権を行使する"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "注文番号とメールアドレスを入力して、撤回できるかどうかを確認してください。"
+
+msgid "Order number"
+msgstr "注文番号"
+
+msgid "Email address used to purchase"
+msgstr "購入時に使用したメールアドレス"
+
+msgid "Check my order"
+msgstr "注文を確認する"
+
+msgid "Pedido #%s verificado."
+msgstr "注文 #%s を確認しました。"
+
+msgid "Total"
+msgstr "合計"
+
+msgid "Check a different order"
+msgstr "別の注文を確認する"
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— 標準（撤回権の対象）—"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "除外 — 第16条の例外（撤回権なし）"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "デジタルコンテンツ — チェックアウト時に同意が必要（第16条m項）"
+
+msgid "Withdrawal status"
+msgstr "撤回ステータス"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "この商品に撤回権をどのように適用するかを設定します。「標準」はプラグインの全体設定に従います。「除外」（第16条の例外）：注文内のすべての商品が除外の場合、その注文には撤回ボタンを表示しません。「デジタルコンテンツ」は決済時に必須の同意チェックボックスを表示します。"
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "新しい撤回申請"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "%sで新しい撤回申請が登録されました。"
+
+msgid "Nº de solicitud"
+msgstr "申請番号"
+
+msgid "Pedido"
+msgstr "注文"
+
+msgid "Cliente"
+msgstr "顧客"
+
+msgid "Correo del cliente"
+msgstr "顧客のメールアドレス"
+
+msgid "Teléfono"
+msgstr "電話番号"
+
+msgid "Importe del pedido"
+msgstr "注文金額"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "申請日時"
+
+msgid "Motivo"
+msgstr "理由"
+
+msgid "No indicado"
+msgstr "記載なし"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "注意：返金は最長14暦日以内に行う必要があります。"
+
+msgid "Ver pedido en WooCommerce"
+msgstr "WooCommerceで注文を表示"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Withdrawal Button Liteにより自動生成 | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "撤回申請を受け付けました"
+
+msgid "Hola, %s:"
+msgstr "%s 様"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "撤回申請を受け付けました。このメールは、指令(EU)2023/2673に基づく受領確認です。"
+
+msgid "¿Qué ocurre ahora?"
+msgstr "今後の流れ"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "この申請の受領日から最長14暦日以内に返金を行います。"
+
+msgid "Nombre"
+msgstr "氏名"
+
+msgid "Recibirás la confirmación en"
+msgstr "確認の送付先"
+
+msgid "Motivo indicado"
+msgstr "記載された理由"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "ご不明な点がございましたら、このメールにご返信ください。"
+
+msgid "Gracias por confiar en %s."
+msgstr "%sをご利用いただきありがとうございます。"
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "このメールは撤回申請の受領確認です。"
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "撤回申請が<strong>承認</strong>されました。最長<strong>14暦日</strong>以内に全額を返金します。"
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "撤回申請は<strong>却下</strong>されました。ご不明な点がございましたら、お問い合わせください。"
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "撤回申請が<strong>完了</strong>しました。返金処理が完了しました。"
+
+msgid "Dear"
+msgstr "お客様"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "撤回申請のステータスが更新されました。"
+
+msgid "Request number"
+msgstr "申請番号"
+
+msgid "New status"
+msgstr "新しいステータス"
+
+msgid "Updated on"
+msgstr "更新日時"
+
+msgid "Admin note:"
+msgstr "ストアからのメモ："
+
+msgid "Thank you for trusting %s."
+msgstr "%sをご利用いただきありがとうございます。"
+
+msgid "Automatic withdrawal request update."
+msgstr "撤回申請の自動更新のお知らせです。"
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "撤回ウィンドウを閉じる"
+
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "あなたは理由を示すことなく本契約を撤回する権利があります。"
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "確定する前に内容をご確認ください："
+
+msgid "Motivo (opcional)"
+msgstr "理由（任意）"
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "確定すると受領確認メールが届き、最長14暦日以内に返金を行います。"
+

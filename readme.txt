@@ -4,52 +4,51 @@ Author: Álvaro Martínez - AdaptaTuWeb.com
 Tags: withdrawal, woocommerce, ecommerce, eu-directive, desistimiento
 Requires at least: 5.8
 Tested up to: 7.1
-Stable tag: 1.2.1
+Stable tag: 1.2.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Legal withdrawal button for WooCommerce. EU Directive 2023/2673 compliant. Works for registered customers and guests. 1-click acknowledgement.
+Withdrawal function for WooCommerce (Art. 11a, Directive 2011/83/EU, added by Directive 2023/2673). For customers with or without an account.
 
 == Description ==
 
-**EU2673 Withdrawal Button** adds a legal withdrawal button to your WooCommerce store, allowing customers to exercise their right of withdrawal in 1 click and receive an automatic acknowledgement email.
+**EU2673 Withdrawal Button** adds the online withdrawal function required by Article 11a of Directive 2011/83/EU (introduced by Directive (EU) 2023/2673) to your WooCommerce store. Customers confirm their withdrawal in a few clicks and receive an acknowledgement of receipt by email.
 
-**EU Directive 2023/2673** is mandatory from **June 19, 2026** for all online stores selling to consumers in the European Union.
+Article 11a applies from **19 June 2026** to distance contracts concluded through an online interface with consumers in the European Union.
 
 = How it works =
 
-1. The button appears on the order confirmation page and in "My Account → order detail"
-2. It is only shown within the legal period of 14 calendar days
-3. The customer clicks the button, confirms in a modal and optionally provides a reason
-4. The request is recorded in your database
-5. The customer receives an acknowledgement email
+1. The button "Withdraw from contract here" appears in "My Account → order details", on the order received page and on a public withdrawal page for customers without an account
+2. It stays available during the whole withdrawal period (14 calendar days or more, counted from delivery or from the order date)
+3. The customer reviews their name, order and email, and presses "Confirm withdrawal" (an optional reason field can be enabled)
+4. The request is recorded and appears in Withdrawal → Requests
+5. The customer receives an acknowledgement of receipt with the date and time
 6. You receive a notification with a direct link to the order
-7. The order status changes automatically (configurable)
+7. You change the status of the request; the customer is notified by email
 
 = Included features =
 
-* ✅ Withdrawal button on order detail and thank-you page
-* ✅ Modal with mandatory legal text
-* ✅ Acknowledgement email to the customer
-* ✅ Notification email to the administrator
-* ✅ Status update emails (approved, rejected, completed)
-* ✅ Request management panel with filters and CSV export
-* ✅ Automatic order status change (configurable)
-* ✅ Compatible with guest orders (guest checkout)
-* ✅ **Public withdrawal page** — shortcode [eu2673_withdrawal_form] for customers without an account
-* ✅ **Product-level withdrawal status** — Standard / Excluded (Art. 16) / Digital consent (Art. 16m)
-* ✅ **Digital content consent** — mandatory checkbox at checkout for digital/downloadable products
-* ✅ **Product and category exclusions** — hide the button for specific products or entire categories
-* ✅ Configurable deadline (minimum 14 calendar days)
-* ✅ Optional grace days on top of the legal deadline
+* ✅ Withdrawal button on order details and the order received page, labelled with the wording of the Directive in each language
+* ✅ Confirmation window showing the customer's name, order and email (Art. 11a(2) and (3))
+* ✅ Acknowledgement of receipt to the customer with date and time (Art. 11a(4))
+* ✅ Notification email to the store
+* ✅ Request panel with status filters; status update emails with an optional note
+* ✅ **Public withdrawal page** created on activation — shortcode [eu2673_withdrawal_form] for customers without an account
+* ✅ Optional links to the withdrawal page at the bottom of the store and in WooCommerce order emails
+* ✅ **Model withdrawal form (Annex I.B)** pre-filled and printable
+* ✅ **Product-level withdrawal status** — Standard / Excluded (Art. 16) / Digital content consent (Art. 16(m))
+* ✅ **Digital content consent** checkbox in the classic checkout and the checkout block
+* ✅ Deadline counted in calendar days from delivery or from the order date (minimum 14 days, optional grace days)
+* ✅ Optional automatic order status change (never to Refunded)
+* ✅ Compatible with High-Performance Order Storage (HPOS)
 * ✅ Available in 16 languages: ES, EN, FR, DE, IT, PT, NL, PL, RO, SV, CA, EU, GL, AR, ZH, JA
 
 = Public withdrawal page for guests =
 
-Add the shortcode **[eu2673_withdrawal_form]** to any WordPress page to create a public withdrawal form. Customers without an account can exercise their right of withdrawal by entering their order number and purchase email — no login required.
+The plugin creates a page with the shortcode **[eu2673_withdrawal_form]** when you activate it (on existing stores, a notice offers to create it). Customers without an account withdraw there by entering their order number and purchase email — no login required.
 
-Add a link to this page in your footer so it is always visible and accessible, as required by the Directive.
+A link to this page can be shown at the bottom of every page and in the WooCommerce order emails, so the function stays visible and available during the whole period.
 
 = Pro version =
 
@@ -57,18 +56,16 @@ The **[Pro version (€39, one-time payment)](https://adaptatuweb.com/withdrawal
 
 * 📄 **Legal PDF** with official acknowledgement attached to the customer email
 * 🔐 **SHA-256 hash** verification for legal proof in case of disputes
-* 📋 **Official Annex B form** pre-filled in PDF (required by the Directive)
 * 🔄 **Reverse automation** — the request status syncs automatically with the WooCommerce order
 * 📊 **Legal email traceability** of all emails sent with exact date and time
 * 🛡️ **Anti-fraud system** — detects abuse patterns by email, IP and systematic behaviour, with risk alerts for the administrator
 * 🔔 **Automatic updates** from the WordPress dashboard
-* Compatible with **PrestaShop** too
 
 = Legal basis =
 
-* **EU Directive 2023/2673** of the European Parliament and of the Council
-* **Art. 102 TRLGDCU** — Right of withdrawal in distance contracts
-* **Art. 107 TRLGDCU** — Refund within maximum 14 calendar days
+* **Directive 2011/83/EU**, Article 11a (withdrawal function), inserted by **Directive (EU) 2023/2673**
+* Directive 2011/83/EU, Articles 9 (withdrawal period), 13 (refund) and 16 (exceptions), and Annex I.B (model withdrawal form)
+* Spain: Art. 102 and 107 TRLGDCU
 
 = Requirements =
 
@@ -82,33 +79,33 @@ The **[Pro version (€39, one-time payment)](https://adaptatuweb.com/withdrawal
 2. Activate the plugin from the WordPress "Plugins" menu.
 3. WooCommerce must be installed and active.
 4. Go to **Withdrawal → Settings** to adjust the options for your store.
-5. Optionally, create a page with the shortcode **[eu2673_withdrawal_form]** and add a link to it in your footer.
+5. Check that the public withdrawal page exists (Withdrawal → Settings → Public withdrawal page).
 
 == Frequently Asked Questions ==
 
 = Is this plugin mandatory from June 19, 2026? =
 
-EU Directive 2023/2673 requires online stores selling to EU consumers to provide a clear and accessible mechanism for exercising the right of withdrawal. This plugin helps you meet that requirement in a simple and documented way.
+From 19 June 2026, Article 11a of Directive 2011/83/EU (inserted by Directive (EU) 2023/2673) requires traders that conclude distance contracts through an online interface to offer a withdrawal function. This plugin implements that function for WooCommerce. It does not replace legal advice about your store.
 
 = Does it work with guest orders (no account)? =
 
-Yes. Guests can use the withdrawal button on the thank-you page, or use the public form [eu2673_withdrawal_form] by entering their order number and purchase email — no login required.
+Yes. Guests can use the button on the order received page, or the public withdrawal page by entering their order number and purchase email — no login required.
 
 = Is the customer required to provide a reason? =
 
-No. The law does not require the consumer to justify the withdrawal. The reason field is optional and configurable from the plugin settings.
+No. The law does not require the consumer to justify the withdrawal. You can enable an optional reason field in the settings; it is never mandatory.
 
 = Can I change the 14-day deadline? =
 
-You can extend it by adding optional grace days. You cannot reduce it below 14 calendar days, which is the legal minimum established by the Directive.
+You can set a longer period or add grace days. It cannot be set below 14 calendar days, the legal minimum.
 
 = When do the 14 days start? =
 
-You can choose between the order date or the date the order moves to "Completed" status (recommended for physical products). For services and digital products always use the order date.
+For goods, from delivery: choose "Delivery date" and mark orders as Completed when they are delivered; until then the button stays available. For services and digital content, choose the order date. The period ends at the end of the last calendar day, in the store time zone.
 
 = What is the difference between Lite and Pro? =
 
-The Lite version covers basic compliance. The Pro version adds the official legal PDF acknowledgement, SHA-256 verification hash, Annex B form, email traceability, reverse automation and an anti-fraud system. More information at [adaptatuweb.com/withdrawal-button-es](https://adaptatuweb.com/withdrawal-button-es/).
+The Lite version implements the withdrawal function. The Pro version adds a PDF acknowledgement, a SHA-256 hash of each request, an email log, order status sync and anti-fraud alerts. More information at [adaptatuweb.com/withdrawal-button-es](https://adaptatuweb.com/withdrawal-button-es/).
 
 = Where can I get support? =
 
@@ -128,6 +125,43 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 10. Pro upgrade page
 
 == Changelog ==
+
+= 1.2.3 =
+* Fixed: the Requests page in the admin was always empty (it read a table that does not exist)
+* Fixed: changing the status of a request did nothing, so status emails were never sent; status changes now work, add an order note and email the customer with an optional note
+* Fixed: the Settings page saved options the plugin never read (deadline, automatic status change); all settings now take effect
+* Fixed: orders with status Completed had no withdrawal button
+* Fixed: "Delivery date" deadline depended on the language of an order note; it now uses the completion date, and the button stays available until the order is delivered
+* Fixed: the deadline is counted in calendar days and ends at the end of the last day
+* Fixed: "My withdrawals" showed only the requests of one order
+* Fixed: "Print this form" opened the home page; it now prints the model form
+* Fixed: the guest form put the customer's email in the URL and could not show errors; it now uses POST and shows errors on the page
+* Fixed: logged-in customers could not withdraw orders placed as guests
+* Fixed: the confirmation window was printed up to three times on the guest page
+* Fixed: the digital content consent checkbox did not appear in the WooCommerce checkout block
+* Fixed: "Excluded" products did not hide the button; an order is now excluded when all its products are excluded
+* Fixed: store links in the admin email did not work with HPOS
+* The confirmation window shows the customer's name, order and email before confirming (Art. 11a(2))
+* The acknowledgement of receipt always goes to the customer (Art. 11a(4)) and includes name and email
+* Default button text is the wording of the Directive ("Withdraw from contract here") in each language
+* A public withdrawal page is created on activation; optional links in the footer and in WooCommerce order emails
+* Model withdrawal form (Annex I.B) now lists the products and includes the signature and date lines
+* Emails use the WooCommerce sender name and address; the store notification can be answered directly to the customer
+* Optional reason field (never mandatory)
+* Admin pages rewritten: labelled fields, accurate help, translated into all bundled languages
+
+= 1.2.2 =
+* Fixed: customer acknowledgement email and shop notification email were always in Spanish; they now follow the store language
+* Fixed: "Processing..." message and email subjects were not translated
+* Fixed: dates in emails mixed languages (e.g. "21 de November de 2026"); they now use the store date format and language
+* Fixed: guest customers (no account) could not submit the withdrawal from the guest form or the thank-you page
+* Fixed: status update emails sent from the admin now use the store language, not the admin user language
+* Fixed: settings migration now also runs on stores with WooCommerce active
+* Regional locales (fr_BE, fr_CA, de_AT, es_MX...) now use the base language translation
+* Legal basis line now cites Article 11a of Directive 2011/83/EU; the Spanish TRLGDCU reference is shown only for stores based in Spain
+* Completed customer-facing translations in all bundled languages and added Spanish and English translation files
+* Model withdrawal form (Annex I.B) uses the official wording of each EU language
+* Removed an old copy of version 1.1.4 that was included by mistake inside the plugin
 
 = 1.2.1 =
 * Fixed automatic order status change to Refunded regardless of saved settings
@@ -188,6 +222,12 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 * Available in Spanish and English
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+The request panel, status emails and settings now work. Completed orders show the withdrawal button again. Check Withdrawal → Settings after updating.
+
+= 1.2.2 =
+Customer emails now follow the store language and guest customers can submit withdrawals again. Recommended update.
 
 = 1.1.0 =
 Adds public withdrawal form for guests ([eu2673_withdrawal_form] shortcode), product exclusions and digital consent checkbox.

@@ -23,7 +23,7 @@ $eu2673_status_color   = isset( $eu2673_status_colors[ $new_status ] )   ? $eu26
 $eu2673_status_message = isset( $eu2673_status_messages[ $new_status ] ) ? $eu2673_status_messages[ $new_status ] : '';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo esc_attr( get_bloginfo( 'language' ) ); ?>">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,21 +55,14 @@ $eu2673_status_message = isset( $eu2673_status_messages[ $new_status ] ) ? $eu26
     <div class="highlight-box" style="border-color:<?php echo esc_attr( $eu2673_status_color ); ?>"><?php echo wp_kses_post( $eu2673_status_message ); ?></div>
     <table class="info-table">
       <tr><td><?php esc_html_e( 'Request number', 'eu2673-withdrawal-button' ); ?></td><td>#<?php echo esc_html( $request->id ); ?></td></tr>
-      <tr><td><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></td><td>#<?php echo esc_html( $order->get_id() ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></td><td>#<?php echo esc_html( $order->get_order_number() ); ?></td></tr>
       <tr><td><?php esc_html_e( 'New status', 'eu2673-withdrawal-button' ); ?></td><td style="color:<?php echo esc_attr( $eu2673_status_color ); ?>"><?php echo esc_html( $eu2673_status_label ); ?></td></tr>
-      <tr><td><?php esc_html_e( 'Updated on', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( current_time( 'j F Y, H:i' ) ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Updated on', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( EU2673_Core::format_datetime() ); ?></td></tr>
     </table>
     <?php if ( $request->admin_notes ) : ?>
     <p><strong><?php esc_html_e( 'Admin note:', 'eu2673-withdrawal-button' ); ?></strong><br><?php echo esc_html( $request->admin_notes ); ?></p>
     <?php endif; ?>
-    <p><?php
-    printf(
-        wp_kses_post(
-            /* translators: %s: contact page URL */
-            __( 'If you have any questions, you can <a href="%s">contact us</a>.', 'eu2673-withdrawal-button' )
-        ),
-        esc_url( $site_url . '/contact' )
-    ); ?></p>
+    <p><?php esc_html_e( 'Si tienes alguna pregunta, responde a este correo.', 'eu2673-withdrawal-button' ); ?></p>
     <p><?php
     printf(
         /* translators: %s: store name */
@@ -79,7 +72,7 @@ $eu2673_status_message = isset( $eu2673_status_messages[ $new_status ] ) ? $eu26
   </div>
   <div class="footer">
     <p><?php esc_html_e( 'Automatic withdrawal request update.', 'eu2673-withdrawal-button' ); ?></p>
-    <p><?php esc_html_e( 'Legal basis: EU Directive 2023/2673 | Art. 102 TRLGDCU', 'eu2673-withdrawal-button' ); ?></p>
+    <p><?php echo esc_html( EU2673_Core::legal_basis() ); ?></p>
     <p><a href="<?php echo esc_url( $site_url ); ?>"><?php echo esc_html( $site_name ); ?></a></p>
   </div>
 </div>

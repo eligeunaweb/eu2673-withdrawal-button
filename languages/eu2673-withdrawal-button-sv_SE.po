@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - sv_SE
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Utöva ångerrätten"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Hjälp"
+
+msgid "What the law requires"
+msgstr "Vad lagen kräver"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "Artikel 11a i direktiv 2011/83/EU, införd genom direktiv (EU) 2023/2673, gäller från den 19 juni 2026 för distansavtal som ingås via ett onlinegränssnitt. Butiken måste erbjuda en ångerfunktion som:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "är märkt med orden ”ångra avtalet här” eller en otvetydig motsvarande formulering, visas tydligt och är tillgänglig under hela ångerfristen;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "låter konsumenten ange eller bekräfta sitt namn, avtalet och den e-postadress dit bekräftelsen ska skickas;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "begär bekräftelse med en knapp märkt ”bekräfta frånträde” eller motsvarande;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "skickar ett mottagningsbevis på ett varaktigt medium med innehållet samt datum och tid för frånträdet."
+
+msgid "Where customers find the button"
+msgstr "Var kunderna hittar knappen"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "Mitt konto → orderdetaljer, och avsnittet Mina frånträden."
+
+msgid "The order received page, right after buying."
+msgstr "Sidan Order mottagen, direkt efter köpet."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "Den offentliga ångersidan för kunder utan konto: de anger ordernummer och e-postadress."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Länkar till den sidan längst ner i butiken och i WooCommerces ordermejl (valfritt)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "Knappen försvinner när fristen löper ut, när ordern har en undantagen status eller när alla produkter i ordern är markerade som undantagna."
+
+msgid "What happens when the customer withdraws"
+msgstr "Vad som händer när kunden ångrar sig"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "Ett fönster visar namn, order och e-postadress, och kunden bekräftar."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "Begäran sparas och visas under Frånträde → Begäranden."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "Kunden får mottagningsbeviset; butiken får ett meddelande."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "Ordern återbetalas inte automatiskt. Kontrollera den och återbetala den i WooCommerce."
+
+msgid "Managing requests"
+msgstr "Hantera begäranden"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Ändra status för varje begäran under Frånträde → Begäranden. Om statusmejl är aktiverade får kunden den nya statusen och din anteckning."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "Näringsidkaren ska återbetala mottagna betalningar utan onödigt dröjsmål och senast 14 dagar från den dag då den underrättades om frånträdet; för varor får den hålla inne återbetalningen tills den har fått tillbaka varorna eller konsumenten har visat att de har skickats tillbaka (artikel 13 i direktiv 2011/83/EU)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Produkter utan ångerrätt"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "I varje produkt, fliken Allmänt, ”Ångerstatus”: markera produkter som omfattas av ett undantag i artikel 16 som undantagna, och digitalt innehåll som kräver samtycke i kassan. Samtyckesrutan fungerar i den klassiska kassan och i kassablocket."
+
+msgid "Emails"
+msgstr "E-post"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "E-post skickas med avsändarnamn och avsändaradress från WooCommerce → Inställningar → E-post. För pålitlig leverans, använd ett SMTP-tillägg med en riktig e-postserver."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Support för gratisversionen: supportforumet på WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Frånträde"
+
+msgid "Withdrawal requests"
+msgstr "Begäranden om frånträde"
+
+msgid "Requests"
+msgstr "Begäranden"
+
+msgid "Settings"
+msgstr "Inställningar"
+
+msgid "Help"
+msgstr "Hjälp"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: det finns ingen offentlig ångersida."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Kunder som har handlat utan konto behöver en sida där de när som helst under ångerfristen kan frånträda avtalet (artikel 11a.1 i direktiv 2011/83/EU)."
+
+msgid "Create the withdrawal page"
+msgstr "Skapa ångersidan"
+
+msgid "You do not have permission to do this."
+msgstr "Du har inte behörighet att göra detta."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Hjälper Withdrawal Button din butik? En kort recension på WordPress.org hjälper andra handlare att hitta det."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Skriv en recension på WordPress.org"
+
+msgid "Rate"
+msgstr "Betygsätt"
+
+msgid "Upgrade to Pro"
+msgstr "Uppgradera till Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "Mottagningsbevis som PDF bifogat kundens mejl, SHA-256-hash för varje begäran, e-postlogg med exakta tider, bedrägerivarningar och synkronisering med orderstatus."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Skaffa Pro — engångsbetalning 39 €"
+
+msgid "The request could not be updated."
+msgstr "Begäran kunde inte uppdateras."
+
+msgid "Request #%d updated."
+msgstr "Begäran nr %d har uppdaterats."
+
+msgid "The customer has been notified by email."
+msgstr "Kunden har meddelats via e-post."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "Mejlet till kunden kunde inte skickas. Kontrollera dina e-postinställningar."
+
+msgid "All"
+msgstr "Alla"
+
+msgid "Ref."
+msgstr "Nr"
+
+msgid "Order"
+msgstr "Order"
+
+msgid "Customer"
+msgstr "Kund"
+
+msgid "Reason"
+msgstr "Anledning"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Change status"
+msgstr "Ändra status"
+
+msgid "No requests found."
+msgstr "Inga begäranden hittades."
+
+msgid "New status for request #%d"
+msgstr "Ny status för begäran nr %d"
+
+msgid "Note for the customer (optional)"
+msgstr "Anteckning till kunden (valfritt)"
+
+msgid "Update"
+msgstr "Uppdatera"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "När du ändrar status till Godkänd, Avslagen eller Slutförd får kunden ett mejl med den nya statusen och din anteckning."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "Begäran om frånträde nr %1$d markerad som %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Inställningar"
+
+msgid "Settings saved."
+msgstr "Inställningarna har sparats."
+
+msgid "The withdrawal page has been created."
+msgstr "Ångersidan har skapats."
+
+msgid "View page"
+msgstr "Visa sidan"
+
+msgid "The withdrawal page could not be created."
+msgstr "Ångersidan kunde inte skapas."
+
+msgid "Withdrawal period"
+msgstr "Ångerfrist"
+
+msgid "Withdrawal period (days)"
+msgstr "Ångerfrist (dagar)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "Det lagstadgade minimumet är 14 kalenderdagar. Du kan erbjuda fler."
+
+msgid "Grace days (optional)"
+msgstr "Extra dagar (valfritt)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Dagar utöver den lagstadgade fristen."
+
+msgid "Start deadline from"
+msgstr "Fristen räknas från"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Leveransdatum (när ordern är slutförd)"
+
+msgid "Order date"
+msgstr "Orderdatum"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "För varor börjar fristen när kunden tar emot dem (artikel 9.2 b i direktiv 2011/83/EU): markera ordern som Slutförd vid leverans. Fram till dess förblir knappen tillgänglig. Använd orderdatumet endast om du säljer tjänster eller digitalt innehåll."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "Visa inte knappen för ordrar med dessa statusar"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "Undanta inte Slutförd: kunder ångrar sig oftast efter att ha tagit emot ordern."
+
+msgid "Where the button appears"
+msgstr "Var knappen visas"
+
+msgid "Button text"
+msgstr "Knapptext"
+
+msgid "Desistir del contrato aquí"
+msgstr "Ångra avtalet här"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Lämna tomt för att använda direktivets formulering (”ångra avtalet här”), översatt till butikens språk."
+
+msgid "Public withdrawal page"
+msgstr "Offentlig ångersida"
+
+msgid "— None —"
+msgstr "— Ingen —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "Sida med kortkoden [eu2673_withdrawal_form]. Kunder som har handlat utan konto ångrar sig här med ordernummer och e-postadress."
+
+msgid "Links to the withdrawal page"
+msgstr "Länkar till ångersidan"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Visa en länk längst ner på varje sida"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Lägg till en länk i WooCommerces ordermejl till kunden"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "Ångerfunktionen ska visas tydligt och vara tillgänglig under hela ångerfristen (artikel 11a.1)."
+
+msgid "Order received page"
+msgstr "Sidan Order mottagen"
+
+msgid "Show the button on the order received page"
+msgstr "Visa knappen på sidan Order mottagen"
+
+msgid "Show an optional reason field"
+msgstr "Visa ett valfritt fält för anledning"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "Kunden behöver aldrig ange någon anledning; fältet är alltid valfritt."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "Mottagningsbeviset skickas alltid till kunden, enligt artikel 11a.4."
+
+msgid "Customer email subject"
+msgstr "Ämne för kundmejlet"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Lämna tomt för standardtexten på butikens språk. Du kan använda {order_id} och {customer_name}."
+
+msgid "Status updates"
+msgstr "Statusändringar"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "Mejla kunden när du ändrar status för en begäran"
+
+msgid "Store notification"
+msgstr "Meddelande till butiken"
+
+msgid "Email the store when a customer withdraws"
+msgstr "Mejla butiken när en kund ångrar sig"
+
+msgid "Admin email"
+msgstr "Administratörens e-post"
+
+msgid "Store email subject"
+msgstr "Ämne för butiksmejlet"
+
+msgid "Order status"
+msgstr "Orderstatus"
+
+msgid "Change order status automatically"
+msgstr "Ändra orderstatus automatiskt"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "Ändra orderstatus när kunden ångrar sig"
+
+msgid "New order status"
+msgstr "Ny orderstatus"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Återbetalningar görs aldrig automatiskt: återbetala ordern i WooCommerce när du har kontrollerat den."
+
+msgid "Save settings"
+msgstr "Spara inställningar"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Ogiltig begäran (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Ordern hittades inte."
+
+msgid "No tienes permiso para esta acción."
+msgstr "Du har inte behörighet för den här åtgärden."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "Du har redan ångrat den här ordern."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Den här ordern kan inte ångras."
+
+msgid "Error desconocido."
+msgstr "Okänt fel."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Kunden har utnyttjat ångerrätten. Ärende-ID: %1$d. Orsak: %2$s"
+
+msgid "Not provided"
+msgstr "Ej angiven"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Status ändrades automatiskt på grund av ett ångerärende."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "Din begäran om ångerrätt har registrerats korrekt. Du kommer snart att få ett bekräftelsemail."
@@ -17,8 +363,104 @@ msgstr "Jag begär uttryckligen omedelbar tillgång till det digitala innehålle
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "Du måste acceptera villkoren för digitalt innehåll för att slutföra din beställning."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Bekräftelse på ånger - Order #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Ånger] Order #{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Rättslig grund: artikel 11a i direktiv 2011/83/EU, infogad genom direktiv (EU) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Frånträde av avtalet"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Om du vill ångra denna order kan du göra det online:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button kräver att WooCommerce är aktivt."
+
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Ånger godkänd] Order #{order_id}"
+
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Ånger avslagen] Order #{order_id}"
+
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Ånger slutförd] Order #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Ånger] Order #{order_id}"
+
+msgid "Confirmar desistimiento"
+msgstr "Bekräfta frånträde"
+
+msgid "Cancelar"
+msgstr "Avbryt"
+
+msgid "Cerrar"
+msgstr "Stäng"
+
+msgid "Procesando..."
+msgstr "Bearbetar..."
+
+msgid "Desistimiento ejercido"
+msgstr "Ångerrätt utövad"
+
+msgid "Error de conexión."
+msgstr "Anslutningsfel."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Standardformulär för ångerrätt (Bilaga I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "Ångerfristen börjar när du tar emot ordern."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "Du kan ångra dig till och med %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Ångerrätten har utnyttjats"
+
+msgid "Request ref."
+msgstr "Ärendenr"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU-direktiv 2011/83/EU"
+
+msgid "To:"
+msgstr "Till:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Jag/Vi (*) meddelar härmed att jag/vi (*) frånträder mitt/vårt (*) köpeavtal avseende följande varor (*)/tjänster (*)"
+
+msgid "Ordered on:"
+msgstr "Beställdes den (*)/mottogs den (*):"
+
+msgid "Order number:"
+msgstr "Ordernummer:"
+
+msgid "Name of consumer(s):"
+msgstr "Konsumentens/konsumenternas namn:"
+
+msgid "Address of consumer(s):"
+msgstr "Konsumentens/konsumenternas adress:"
+
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Konsumentens/konsumenternas underskrift (endast om denna blankett meddelas på papper):"
+
+msgid "Date:"
+msgstr "Datum:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Stryk det som inte är tillämpligt."
+
+msgid "Print this form"
+msgstr "Skriv ut detta formulär"
+
+msgid "My withdrawal requests"
+msgstr "Mina ångerärenden"
 
 msgid "My withdrawals"
 msgstr "Mina ångerärenden"
@@ -26,9 +468,53 @@ msgstr "Mina ångerärenden"
 msgid "You have no withdrawal requests registered."
 msgstr "Du har inga registrerade ångerärenden."
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Ångerfrist: %d dagar kvar"
+msgid "Pending"
+msgstr "Väntar"
 
+msgid "Approved"
+msgstr "Godkänd"
+
+msgid "Rejected"
+msgstr "Avslagen"
+
+msgid "Completed"
+msgstr "Slutförd"
+
+msgid "We could not find an order with those details."
+msgstr "Vi hittade ingen order med de uppgifterna."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "Ångerfristen för den här ordern har gått ut (14 kalenderdagar)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Du har redan utnyttjat ångerrätten för den här ordern."
+
+msgid "An error occurred. Please try again."
+msgstr "Ett fel uppstod. Försök igen."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Utnyttja din ångerrätt"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Ange ordernummer och e-postadress för att kontrollera om du kan ångra köpet."
+
+msgid "Order number"
+msgstr "Ordernummer"
+
+msgid "Email address used to purchase"
+msgstr "E-postadress som användes vid köpet"
+
+msgid "Check my order"
+msgstr "Kontrollera min order"
+
+msgid "Pedido #%s verificado."
+msgstr "Order nr %s verifierad."
+
+msgid "Total"
+msgstr "Totalt"
+
+msgid "Check a different order"
+msgstr "Kontrollera en annan order"
 
 msgid "— Standard (subject to withdrawal right) —"
 msgstr "— Standard (ångerrätt gäller) —"
@@ -42,64 +528,129 @@ msgstr "Digitalt innehåll — samtycke krävs vid kassan (art. 16m)"
 msgid "Withdrawal status"
 msgstr "Ångerstatus"
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Styr hur ångerrätten gäller för denna produkt. \"Standard\" följer de allmänna inställningarna. \"Undantagen\" döljer knappen för beställningar med denna produkt. \"Digitalt innehåll\" visar en obligatorisk kryssruta vid kassan."
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Styr hur ångerrätten gäller för denna produkt. ”Standard” följer tilläggets allmänna inställningar. ”Undantagen” (undantag i artikel 16): om alla produkter i en order är undantagna visas inte ångerknappen för den ordern. ”Digitalt innehåll” visar en obligatorisk samtyckesruta i kassan."
 
-msgid "Model withdrawal form (Annex I.B)"
-msgstr "Standardformulär för ångerrätt (Bilaga I.B)"
+msgid "Nueva solicitud de desistimiento"
+msgstr "Nytt ångerärende"
 
-msgid "EU Directive 2011/83/UE"
-msgstr "EU-direktiv 2011/83/EU"
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "Ett nytt ångerärende har registrerats på %s."
 
-msgid "To:"
-msgstr "Till:"
+msgid "Nº de solicitud"
+msgstr "Ärendenummer"
 
-msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
-msgstr "Jag/Vi (*) meddelar härmed att jag/vi (*) frånträder mitt/vårt (*) köpeavtal avseende följande varor (*)/tillhandahållande av följande tjänst (*)"
+msgid "Pedido"
+msgstr "Order"
 
-msgid "Ordered on:"
-msgstr "Beställd:"
+msgid "Cliente"
+msgstr "Kund"
 
-msgid "Order number:"
-msgstr "Ordernummer:"
+msgid "Correo del cliente"
+msgstr "Kundens e-post"
 
-msgid "Name of consumer(s):"
-msgstr "Konsumentens/konsumenternas namn:"
+msgid "Teléfono"
+msgstr "Telefon"
 
-msgid "Address of consumer(s):"
-msgstr "Konsumentens/konsumenternas adress:"
+msgid "Importe del pedido"
+msgstr "Orderbelopp"
 
-msgid "(*) Delete as appropriate."
-msgstr "(*) Stryk det som inte är tillämpligt."
+msgid "Fecha y hora de la solicitud"
+msgstr "Datum och tid för ärendet"
 
-msgid "Print this form"
-msgstr "Skriv ut detta formulär"
+msgid "Motivo"
+msgstr "Orsak"
 
+msgid "No indicado"
+msgstr "Ej angiven"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Kom ihåg: återbetalningen ska göras senast inom 14 kalenderdagar."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Visa ordern i WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Automatiskt genererat av Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Ångerärende registrerat"
+
+msgid "Hola, %s:"
+msgstr "Hej %s,"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "Vi har tagit emot ditt ångerärende. Det här e-postmeddelandet är din mottagningsbekräftelse enligt direktiv (EU) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "Vad händer nu?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "Vi betalar tillbaka beloppet senast 14 kalenderdagar efter att vi tagit emot ärendet."
+
+msgid "Nombre"
+msgstr "Namn"
+
+msgid "Recibirás la confirmación en"
+msgstr "Du får bekräftelsen till"
+
+msgid "Motivo indicado"
+msgstr "Angiven orsak"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Har du frågor? Svara på det här e-postmeddelandet."
+
+msgid "Gracias por confiar en %s."
+msgstr "Tack för ditt förtroende för %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Det här e-postmeddelandet är mottagningsbekräftelsen för ditt ångerärende."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "Ditt ångerärende har <strong>godkänts</strong>. Vi betalar tillbaka hela beloppet inom högst <strong>14 kalenderdagar</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "Ditt ångerärende har <strong>avslagits</strong>. Kontakta oss om du har frågor."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "Ditt ångerärende är <strong>slutfört</strong>. Återbetalningen har genomförts."
+
+msgid "Dear"
+msgstr "Hej"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "Statusen för ditt ångerärende har uppdaterats."
+
+msgid "Request number"
+msgstr "Ärendenummer"
+
+msgid "New status"
+msgstr "Ny status"
+
+msgid "Updated on"
+msgstr "Uppdaterad"
+
+msgid "Admin note:"
+msgstr "Meddelande från butiken:"
+
+msgid "Thank you for trusting %s."
+msgstr "Tack för ditt förtroende för %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Automatisk uppdatering av ditt ångerärende."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Stäng ångerfönstret"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "Enligt EU-direktiv 2023/2673 har du rätt att ångra detta avtal inom 14 kalenderdagar utan att behöva ange någon anledning."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "Du har rätt att frånträda detta avtal utan att ange något skäl."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Kontrollera dina uppgifter innan du bekräftar:"
+
+msgid "Motivo (opcional)"
+msgstr "Anledning (valfritt)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "Vid bekräftelse får du ett bekräftelsemail och vårt team kommer att behandla återbetalningen inom maximalt 14 kalenderdagar."
 
-msgid "Cancelar"
-msgstr "Avbryt"
-
-msgid "Confirmar desistimiento"
-msgstr "Bekräfta ångran"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Ångerrätt utövad"
-
-msgid "Cerrar"
-msgstr "Stäng"
-
-msgid "Error desconocido."
-msgstr "Okänt fel."
-
-msgid "Error de conexión."
-msgstr "Anslutningsfel."

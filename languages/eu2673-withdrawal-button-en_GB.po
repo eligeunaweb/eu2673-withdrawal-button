@@ -1,0 +1,328 @@
+# EU2673 Withdrawal Button - en_GB
+msgid ""
+msgstr ""
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Ref."
+msgstr "Ref."
+
+msgid "Order"
+msgstr "Order"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Desistir del contrato aquí"
+msgstr "Withdraw from contract here"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Invalid request (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Order not found."
+
+msgid "No tienes permiso para esta acción."
+msgstr "You do not have permission to do this."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "You have already withdrawn from this order."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "This order is not eligible for withdrawal."
+
+msgid "Error desconocido."
+msgstr "Unknown error."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+
+msgid "Not provided"
+msgstr "Not provided"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Status changed automatically because of a withdrawal request."
+
+msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
+msgstr "Your withdrawal request has been registered. You will receive a confirmation email shortly."
+
+msgid "Solicito expresamente el acceso inmediato al contenido digital y reconozco que, en cuanto comience a acceder a él, a visualizarlo o a descargarlo, perderé el derecho de desistimiento de 14 días previsto en el artículo 16, letra m), de la Directiva 2011/83/UE (art. 103.m de la TRLGDCU en España)."
+msgstr "I expressly request immediate access to the digital content and acknowledge that, as soon as I start accessing, viewing or downloading it, I will lose the 14-day right of withdrawal provided for in Article 16(m) of Directive 2011/83/EU."
+
+msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
+msgstr "You must accept the digital content conditions to complete your order."
+
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Withdrawal confirmation - Order #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Withdrawal] Order #{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Legal basis: Article 11a of Directive 2011/83/EU, inserted by Directive (EU) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Withdrawal from the contract"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "If you wish to withdraw from this order, you can do it online:"
+
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Withdrawal approved] Order #{order_id}"
+
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Withdrawal rejected] Order #{order_id}"
+
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Withdrawal completed] Order #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Withdrawal] Order #{order_id}"
+
+msgid "Confirmar desistimiento"
+msgstr "Confirm withdrawal"
+
+msgid "Cancelar"
+msgstr "Cancel"
+
+msgid "Cerrar"
+msgstr "Close"
+
+msgid "Procesando..."
+msgstr "Processing..."
+
+msgid "Desistimiento ejercido"
+msgstr "Withdrawal exercised"
+
+msgid "Error de conexión."
+msgstr "Connection error."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Model withdrawal form (Annex I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "The withdrawal period starts when you receive the order."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "You can withdraw until %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Withdrawal successfully exercised"
+
+msgid "Request ref."
+msgstr "Request ref."
+
+msgid "EU Directive 2011/83/UE"
+msgstr "Directive 2011/83/EU"
+
+msgid "To:"
+msgstr "To:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+
+msgid "Ordered on:"
+msgstr "Ordered on (*)/received on (*):"
+
+msgid "Order number:"
+msgstr "Order number:"
+
+msgid "Name of consumer(s):"
+msgstr "Name of consumer(s):"
+
+msgid "Address of consumer(s):"
+msgstr "Address of consumer(s):"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Delete as appropriate."
+
+msgid "Print this form"
+msgstr "Print this form"
+
+msgid "My withdrawal requests"
+msgstr "My withdrawal requests"
+
+msgid "My withdrawals"
+msgstr "My withdrawals"
+
+msgid "You have no withdrawal requests registered."
+msgstr "You have no withdrawal requests registered."
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "Approved"
+msgstr "Approved"
+
+msgid "Rejected"
+msgstr "Rejected"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "We could not find an order with those details."
+msgstr "We could not find an order with those details."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "The withdrawal period for this order has expired (14 calendar days)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "You have already exercised the right of withdrawal for this order."
+
+msgid "An error occurred. Please try again."
+msgstr "An error occurred. Please try again."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Exercise your right of withdrawal"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Enter your order number and email address to check your eligibility."
+
+msgid "Order number"
+msgstr "Order number"
+
+msgid "Email address used to purchase"
+msgstr "Email address used to purchase"
+
+msgid "Check my order"
+msgstr "Check my order"
+
+msgid "Pedido #%s verificado."
+msgstr "Order #%s verified."
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Check a different order"
+msgstr "Check a different order"
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "New withdrawal request"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "A new withdrawal request has been registered on %s."
+
+msgid "Nº de solicitud"
+msgstr "Request number"
+
+msgid "Pedido"
+msgstr "Order"
+
+msgid "Cliente"
+msgstr "Customer"
+
+msgid "Correo del cliente"
+msgstr "Customer email"
+
+msgid "Teléfono"
+msgstr "Phone"
+
+msgid "Importe del pedido"
+msgstr "Order amount"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "Date and time of the request"
+
+msgid "Motivo"
+msgstr "Reason"
+
+msgid "No indicado"
+msgstr "Not provided"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Reminder: you must process the refund within a maximum of 14 calendar days."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "View order in WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Automatically generated by Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Withdrawal request registered"
+
+msgid "Hola, %s:"
+msgstr "Hello %s,"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "We have received your withdrawal request. This email is your acknowledgement of receipt under Directive (EU) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "What happens now?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "We will process the refund within a maximum of 14 calendar days from receipt of this request."
+
+msgid "Nombre"
+msgstr "Name"
+
+msgid "Recibirás la confirmación en"
+msgstr "You will receive the confirmation at"
+
+msgid "Motivo indicado"
+msgstr "Reason given"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "If you have any questions, just reply to this email."
+
+msgid "Gracias por confiar en %s."
+msgstr "Thank you for trusting %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "This email is the acknowledgement of receipt of your withdrawal request."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+
+msgid "Dear"
+msgstr "Dear"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "The status of your withdrawal request has been updated."
+
+msgid "Request number"
+msgstr "Request number"
+
+msgid "New status"
+msgstr "New status"
+
+msgid "Updated on"
+msgstr "Updated on"
+
+msgid "Admin note:"
+msgstr "Note from the store:"
+
+msgid "Thank you for trusting %s."
+msgstr "Thank you for trusting %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Automatic withdrawal request update."
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "Close withdrawal window"
+
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "You have the right to withdraw from this contract without giving any reason."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Please check your details before confirming:"
+
+msgid "Motivo (opcional)"
+msgstr "Reason (optional)"
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "When you confirm, you will receive an acknowledgement email and our team will process the refund within a maximum of 14 calendar days."
+

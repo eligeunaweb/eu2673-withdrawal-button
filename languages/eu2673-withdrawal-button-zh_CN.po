@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - zh_CN
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "行使撤回权"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — 帮助"
+
+msgid "What the law requires"
+msgstr "法律要求"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "第 2011/83/EU 号指令第 11a 条（由第 (EU) 2023/2673 号指令增加）自 2026 年 6 月 19 日起适用于通过在线界面订立的远程合同。商店必须提供一个撤回功能，该功能应当："
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "标注“在此撤回合同”或同等明确的表述，显著展示，并在整个撤回期内可用；"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "允许消费者提供或确认其姓名、合同以及接收确认的电子邮箱；"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "通过标注“确认撤回”或同等表述的按钮请求确认；"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "以耐久介质发送收到确认，载明撤回的内容、日期和时间。"
+
+msgid "Where customers find the button"
+msgstr "客户在哪里找到按钮"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "我的账户 → 订单详情，以及“我的撤回”栏目。"
+
+msgid "The order received page, right after buying."
+msgstr "购买后立即显示的订单已收到页面。"
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "面向无账户客户的公开撤回页面：输入订单号和电子邮箱。"
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "在商店底部和 WooCommerce 订单邮件中添加指向该页面的链接（可选）。"
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "撤回期结束、订单处于被排除的状态，或订单中所有商品均被标记为排除时，按钮将不再显示。"
+
+msgid "What happens when the customer withdraws"
+msgstr "客户撤回后会发生什么"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "窗口显示姓名、订单和电子邮箱，客户进行确认。"
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "申请被保存，并显示在“撤回 → 申请”中。"
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "客户收到收到确认，商店收到通知。"
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "订单不会自动退款。请检查后在 WooCommerce 中退款。"
+
+msgid "Managing requests"
+msgstr "管理申请"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "在“撤回 → 申请”中更改每个申请的状态。如果启用了状态邮件，客户将收到新状态和您的备注。"
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "经营者应在获知撤回之日起不得无故拖延、最迟 14 天内退还已收款项；对于商品，可在收回商品或消费者提供已寄回证明之前暂缓退款（第 2011/83/EU 号指令第 13 条）。"
+
+msgid "Products without a right of withdrawal"
+msgstr "无撤回权的商品"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "在每个商品的“常规”选项卡中设置“撤回状态”：将适用第 16 条例外的商品标记为排除，将数字内容标记为结账时需要同意。同意复选框在经典结账和结账区块中均可使用。"
+
+msgid "Emails"
+msgstr "电子邮件"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "邮件使用 WooCommerce → 设置 → 电子邮件中配置的发件人名称和地址发送。为确保送达，请使用连接真实邮件服务器的 SMTP 插件。"
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "免费版支持：WordPress.org 支持论坛。"
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "撤回"
+
+msgid "Withdrawal requests"
+msgstr "撤回申请"
+
+msgid "Requests"
+msgstr "申请"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button：没有公开撤回页面。"
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "无账户购买的客户需要一个页面，以便在撤回期内随时撤回（第 2011/83/EU 号指令第 11a 条第 1 款）。"
+
+msgid "Create the withdrawal page"
+msgstr "创建撤回页面"
+
+msgid "You do not have permission to do this."
+msgstr "您没有执行此操作的权限。"
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Withdrawal Button 对您的商店有帮助吗？在 WordPress.org 留下简短评价，可帮助其他商家找到它。"
+
+msgid "Leave a review on WordPress.org"
+msgstr "在 WordPress.org 留下评价"
+
+msgid "Rate"
+msgstr "评分"
+
+msgid "Upgrade to Pro"
+msgstr "升级到 Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "附在客户邮件中的 PDF 收到确认、每个申请的 SHA-256 哈希、带精确时间的邮件记录、反欺诈提醒以及与订单状态同步。"
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "获取 Pro — 一次性付款 39 €"
+
+msgid "The request could not be updated."
+msgstr "无法更新申请。"
+
+msgid "Request #%d updated."
+msgstr "申请 #%d 已更新。"
+
+msgid "The customer has been notified by email."
+msgstr "已通过电子邮件通知客户。"
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "无法向客户发送邮件。请检查邮件设置。"
+
+msgid "All"
+msgstr "全部"
+
+msgid "Ref."
+msgstr "编号"
+
+msgid "Order"
+msgstr "订单"
+
+msgid "Customer"
+msgstr "客户"
+
+msgid "Reason"
+msgstr "原因"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Change status"
+msgstr "更改状态"
+
+msgid "No requests found."
+msgstr "未找到申请。"
+
+msgid "New status for request #%d"
+msgstr "申请 #%d 的新状态"
+
+msgid "Note for the customer (optional)"
+msgstr "给客户的备注（可选）"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "将状态更改为“已批准”“已拒绝”或“已完成”时，客户会收到包含新状态和您备注的邮件。"
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "撤回申请 #%1$d 已标记为 %2$s。"
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — 设置"
+
+msgid "Settings saved."
+msgstr "设置已保存。"
+
+msgid "The withdrawal page has been created."
+msgstr "撤回页面已创建。"
+
+msgid "View page"
+msgstr "查看页面"
+
+msgid "The withdrawal page could not be created."
+msgstr "无法创建撤回页面。"
+
+msgid "Withdrawal period"
+msgstr "撤回期"
+
+msgid "Withdrawal period (days)"
+msgstr "撤回期（天）"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "法定最短期限为 14 个自然日。您可以提供更长期限。"
+
+msgid "Grace days (optional)"
+msgstr "宽限天数（可选）"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "在法定期限之外增加的天数。"
+
+msgid "Start deadline from"
+msgstr "期限起算日"
+
+msgid "Delivery date (when order is completed)"
+msgstr "交付日期（订单完成时）"
+
+msgid "Order date"
+msgstr "订单日期"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "对于商品，期限自客户收到商品时起算（第 2011/83/EU 号指令第 9 条第 2 款 (b) 项）：交付时请将订单标记为“已完成”。在此之前按钮始终可用。仅在销售服务或数字内容时使用订单日期。"
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "以下状态的订单不显示按钮"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "请勿排除“已完成”：客户通常在收到订单后撤回。"
+
+msgid "Where the button appears"
+msgstr "按钮显示位置"
+
+msgid "Button text"
+msgstr "按钮文字"
+
+msgid "Desistir del contrato aquí"
+msgstr "在此撤回合同"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "留空则使用指令中的表述（“在此撤回合同”），并翻译为商店语言。"
+
+msgid "Public withdrawal page"
+msgstr "公开撤回页面"
+
+msgid "— None —"
+msgstr "— 无 —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "包含短代码 [eu2673_withdrawal_form] 的页面。无账户购买的客户在此使用订单号和电子邮箱撤回。"
+
+msgid "Links to the withdrawal page"
+msgstr "撤回页面链接"
+
+msgid "Show a link at the bottom of every page"
+msgstr "在每个页面底部显示链接"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "在发送给客户的 WooCommerce 订单邮件中添加链接"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "撤回功能必须显著展示，并在整个撤回期内可用（第 11a 条第 1 款）。"
+
+msgid "Order received page"
+msgstr "订单已收到页面"
+
+msgid "Show the button on the order received page"
+msgstr "在订单已收到页面显示按钮"
+
+msgid "Show an optional reason field"
+msgstr "显示可选的原因字段"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "客户无需说明原因；该字段始终为可选。"
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "根据第 11a 条第 4 款，收到确认始终会发送给客户。"
+
+msgid "Customer email subject"
+msgstr "客户邮件主题"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "留空则使用商店语言的默认文字。可使用 {order_id} 和 {customer_name}。"
+
+msgid "Status updates"
+msgstr "状态变更"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "更改申请状态时向客户发送邮件"
+
+msgid "Store notification"
+msgstr "商店通知"
+
+msgid "Email the store when a customer withdraws"
+msgstr "客户撤回时向商店发送邮件"
+
+msgid "Admin email"
+msgstr "管理员邮箱"
+
+msgid "Store email subject"
+msgstr "商店邮件主题"
+
+msgid "Order status"
+msgstr "订单状态"
+
+msgid "Change order status automatically"
+msgstr "自动更改订单状态"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "客户撤回时更改订单状态"
+
+msgid "New order status"
+msgstr "新的订单状态"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "退款从不自动进行：请在检查后于 WooCommerce 中为订单退款。"
+
+msgid "Save settings"
+msgstr "保存设置"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "无效请求（nonce）。"
+
+msgid "Pedido no encontrado."
+msgstr "未找到订单。"
+
+msgid "No tienes permiso para esta acción."
+msgstr "您无权执行此操作。"
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "您已对此订单行使过撤回权。"
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "此订单不符合撤回条件。"
+
+msgid "Error desconocido."
+msgstr "未知错误。"
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "客户已行使撤回权。申请ID：%1$d。原因：%2$s"
+
+msgid "Not provided"
+msgstr "未提供"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "因撤回申请，状态已自动更改。"
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "您的撤回申请已成功注册。您将很快收到确认电子邮件。"
@@ -17,36 +363,68 @@ msgstr "我明确要求立即访问数字内容，并承认一旦我开始访问
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "您必须接受有关数字内容的条款才能完成订单。"
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "撤回确认 - 订单 #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[撤回] 订单 #{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "法律依据：由(EU) 2023/2673号指令新增的欧盟第2011/83/EU号指令第11a条"
+
+msgid "Desistimiento del contrato"
+msgstr "撤回合同"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "如需撤回此订单，可在线办理："
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button需要WooCommerce处于激活状态。"
 
-msgid "My withdrawals"
-msgstr "我的撤回申请"
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[撤回已批准] 订单 #{order_id}"
 
-msgid "You have no withdrawal requests registered."
-msgstr "您没有已注册的撤回申请。"
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[撤回已拒绝] 订单 #{order_id}"
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "撤回期限：剩余%d天"
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[撤回已完成] 订单 #{order_id}"
 
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[撤回] 订单 #{order_id}"
 
-msgid "— Standard (subject to withdrawal right) —"
-msgstr "— 标准（适用撤回权）—"
+msgid "Confirmar desistimiento"
+msgstr "确认撤回"
 
-msgid "Excluded — Art. 16 exception (no withdrawal right)"
-msgstr "排除 — 第16条例外（无撤回权）"
+msgid "Cancelar"
+msgstr "取消"
 
-msgid "Digital content — requires consent at checkout (Art. 16m)"
-msgstr "数字内容 — 结账时需要同意（第16条m款）"
+msgid "Cerrar"
+msgstr "关闭"
 
-msgid "Withdrawal status"
-msgstr "撤回状态"
+msgid "Procesando..."
+msgstr "处理中..."
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "控制撤回权如何适用于此产品。\"标准\"遵循一般插件设置。\"排除\"对包含此产品的订单隐藏撤回按钮。\"数字内容\"在结账时显示强制同意复选框。"
+msgid "Desistimiento ejercido"
+msgstr "已撤回"
+
+msgid "Error de conexión."
+msgstr "连接错误。"
 
 msgid "Model withdrawal form (Annex I.B)"
 msgstr "撤回权模型表格（附件I.B）"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "撤回期自您收到订单时开始。"
+
+msgid "Puedes desistir hasta el %s."
+msgstr "您可在 %s 之前撤回。"
+
+msgid "Withdrawal successfully exercised"
+msgstr "已成功行使撤回权"
+
+msgid "Request ref."
+msgstr "申请编号"
 
 msgid "EU Directive 2011/83/UE"
 msgstr "欧盟指令2011/83/EU"
@@ -69,8 +447,210 @@ msgstr "消费者姓名:"
 msgid "Address of consumer(s):"
 msgstr "消费者地址:"
 
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "消费者签名（仅在以纸质方式提交本表格时）："
+
+msgid "Date:"
+msgstr "日期："
+
 msgid "(*) Delete as appropriate."
 msgstr "（*）删除不适用项。"
 
 msgid "Print this form"
 msgstr "打印此表格"
+
+msgid "My withdrawal requests"
+msgstr "我的撤回申请"
+
+msgid "My withdrawals"
+msgstr "我的撤回申请"
+
+msgid "You have no withdrawal requests registered."
+msgstr "您没有已注册的撤回申请。"
+
+msgid "Pending"
+msgstr "待处理"
+
+msgid "Approved"
+msgstr "已批准"
+
+msgid "Rejected"
+msgstr "已拒绝"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "We could not find an order with those details."
+msgstr "未找到与这些信息匹配的订单。"
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "此订单的撤回期限已过（14个自然日）。"
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "您已对此订单行使过撤回权。"
+
+msgid "An error occurred. Please try again."
+msgstr "发生错误，请重试。"
+
+msgid "Exercise your right of withdrawal"
+msgstr "行使您的撤回权"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "请输入您的订单号和电子邮箱，以确认是否可以撤回。"
+
+msgid "Order number"
+msgstr "订单号"
+
+msgid "Email address used to purchase"
+msgstr "购买时使用的电子邮箱"
+
+msgid "Check my order"
+msgstr "查询我的订单"
+
+msgid "Pedido #%s verificado."
+msgstr "订单 #%s 已验证。"
+
+msgid "Total"
+msgstr "合计"
+
+msgid "Check a different order"
+msgstr "查询其他订单"
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— 标准（适用撤回权）—"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "排除 — 第16条例外（无撤回权）"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "数字内容 — 结账时需要同意（第16条m款）"
+
+msgid "Withdrawal status"
+msgstr "撤回状态"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "设置撤回权如何适用于此商品。“标准”遵循插件的常规设置。“排除”（第 16 条例外）：如果订单中所有商品均被排除，则该订单不显示撤回按钮。“数字内容”在结账时显示必选的同意复选框。"
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "新的撤回申请"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "%s 收到一份新的撤回申请。"
+
+msgid "Nº de solicitud"
+msgstr "申请编号"
+
+msgid "Pedido"
+msgstr "订单"
+
+msgid "Cliente"
+msgstr "客户"
+
+msgid "Correo del cliente"
+msgstr "客户邮箱"
+
+msgid "Teléfono"
+msgstr "电话"
+
+msgid "Importe del pedido"
+msgstr "订单金额"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "申请日期和时间"
+
+msgid "Motivo"
+msgstr "原因"
+
+msgid "No indicado"
+msgstr "未提供"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "提醒：您必须在最多14个自然日内办理退款。"
+
+msgid "Ver pedido en WooCommerce"
+msgstr "在WooCommerce中查看订单"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "由 Withdrawal Button Lite 自动生成 | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "撤回申请已登记"
+
+msgid "Hola, %s:"
+msgstr "%s，您好："
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "我们已收到您的撤回申请。本邮件是根据(EU) 2023/2673号指令发出的收件确认。"
+
+msgid "¿Qué ocurre ahora?"
+msgstr "接下来会怎样？"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "我们将在收到本申请之日起最多14个自然日内办理退款。"
+
+msgid "Nombre"
+msgstr "姓名"
+
+msgid "Recibirás la confirmación en"
+msgstr "确认将发送至"
+
+msgid "Motivo indicado"
+msgstr "填写的原因"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "如有任何疑问，请直接回复本邮件。"
+
+msgid "Gracias por confiar en %s."
+msgstr "感谢您对%s的信任。"
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "本邮件是您撤回申请的收件确认。"
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "您的撤回申请已<strong>批准</strong>。我们将在最多<strong>14个自然日</strong>内全额退款。"
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "您的撤回申请已被<strong>拒绝</strong>。如有疑问，请联系我们。"
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "您的撤回申请已<strong>完成</strong>。退款已成功办理。"
+
+msgid "Dear"
+msgstr "尊敬的"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "您的撤回申请状态已更新。"
+
+msgid "Request number"
+msgstr "申请编号"
+
+msgid "New status"
+msgstr "新状态"
+
+msgid "Updated on"
+msgstr "更新时间"
+
+msgid "Admin note:"
+msgstr "商店备注："
+
+msgid "Thank you for trusting %s."
+msgstr "感谢您对%s的信任。"
+
+msgid "Automatic withdrawal request update."
+msgstr "撤回申请自动更新通知。"
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "关闭撤回窗口"
+
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "您有权在不说明任何理由的情况下撤回本合同。"
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "确认前请核对您的信息："
+
+msgid "Motivo (opcional)"
+msgstr "原因（可选）"
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "确认后，您将收到一封收件确认邮件，我们的团队将在最多14个自然日内办理退款。"
+
