@@ -4,7 +4,7 @@ Author: Álvaro Martínez - AdaptaTuWeb.com
 Tags: withdrawal, woocommerce, ecommerce, eu-directive, desistimiento
 Requires at least: 5.8
 Tested up to: 7.1
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,10 @@ For goods, from delivery: choose "Delivery date" and mark orders as Completed wh
 
 The Lite version implements the withdrawal function. The Pro version adds a PDF acknowledgement, a SHA-256 hash of each request, an email log, order status sync and anti-fraud alerts. More information at [adaptatuweb.com/withdrawal-button-es](https://adaptatuweb.com/withdrawal-button-es/).
 
+= Does the digital content consent work in the checkout block? =
+
+Yes. In recent WooCommerce versions the checkbox only appears, and is only required, when the cart contains digital content. Older versions cannot show checkout fields conditionally: there the checkbox is always visible but optional, and the order is only refused when the cart contains digital content and the box is not ticked.
+
 = Where can I get support? =
 
 For the free version, use the WordPress.org support forum. For the Pro version, direct support at proyectos@adaptatuweb.com.
@@ -125,6 +129,12 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 10. Pro upgrade page
 
 == Changelog ==
+
+= 1.2.4 =
+* Fixed: unticking "Show the button on the order received page" did not hide it, because the order details on that page also showed the button
+* Fixed: while no withdrawal page existed, every page view searched the whole site for it; the search now runs at most once an hour, or when a page is saved
+* Fixed: the order number field of the guest form opened the numeric keyboard on phones, which made order numbers with letters hard to type
+* Readme: explains how the digital content checkbox behaves in older WooCommerce versions
 
 = 1.2.3 =
 * Fixed: the Requests page in the admin was always empty (it read a table that does not exist)
@@ -222,6 +232,9 @@ For the free version, use the WordPress.org support forum. For the Pro version, 
 * Available in Spanish and English
 
 == Upgrade Notice ==
+
+= 1.2.4 =
+Small fixes: the order received page setting now works, and stores without a withdrawal page no longer run a search on every page view.
 
 = 1.2.3 =
 The request panel, status emails and settings now work. Completed orders show the withdrawal button again. Check Withdrawal → Settings after updating.

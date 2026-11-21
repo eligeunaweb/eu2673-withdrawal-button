@@ -3,7 +3,7 @@
 Withdrawal function for **WooCommerce**, as required by **Article 11a of Directive 2011/83/EU**, inserted by **Directive (EU) 2023/2673**. Article 11a applies from **19 June 2026** to distance contracts concluded through an online interface with consumers in the European Union.
 
 - **Install from WordPress.org:** <https://wordpress.org/plugins/eu2673-withdrawal-button/>
-- **Current version:** 1.2.3 (identical to the code published on WordPress.org)
+- **Current version:** 1.2.4 (identical to the code published on WordPress.org)
 - **Requirements:** WordPress 5.8+, WooCommerce 6.0+, PHP 7.4+
 - **License:** GPL-2.0-or-later
 

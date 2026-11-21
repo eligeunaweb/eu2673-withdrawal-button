@@ -120,8 +120,15 @@ class EU2673_Frontend {
 
     /* ── Botón ──────────────────────────────────────────────────────────── */
 
+    /** Ajuste «Mostrar el botón en la página de pedido recibido». */
+    private function hidden_on_order_received() {
+        return is_wc_endpoint_url( 'order-received' ) && '1' !== (string) get_option( 'eu2673_show_on_guest_orders', '1' );
+    }
+
     public function render_button_order_detail( $order ) {
         if ( ! $order instanceof WC_Order ) return;
+        // La página de pedido recibido también pinta el detalle del pedido: respetar el ajuste aquí.
+        if ( $this->hidden_on_order_received() ) return;
         if ( $order->get_meta( '_eu2673_withdrawal_done' ) ) {
             echo $this->done_html( $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escapado en done_html()
             return;
