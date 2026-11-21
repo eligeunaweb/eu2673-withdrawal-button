@@ -3,6 +3,8 @@ defined( 'ABSPATH' ) || exit;
 
 class EU2673_Core {
 
+    const SHORTCODE = 'eu2673_withdrawal_form';
+
     private static $instance = null;
 
     public static function init() {
@@ -13,13 +15,10 @@ class EU2673_Core {
 
     private function __construct() {
         $this->load_textdomain();
+        $this->maybe_migrate();
 
         if ( ! $this->woocommerce_active() ) {
             add_action( 'admin_notices', [ $this, 'notice_woocommerce_missing' ] );
-            add_action( 'admin_notices', [ $this, 'notice_review_request' ] );
-            $this->maybe_migrate();
-            add_action( 'admin_notices', [ $this, 'notice_pro_upsell' ] );
-            add_action( 'wp_ajax_eu2673_dismiss_notice', [ $this, 'ajax_dismiss_notice' ] );
             return;
         }
 
@@ -33,15 +32,202 @@ class EU2673_Core {
         if ( is_admin() ) {
             new EU2673_Admin();
         }
+
+        add_action( 'wp_footer', [ $this, 'render_footer_link' ], 5 );
+        add_action( 'woocommerce_email_after_order_table', [ $this, 'render_email_link' ], 20, 4 );
+        add_action( 'init', [ $this, 'maybe_flush_rewrite_rules' ], 99 );
     }
 
+    /* ── Idioma ─────────────────────────────────────────────────────────── */
+
     private function load_textdomain() {
-        load_plugin_textdomain(
-            'eu2673-withdrawal-button',
-            false,
-            dirname( plugin_basename( EU2673_PLUGIN_FILE ) ) . '/languages/'
+        // Variantes regionales (fr_BE, fr_CA, de_AT, es_MX…) usan el archivo del idioma base.
+        add_filter( 'load_textdomain_mofile', [ __CLASS__, 'fallback_mofile' ], 10, 2 );
+        // Al cambiar de idioma (correos al cliente enviados desde el escritorio) se recarga el dominio.
+        add_action( 'change_locale', [ __CLASS__, 'reload_textdomain' ] );
+        self::reload_textdomain();
+    }
+
+    public static function reload_textdomain() {
+        $domain = 'eu2673-withdrawal-button';
+        // Con switch_to_locale() activo manda el idioma cambiado (get_locale);
+        // si no, el del usuario o del sitio (determine_locale), como hace WordPress.
+        // El gestor de idiomas no existe todavía en plugins_loaded: comprobarlo antes de usarlo.
+        $switched = ! empty( $GLOBALS['wp_locale_switcher'] ) && function_exists( 'is_locale_switched' ) && is_locale_switched();
+        $locale   = $switched ? get_locale() : determine_locale();
+        $locale   = apply_filters( 'plugin_locale', $locale, $domain );
+        unload_textdomain( $domain );
+        load_textdomain( $domain, EU2673_PLUGIN_DIR . 'languages/' . $domain . '-' . $locale . '.mo', $locale );
+    }
+
+    public static function fallback_mofile( $mofile, $domain ) {
+        if ( 'eu2673-withdrawal-button' !== $domain || is_readable( $mofile ) ) {
+            return $mofile;
+        }
+        if ( preg_match( '/^(.*-)([a-z]{2,3})_[A-Za-z0-9_]+\.mo$/', $mofile, $m ) ) {
+            $candidates = array_merge(
+                glob( $m[1] . $m[2] . '.mo' ) ?: [],
+                glob( $m[1] . $m[2] . '_*.mo' ) ?: []
+            );
+            if ( $candidates ) {
+                return $candidates[0];
+            }
+        }
+        return $mofile;
+    }
+
+    /* ── Textos y fechas ────────────────────────────────────────────────── */
+
+    /**
+     * Texto configurable con valor por defecto traducido.
+     * Si el campo está vacío o conserva un texto por defecto de versiones anteriores
+     * (guardado en español al activar), se usa el texto por defecto en el idioma actual.
+     */
+    public static function text_option( $key ) {
+        $defaults = [
+            // Rótulo del art. 11 bis.1 de la Directiva 2011/83/UE: «desistir del contrato aquí».
+            'eu2673_button_text'            => [
+                __( 'Desistir del contrato aquí', 'eu2673-withdrawal-button' ),
+                [ 'Ejercer derecho de desistimiento', 'Exercise right of withdrawal' ],
+            ],
+            'eu2673_email_subject_customer' => [
+                __( 'Confirmación de desistimiento - Pedido #{order_id}', 'eu2673-withdrawal-button' ),
+                [ 'Confirmación de desistimiento - Pedido #{order_id}' ],
+            ],
+            'eu2673_email_subject_admin'    => [
+                __( '[Desistimiento] Pedido #{order_id} - {customer_name}', 'eu2673-withdrawal-button' ),
+                [ '[Desistimiento] Pedido #{order_id} - {customer_name}' ],
+            ],
+        ];
+        if ( ! isset( $defaults[ $key ] ) ) {
+            return get_option( $key, '' );
+        }
+        list( $default, $legacy ) = $defaults[ $key ];
+        $value = trim( (string) get_option( $key, '' ) );
+        if ( '' === $value || in_array( $value, $legacy, true ) ) {
+            return $default;
+        }
+        return $value;
+    }
+
+    /** Fecha y hora con el formato y el idioma del sitio. */
+    public static function format_datetime( $timestamp = null ) {
+        return wp_date( get_option( 'date_format' ) . ', ' . get_option( 'time_format' ), $timestamp ?: time() );
+    }
+
+    /** Fecha y hora guardadas en la tabla (hora local del sitio, formato MySQL). */
+    public static function format_db_datetime( $mysql ) {
+        $date = date_create_immutable( (string) $mysql, wp_timezone() );
+        return $date ? self::format_datetime( $date->getTimestamp() ) : (string) $mysql;
+    }
+
+    /** Línea de base legal: la directiva siempre; el TRLGDCU solo si la tienda está en España. */
+    public static function legal_basis() {
+        $text = __( 'Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673', 'eu2673-withdrawal-button' );
+        if ( function_exists( 'WC' ) && WC()->countries && 'ES' === WC()->countries->get_base_country() ) {
+            $text .= ' | Art. 102 TRLGDCU';
+        }
+        return $text;
+    }
+
+    /* ── Remitente de los correos ───────────────────────────────────────── */
+
+    public static function from_address() {
+        $email = get_option( 'woocommerce_email_from_address' );
+        return is_email( $email ) ? $email : get_option( 'admin_email' );
+    }
+
+    public static function from_name() {
+        $name = get_option( 'woocommerce_email_from_name' );
+        return $name ? wp_specialchars_decode( $name, ENT_QUOTES ) : get_bloginfo( 'name' );
+    }
+
+    /* ── Página pública de desistimiento ────────────────────────────────── */
+
+    /**
+     * ID de la página publicada que contiene el formulario de desistimiento, o 0.
+     * Los compradores sin cuenta necesitan una forma permanente de desistir
+     * durante todo el plazo (art. 11 bis.1 de la Directiva 2011/83/UE).
+     */
+    public static function withdrawal_page_id() {
+        $id   = (int) get_option( 'eu2673_withdrawal_page_id', 0 );
+        $page = $id ? get_post( $id ) : null;
+        if ( $page && 'publish' === $page->post_status && has_shortcode( $page->post_content, self::SHORTCODE ) ) {
+            return $id;
+        }
+        $found = get_posts( [
+            'post_type'      => 'page',
+            'post_status'    => 'publish',
+            's'              => '[' . self::SHORTCODE,
+            'posts_per_page' => 5,
+            'fields'         => 'ids',
+        ] );
+        foreach ( $found as $page_id ) {
+            if ( has_shortcode( get_post_field( 'post_content', $page_id ), self::SHORTCODE ) ) {
+                update_option( 'eu2673_withdrawal_page_id', (int) $page_id );
+                return (int) $page_id;
+            }
+        }
+        return 0;
+    }
+
+    /** Crea la página pública con el formulario. Devuelve su ID o 0. */
+    public static function create_withdrawal_page() {
+        $existing = self::withdrawal_page_id();
+        if ( $existing ) return $existing;
+        // El título se escribe en el idioma de la tienda, no en el del administrador.
+        $switched = ! empty( $GLOBALS['wp_locale_switcher'] ) && switch_to_locale( get_locale() );
+        $title    = __( 'Desistimiento del contrato', 'eu2673-withdrawal-button' );
+        if ( $switched ) {
+            restore_previous_locale();
+        }
+        $id = wp_insert_post( [
+            'post_type'    => 'page',
+            'post_status'  => 'publish',
+            'post_title'   => $title,
+            'post_content' => '<!-- wp:shortcode -->[' . self::SHORTCODE . ']<!-- /wp:shortcode -->',
+        ] );
+        if ( is_wp_error( $id ) || ! $id ) return 0;
+        update_option( 'eu2673_withdrawal_page_id', (int) $id );
+        return (int) $id;
+    }
+
+    public function render_footer_link() {
+        if ( '1' !== (string) get_option( 'eu2673_footer_link', '1' ) ) return;
+        $page_id = self::withdrawal_page_id();
+        if ( ! $page_id || is_page( $page_id ) ) return;
+        printf(
+            '<p class="eu2673-footer-link" style="text-align:center;margin:16px auto;font-size:14px;"><a href="%s">%s</a></p>',
+            esc_url( get_permalink( $page_id ) ),
+            esc_html( self::text_option( 'eu2673_button_text' ) )
         );
     }
+
+    /** Enlace a la página de desistimiento en los correos de WooCommerce al cliente. */
+    public function render_email_link( $order, $sent_to_admin, $plain_text, $email = null ) {
+        if ( $sent_to_admin || ! $order instanceof WC_Order ) return;
+        if ( '1' !== (string) get_option( 'eu2673_email_link', '1' ) ) return;
+        $email_id = is_object( $email ) && isset( $email->id ) ? $email->id : '';
+        if ( ! in_array( $email_id, [ 'customer_processing_order', 'customer_completed_order', 'customer_on_hold_order', 'customer_invoice' ], true ) ) return;
+        $page_id = self::withdrawal_page_id();
+        if ( ! $page_id ) return;
+        $frontend = new EU2673_Frontend( false );
+        if ( ! $frontend->order_is_eligible( $order ) ) return;
+        $url  = get_permalink( $page_id );
+        $text = __( 'Si quieres desistir de este pedido, puedes hacerlo en línea:', 'eu2673-withdrawal-button' );
+        if ( $plain_text ) {
+            echo "\n" . esc_html( $text ) . ' ' . esc_url_raw( $url ) . "\n\n";
+            return;
+        }
+        printf(
+            '<p style="margin:16px 0;">%s <a href="%s">%s</a></p>',
+            esc_html( $text ),
+            esc_url( $url ),
+            esc_html( self::text_option( 'eu2673_button_text' ) )
+        );
+    }
+
+    /* ── Migraciones ────────────────────────────────────────────────────── */
 
     private function woocommerce_active() {
         return class_exists( 'WooCommerce' );
@@ -51,104 +237,46 @@ class EU2673_Core {
         // v1.2.0 — forzar desactivación del cambio automático de estado
         // si el valor es el antiguo 'wc-refunded' o '1'
         if ( get_option( 'eu2673_new_order_status' ) === 'wc-refunded' ) {
-            delete_option( 'eu2673_new_order_status' );
-            add_option( 'eu2673_new_order_status', 'wc-on-hold' );
+            update_option( 'eu2673_new_order_status', 'wc-on-hold' );
         }
-        if ( get_option( 'eu2673_change_order_status' ) === '1' ) {
-            delete_option( 'eu2673_change_order_status' );
-            add_option( 'eu2673_change_order_status', '0' );
+
+        $db_version = (string) get_option( 'eu2673_db_version', '0' );
+        if ( version_compare( $db_version, '1.2.3', '<' ) ) {
+            if ( '1' === (string) get_option( 'eu2673_change_order_status' ) && version_compare( $db_version, '1.2.0', '<' ) ) {
+                update_option( 'eu2673_change_order_status', '0' );
+            }
+
+            // Los pedidos «Completado» quedaban sin botón: el valor por defecto los excluía,
+            // y el desistimiento de bienes suele pedirse justo después de la entrega.
+            $excluded = get_option( 'eu2673_exclude_statuses' );
+            if ( is_array( $excluded ) ) {
+                update_option( 'eu2673_exclude_statuses', array_values( array_diff( $excluded, [ 'wc-completed' ] ) ) );
+            }
+
+            // La pantalla de ajustes de 1.2.x guardaba el plazo con otro nombre.
+            $old_days = (int) get_option( 'eu2673_days', 0 );
+            if ( $old_days > 14 ) {
+                update_option( 'eu2673_withdrawal_days', $old_days );
+            }
+            foreach ( [ 'eu2673_days', 'eu2673_change_status', 'eu2673_new_status', 'eu2673_show_on_confirm', 'eu2673_installed_date', 'eu2673_dismissed_review', 'eu2673_dismissed_pro_upsell' ] as $obsolete ) {
+                delete_option( $obsolete );
+            }
+
+            // Opciones nuevas (sin pisar las existentes).
+            add_option( 'eu2673_footer_link', '1' );
+            add_option( 'eu2673_email_link', '1' );
+
+            // El punto de «Mi cuenta» necesita regenerar los enlaces permanentes.
+            update_option( 'eu2673_flush_rewrite', '1' );
+            update_option( 'eu2673_db_version', '1.2.3' );
         }
     }
 
-    public function ajax_dismiss_notice() {
-        if ( ! current_user_can( 'manage_options' ) ) wp_die();
-        $notice = sanitize_key( $_POST['notice'] ?? '' );
-        if ( $notice ) update_option( 'eu2673_dismissed_' . $notice, time() );
-        wp_send_json_success();
-    }
-
-    public function notice_review_request() {
-        if ( ! current_user_can( 'manage_options' ) ) return;
-        if ( get_option( 'eu2673_dismissed_review' ) ) return;
-
-        $installed = (int) get_option( 'eu2673_installed_date', 0 );
-        if ( ! $installed ) {
-            update_option( 'eu2673_installed_date', time() );
-            return;
+    public function maybe_flush_rewrite_rules() {
+        if ( get_option( 'eu2673_flush_rewrite' ) ) {
+            delete_option( 'eu2673_flush_rewrite' );
+            flush_rewrite_rules( false );
         }
-        if ( ( time() - $installed ) < 14 * DAY_IN_SECONDS ) return;
-
-        // Comprobar que hay al menos 1 solicitud gestionada
-        global $wpdb;
-        $count = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}eu2673_requests" );
-        if ( $count < 1 ) return;
-        ?>
-        <div class="notice notice-info is-dismissible eu2673-notice" data-notice="review" style="border-left-color:#2271b1;padding:12px 16px;">
-            <p style="margin:0;font-size:14px;">
-                <strong>⭐ <?php esc_html_e( 'You\'re helping stores comply with EU law!', 'eu2673-withdrawal-button' ); ?></strong><br>
-                <?php printf(
-                    /* translators: %d: number of requests */
-                    esc_html__( 'You\'ve already managed %d withdrawal request(s) with EU2673 Withdrawal Button. If it\'s been useful, a review on WordPress.org takes 1 minute and helps other store owners find it.', 'eu2673-withdrawal-button' ),
-                    $count
-                ); ?>
-            </p>
-            <p style="margin:8px 0 0;">
-                <a href="https://wordpress.org/support/plugin/eu2673-withdrawal-button/reviews/#new-post" target="_blank" class="button button-primary"><?php esc_html_e( '⭐ Leave a review', 'eu2673-withdrawal-button' ); ?></a>
-                &nbsp;
-                <a href="#" class="eu2673-dismiss-notice button button-secondary" data-notice="review"><?php esc_html_e( 'Already done / Not now', 'eu2673-withdrawal-button' ); ?></a>
-            </p>
-        </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.eu2673-dismiss-notice').forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var notice = btn.getAttribute('data-notice');
-                    btn.closest('.eu2673-notice').style.display = 'none';
-                    fetch(ajaxurl, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'action=eu2673_dismiss_notice&notice=' + notice + '&_wpnonce=<?php echo wp_create_nonce("eu2673_dismiss"); ?>'});
-                });
-            });
-        });
-        </script>
-        <?php
-    }
-
-    public function notice_pro_upsell() {
-        if ( ! current_user_can( 'manage_options' ) ) return;
-        if ( get_option( 'eu2673_dismissed_pro_upsell' ) ) return;
-
-        // Solo en las páginas del plugin
-        $screen = get_current_screen();
-        if ( ! $screen || strpos( $screen->id, 'eu2673' ) === false ) return;
-
-        // Solo si hay solicitudes gestionadas
-        global $wpdb;
-        $count = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}eu2673_requests" );
-        if ( $count < 1 ) return;
-        ?>
-        <div class="notice notice-warning eu2673-notice" data-notice="pro_upsell" style="border-left-color:#dba617;padding:16px;display:flex;align-items:flex-start;gap:16px;">
-            <div style="font-size:32px;line-height:1;">🛡️</div>
-            <div style="flex:1;">
-                <p style="margin:0 0 6px;font-size:15px;font-weight:600;">
-                    <?php printf(
-                        esc_html__( 'You have managed %d withdrawal request(s) — do you have legal proof of all of them?', 'eu2673-withdrawal-button' ),
-                        $count
-                    ); ?>
-                </p>
-                <p style="margin:0 0 10px;color:#555;">
-                    <?php esc_html_e( 'Without the legal PDF and SHA-256 hash, if a customer files a complaint you have no documented proof. The Pro version protects you:', 'eu2673-withdrawal-button' ); ?>
-                    <strong><?php esc_html_e( 'official PDF acknowledgement, SHA-256 cryptographic hash, Annex B form and full email traceability.', 'eu2673-withdrawal-button' ); ?></strong>
-                </p>
-                <p style="margin:0;">
-                    <a href="https://adaptatuweb.com/withdrawal-button-es/" target="_blank" class="button button-primary" style="background:#dba617;border-color:#dba617;">
-                        <?php esc_html_e( '🔐 Upgrade to Pro — €39 one-time payment', 'eu2673-withdrawal-button' ); ?>
-                    </a>
-                    &nbsp;
-                    <a href="#" class="eu2673-dismiss-notice button button-secondary" data-notice="pro_upsell"><?php esc_html_e( 'Remind me later', 'eu2673-withdrawal-button' ); ?></a>
-                </p>
-            </div>
-        </div>
-        <?php
     }
 
     public function notice_woocommerce_missing() {

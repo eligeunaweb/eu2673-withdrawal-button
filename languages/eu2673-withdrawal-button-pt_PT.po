@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - pt_PT
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Exercer o direito de desistência"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Ajuda"
+
+msgid "What the law requires"
+msgstr "O que a lei exige"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "O artigo 11.º-A da Diretiva 2011/83/UE, introduzido pela Diretiva (UE) 2023/2673, aplica-se a partir de 19 de junho de 2026 aos contratos à distância celebrados através de uma interface em linha. A loja tem de oferecer uma função de retratação que:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "seja identificada com a expressão «retrate-se do contrato aqui» ou uma formulação inequívoca equivalente, esteja bem visível e disponível durante todo o prazo de retratação;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "permita ao consumidor fornecer ou confirmar o seu nome, o contrato e o e-mail para onde será enviada a confirmação;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "peça confirmação através de um botão identificado com «confirmar retratação» ou equivalente;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "envie um aviso de receção num suporte duradouro com o conteúdo, a data e a hora da retratação."
+
+msgid "Where customers find the button"
+msgstr "Onde os clientes encontram o botão"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "A minha conta → detalhes da encomenda, e a secção As minhas retratações."
+
+msgid "The order received page, right after buying."
+msgstr "A página de encomenda recebida, logo após a compra."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "A página pública de retratação, para clientes sem conta: indicam o número da encomenda e o e-mail."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Ligações para essa página no fundo da loja e nos e-mails de encomenda do WooCommerce (opcional)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "O botão desaparece quando o prazo termina, quando a encomenda tem um estado excluído ou quando todos os produtos da encomenda estão marcados como excluídos."
+
+msgid "What happens when the customer withdraws"
+msgstr "O que acontece quando o cliente se retrata"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "Uma janela mostra o nome, a encomenda e o e-mail, e o cliente confirma."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "O pedido é guardado e aparece em Retratação → Pedidos."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "O cliente recebe o aviso de receção; a loja recebe uma notificação."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "A encomenda não é reembolsada automaticamente. Verifique-a e reembolse-a no WooCommerce."
+
+msgid "Managing requests"
+msgstr "Gerir pedidos"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Altere o estado de cada pedido em Retratação → Pedidos. Se os e-mails de estado estiverem ativos, o cliente recebe o novo estado e a sua nota."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "O profissional deve reembolsar os pagamentos recebidos sem demora injustificada e o mais tardar 14 dias a contar da data em que é informado da retratação; no caso de bens, pode reter o reembolso até os ter recebido de volta ou até o consumidor apresentar prova do envio (art. 13.º da Diretiva 2011/83/UE)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Produtos sem direito de retratação"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "Em cada produto, separador Geral, «Estado de retratação»: marque como excluídos os produtos abrangidos por uma exceção do artigo 16.º e o conteúdo digital como sujeito a consentimento no pagamento. A caixa de consentimento funciona no checkout clássico e no bloco de checkout."
+
+msgid "Emails"
+msgstr "E-mails"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "Os e-mails são enviados com o nome e o endereço de remetente configurados em WooCommerce → Definições → E-mails. Para uma entrega fiável, use um plugin SMTP com um servidor de correio real."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Suporte da versão gratuita: o fórum de suporte do WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Retratação"
+
+msgid "Withdrawal requests"
+msgstr "Pedidos de retratação"
+
+msgid "Requests"
+msgstr "Pedidos"
+
+msgid "Settings"
+msgstr "Definições"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: não existe uma página pública de retratação."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Os clientes que compraram sem conta precisam de uma página onde se possam retratar em qualquer momento do prazo de retratação (art. 11.º-A, n.º 1, da Diretiva 2011/83/UE)."
+
+msgid "Create the withdrawal page"
+msgstr "Criar a página de retratação"
+
+msgid "You do not have permission to do this."
+msgstr "Não tem permissão para fazer isto."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "O Withdrawal Button está a ajudar a sua loja? Uma breve avaliação no WordPress.org ajuda outros comerciantes a encontrá-lo."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Deixar uma avaliação no WordPress.org"
+
+msgid "Rate"
+msgstr "Avaliar"
+
+msgid "Upgrade to Pro"
+msgstr "Atualizar para Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "Aviso de receção em PDF anexo ao e-mail do cliente, hash SHA-256 de cada pedido, registo de e-mails com hora exata, alertas antifraude e sincronização com o estado da encomenda."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Obter Pro — pagamento único de 39 €"
+
+msgid "The request could not be updated."
+msgstr "Não foi possível atualizar o pedido."
+
+msgid "Request #%d updated."
+msgstr "Pedido n.º %d atualizado."
+
+msgid "The customer has been notified by email."
+msgstr "O cliente foi avisado por e-mail."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "Não foi possível enviar o e-mail ao cliente. Verifique as definições de correio."
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Ref."
+msgstr "Ref."
+
+msgid "Order"
+msgstr "Encomenda"
+
+msgid "Customer"
+msgstr "Cliente"
+
+msgid "Reason"
+msgstr "Motivo"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Change status"
+msgstr "Alterar estado"
+
+msgid "No requests found."
+msgstr "Nenhum pedido encontrado."
+
+msgid "New status for request #%d"
+msgstr "Novo estado do pedido n.º %d"
+
+msgid "Note for the customer (optional)"
+msgstr "Nota para o cliente (opcional)"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "Quando altera o estado para Aprovado, Rejeitado ou Concluído, o cliente recebe um e-mail com o novo estado e a sua nota."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "Pedido de retratação n.º %1$d marcado como %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Definições"
+
+msgid "Settings saved."
+msgstr "Definições guardadas."
+
+msgid "The withdrawal page has been created."
+msgstr "A página de retratação foi criada."
+
+msgid "View page"
+msgstr "Ver página"
+
+msgid "The withdrawal page could not be created."
+msgstr "Não foi possível criar a página de retratação."
+
+msgid "Withdrawal period"
+msgstr "Prazo de retratação"
+
+msgid "Withdrawal period (days)"
+msgstr "Prazo de retratação (dias)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "O mínimo legal é de 14 dias de calendário. Pode oferecer mais."
+
+msgid "Grace days (optional)"
+msgstr "Dias de cortesia (opcional)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Dias adicionais ao prazo legal."
+
+msgid "Start deadline from"
+msgstr "O prazo começa a contar a partir de"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Data de entrega (quando a encomenda é concluída)"
+
+msgid "Order date"
+msgstr "Data da encomenda"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "No caso de bens, o prazo começa quando o cliente os recebe (art. 9.º, n.º 2, alínea b), da Diretiva 2011/83/UE): marque a encomenda como Concluída quando for entregue. Até lá, o botão continua disponível. Use a data da encomenda apenas se vender serviços ou conteúdo digital."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "Não mostrar o botão em encomendas com estes estados"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "Não exclua Concluída: os clientes costumam retratar-se depois de receberem a encomenda."
+
+msgid "Where the button appears"
+msgstr "Onde aparece o botão"
+
+msgid "Button text"
+msgstr "Texto do botão"
+
+msgid "Desistir del contrato aquí"
+msgstr "Retrate-se do contrato aqui"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Deixe vazio para usar a expressão da diretiva («retrate-se do contrato aqui»), traduzida para a língua da loja."
+
+msgid "Public withdrawal page"
+msgstr "Página pública de retratação"
+
+msgid "— None —"
+msgstr "— Nenhuma —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "Página com o shortcode [eu2673_withdrawal_form]. Os clientes que compraram sem conta retratam-se aqui com o número da encomenda e o e-mail."
+
+msgid "Links to the withdrawal page"
+msgstr "Ligações para a página de retratação"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Mostrar uma ligação no fundo de todas as páginas"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Adicionar uma ligação aos e-mails de encomenda do WooCommerce enviados ao cliente"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "A função de retratação deve estar bem visível e disponível durante todo o prazo de retratação (art. 11.º-A, n.º 1)."
+
+msgid "Order received page"
+msgstr "Página de encomenda recebida"
+
+msgid "Show the button on the order received page"
+msgstr "Mostrar o botão na página de encomenda recebida"
+
+msgid "Show an optional reason field"
+msgstr "Mostrar um campo de motivo opcional"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "O cliente nunca tem de indicar um motivo; o campo é sempre opcional."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "O aviso de receção é sempre enviado ao cliente, como exige o art. 11.º-A, n.º 4."
+
+msgid "Customer email subject"
+msgstr "Assunto do e-mail ao cliente"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Deixe vazio para o texto predefinido na língua da loja. Pode usar {order_id} e {customer_name}."
+
+msgid "Status updates"
+msgstr "Alterações de estado"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "Enviar um e-mail ao cliente quando alterar o estado de um pedido"
+
+msgid "Store notification"
+msgstr "Notificação à loja"
+
+msgid "Email the store when a customer withdraws"
+msgstr "Enviar um e-mail à loja quando um cliente se retrata"
+
+msgid "Admin email"
+msgstr "E-mail do administrador"
+
+msgid "Store email subject"
+msgstr "Assunto do e-mail à loja"
+
+msgid "Order status"
+msgstr "Estado da encomenda"
+
+msgid "Change order status automatically"
+msgstr "Alterar o estado da encomenda automaticamente"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "Alterar o estado da encomenda quando o cliente se retrata"
+
+msgid "New order status"
+msgstr "Novo estado da encomenda"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Os reembolsos nunca são automáticos: reembolse a encomenda no WooCommerce depois de a verificar."
+
+msgid "Save settings"
+msgstr "Guardar definições"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Pedido inválido (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Encomenda não encontrada."
+
+msgid "No tienes permiso para esta acción."
+msgstr "Não tem permissão para esta ação."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "Já exerceu a retratação para esta encomenda."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Esta encomenda não é elegível para retratação."
+
+msgid "Error desconocido."
+msgstr "Erro desconhecido."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Retratação exercida pelo cliente. ID do pedido: %1$d. Motivo: %2$s"
+
+msgid "Not provided"
+msgstr "Não indicado"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Estado alterado automaticamente devido a um pedido de retratação."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "O seu pedido de desistência foi registado corretamente. Receberá um e-mail de confirmação em breve."
@@ -17,8 +363,104 @@ msgstr "Solicito expressamente o acesso imediato ao conteúdo digital e reconhe�
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "Deve aceitar as condições sobre conteúdo digital para completar o seu pedido."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Confirmação de retratação - Encomenda n.º {order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Retratação] Encomenda n.º {order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Base jurídica: artigo 11.º-A da Diretiva 2011/83/UE, introduzido pela Diretiva (UE) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Retratação do contrato"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Se pretender retratar-se desta encomenda, pode fazê-lo em linha:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button requer que o WooCommerce esteja ativo."
+
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Retratação aprovada] Encomenda n.º {order_id}"
+
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Retratação rejeitada] Encomenda n.º {order_id}"
+
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Retratação concluída] Encomenda n.º {order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Retratação] Encomenda n.º {order_id}"
+
+msgid "Confirmar desistimiento"
+msgstr "Confirmar retratação"
+
+msgid "Cancelar"
+msgstr "Cancelar"
+
+msgid "Cerrar"
+msgstr "Fechar"
+
+msgid "Procesando..."
+msgstr "A processar..."
+
+msgid "Desistimiento ejercido"
+msgstr "Desistência exercida"
+
+msgid "Error de conexión."
+msgstr "Erro de ligação."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Formulário de desistência modelo (Anexo I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "O prazo de retratação começa quando receber a encomenda."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "Pode retratar-se até %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Retratação exercida com sucesso"
+
+msgid "Request ref."
+msgstr "Ref. do pedido"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "Diretiva UE 2011/83/UE"
+
+msgid "To:"
+msgstr "Para:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Pela presente comunico/comunicamos (*) que me retrato/nos retratamos (*) do meu/nosso (*) contrato de compra e venda relativo ao seguinte bem/para a prestação do seguinte serviço (*)"
+
+msgid "Ordered on:"
+msgstr "Solicitado em (*)/recebido em (*):"
+
+msgid "Order number:"
+msgstr "Número da encomenda:"
+
+msgid "Name of consumer(s):"
+msgstr "Nome do(s) consumidor(es):"
+
+msgid "Address of consumer(s):"
+msgstr "Endereço do(s) consumidor(es):"
+
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Assinatura do(s) consumidor(es) (só no caso de o presente formulário ser notificado em papel):"
+
+msgid "Date:"
+msgstr "Data:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Riscar o que não interessa."
+
+msgid "Print this form"
+msgstr "Imprimir este formulário"
+
+msgid "My withdrawal requests"
+msgstr "Os meus pedidos de retratação"
 
 msgid "My withdrawals"
 msgstr "As minhas desistências"
@@ -26,9 +468,53 @@ msgstr "As minhas desistências"
 msgid "You have no withdrawal requests registered."
 msgstr "Não tem pedidos de desistência registados."
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Prazo de desistência: %d dias restantes"
+msgid "Pending"
+msgstr "Pendente"
 
+msgid "Approved"
+msgstr "Aprovada"
+
+msgid "Rejected"
+msgstr "Rejeitada"
+
+msgid "Completed"
+msgstr "Concluída"
+
+msgid "We could not find an order with those details."
+msgstr "Não encontrámos nenhuma encomenda com esses dados."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "O prazo de retratação desta encomenda expirou (14 dias de calendário)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Já exerceu o direito de retratação para esta encomenda."
+
+msgid "An error occurred. Please try again."
+msgstr "Ocorreu um erro. Tente novamente."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Exerça o seu direito de retratação"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Introduza o número da encomenda e o endereço de e-mail para verificar se pode exercer a retratação."
+
+msgid "Order number"
+msgstr "Número da encomenda"
+
+msgid "Email address used to purchase"
+msgstr "E-mail utilizado na compra"
+
+msgid "Check my order"
+msgstr "Verificar a minha encomenda"
+
+msgid "Pedido #%s verificado."
+msgstr "Encomenda n.º %s verificada."
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Check a different order"
+msgstr "Verificar outra encomenda"
 
 msgid "— Standard (subject to withdrawal right) —"
 msgstr "— Padrão (sujeito ao direito de desistência) —"
@@ -42,64 +528,129 @@ msgstr "Conteúdo digital — consentimento necessário no checkout (art. 16m)"
 msgid "Withdrawal status"
 msgstr "Estado de desistência"
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Controla como o direito de desistência se aplica a este produto. \"Padrão\" segue as configurações gerais. \"Excluído\" oculta o botão para pedidos com este produto. \"Conteúdo digital\" mostra uma caixa obrigatória no checkout."
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Define como se aplica o direito de retratação a este produto. «Normal» segue as definições gerais do plugin. «Excluído» (exceções do art. 16.º): se todos os produtos de uma encomenda estiverem excluídos, o botão de retratação não é mostrado nessa encomenda. «Conteúdo digital» mostra uma caixa de consentimento obrigatória no pagamento."
 
-msgid "Model withdrawal form (Annex I.B)"
-msgstr "Formulário de desistência modelo (Anexo I.B)"
+msgid "Nueva solicitud de desistimiento"
+msgstr "Novo pedido de retratação"
 
-msgid "EU Directive 2011/83/UE"
-msgstr "Diretiva UE 2011/83/UE"
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "Foi registado um novo pedido de retratação em %s."
 
-msgid "To:"
-msgstr "Para:"
+msgid "Nº de solicitud"
+msgstr "N.º do pedido"
 
-msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
-msgstr "Pelo presente instrumento, eu/nós (*) comunicamos a desistência do meu/nosso (*) contrato de venda dos seguintes bens (*)/de prestação do seguinte serviço (*)"
+msgid "Pedido"
+msgstr "Encomenda"
 
-msgid "Ordered on:"
-msgstr "Encomendado em:"
+msgid "Cliente"
+msgstr "Cliente"
 
-msgid "Order number:"
-msgstr "Número de pedido:"
+msgid "Correo del cliente"
+msgstr "E-mail do cliente"
 
-msgid "Name of consumer(s):"
-msgstr "Nome do(s) consumidor(es):"
+msgid "Teléfono"
+msgstr "Telefone"
 
-msgid "Address of consumer(s):"
-msgstr "Endereço do(s) consumidor(es):"
+msgid "Importe del pedido"
+msgstr "Montante da encomenda"
 
-msgid "(*) Delete as appropriate."
-msgstr "(*) Riscar o que não interessa."
+msgid "Fecha y hora de la solicitud"
+msgstr "Data e hora do pedido"
 
-msgid "Print this form"
-msgstr "Imprimir este formulário"
+msgid "Motivo"
+msgstr "Motivo"
 
+msgid "No indicado"
+msgstr "Não indicado"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Lembrete: deve processar o reembolso no prazo máximo de 14 dias de calendário."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Ver encomenda no WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Gerado automaticamente por Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Pedido de retratação registado"
+
+msgid "Hola, %s:"
+msgstr "Olá, %s,"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "Recebemos o seu pedido de retratação. Este e-mail é o seu aviso de receção nos termos da Diretiva (UE) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "E agora?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "Procederemos ao reembolso no prazo máximo de 14 dias de calendário a contar da receção deste pedido."
+
+msgid "Nombre"
+msgstr "Nome"
+
+msgid "Recibirás la confirmación en"
+msgstr "Receberá a confirmação em"
+
+msgid "Motivo indicado"
+msgstr "Motivo indicado"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Se tiver alguma questão, responda a este e-mail."
+
+msgid "Gracias por confiar en %s."
+msgstr "Obrigado por confiar em %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Este e-mail é o aviso de receção do seu pedido de retratação."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "O seu pedido de retratação foi <strong>aprovado</strong>. Procederemos ao reembolso integral no prazo máximo de <strong>14 dias de calendário</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "O seu pedido de retratação foi <strong>rejeitado</strong>. Se tiver alguma questão, contacte-nos."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "O seu pedido de retratação foi <strong>concluído</strong>. O reembolso foi efetuado."
+
+msgid "Dear"
+msgstr "Caro(a)"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "O estado do seu pedido de retratação foi atualizado."
+
+msgid "Request number"
+msgstr "N.º do pedido"
+
+msgid "New status"
+msgstr "Novo estado"
+
+msgid "Updated on"
+msgstr "Atualizado em"
+
+msgid "Admin note:"
+msgstr "Nota da loja:"
+
+msgid "Thank you for trusting %s."
+msgstr "Obrigado por confiar em %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Atualização automática do seu pedido de retratação."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Fechar janela de desistência"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "De acordo com a Diretiva UE 2023/2673, tem o direito de desistir deste contrato no prazo de 14 dias de calendário sem necessidade de justificação."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "Tem o direito de se retratar do presente contrato sem indicar qualquer motivo."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Verifique os seus dados antes de confirmar:"
+
+msgid "Motivo (opcional)"
+msgstr "Motivo (opcional)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "Ao confirmar, receberá um e-mail de confirmação e a nossa equipa processará o reembolso num prazo máximo de 14 dias de calendário."
 
-msgid "Cancelar"
-msgstr "Cancelar"
-
-msgid "Confirmar desistimiento"
-msgstr "Confirmar desistência"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Desistência exercida"
-
-msgid "Cerrar"
-msgstr "Fechar"
-
-msgid "Error desconocido."
-msgstr "Erro desconhecido."
-
-msgid "Error de conexión."
-msgstr "Erro de ligação."

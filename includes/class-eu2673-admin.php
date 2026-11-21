@@ -7,21 +7,26 @@ class EU2673_Admin {
     const OPTION_NOTICE_CLOSED = 'eu2673_notice_closed';
     const PRO_URL              = 'https://adaptatuweb.com/withdrawal-button-es/';
     const REVIEW_URL           = 'https://wordpress.org/support/plugin/eu2673-withdrawal-button/reviews/#new-post';
+    const PER_PAGE             = 20;
+    const STATUSES             = [ 'pending', 'approved', 'rejected', 'completed' ];
 
     public function __construct() {
-        add_action( 'admin_menu',            [ $this, 'register_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
-        add_action( 'admin_notices',         [ $this, 'show_admin_notice' ] );
-        add_action( 'wp_ajax_eu2673_dismiss_notice', [ $this, 'dismiss_notice' ] );
-        add_filter( 'plugin_row_meta',       [ $this, 'plugin_row_meta' ], 10, 2 );
+        add_action( 'admin_menu',                        [ $this, 'register_menu' ] );
+        add_action( 'admin_enqueue_scripts',             [ $this, 'enqueue_assets' ] );
+        add_action( 'admin_notices',                     [ $this, 'notice_withdrawal_page' ] );
+        add_action( 'admin_notices',                     [ $this, 'show_admin_notice' ] );
+        add_action( 'wp_ajax_eu2673_dismiss_notice',     [ $this, 'dismiss_notice' ] );
+        add_action( 'admin_post_eu2673_update_status',   [ $this, 'handle_update_status' ] );
+        add_action( 'admin_post_eu2673_save_settings',   [ $this, 'handle_save_settings' ] );
+        add_action( 'admin_post_eu2673_create_page',     [ $this, 'handle_create_page' ] );
+        add_filter( 'plugin_row_meta',                   [ $this, 'plugin_row_meta' ], 10, 2 );
 
-        // Guardar fecha de instalación la primera vez
         if ( ! get_option( self::OPTION_INSTALL_DATE ) ) {
             update_option( self::OPTION_INSTALL_DATE, time() );
         }
     }
 
-    // ── MENÚ ─────────────────────────────────────────────────────────────────
+    /* ── Menú y recursos ────────────────────────────────────────────────── */
 
     public function register_menu(): void {
         add_menu_page(
@@ -33,350 +38,443 @@ class EU2673_Admin {
             'dashicons-undo',
             58
         );
-        add_submenu_page(
-            'eu2673-withdrawal',
-            __( 'Withdrawal requests', 'eu2673-withdrawal-button' ),
-            __( 'Requests', 'eu2673-withdrawal-button' ),
-            'manage_woocommerce',
-            'eu2673-withdrawal',
-            [ $this, 'page_requests' ]
-        );
-        add_submenu_page(
-            'eu2673-withdrawal',
-            __( 'Settings', 'eu2673-withdrawal-button' ),
-            __( 'Settings', 'eu2673-withdrawal-button' ),
-            'manage_options',
-            'eu2673-settings',
-            [ $this, 'page_settings' ]
-        );
-        add_submenu_page(
-            'eu2673-withdrawal',
-            __( 'Help', 'eu2673-withdrawal-button' ),
-            __( 'Help', 'eu2673-withdrawal-button' ),
-            'manage_options',
-            'eu2673-help',
-            [ $this, 'page_help' ]
-        );
+        add_submenu_page( 'eu2673-withdrawal', __( 'Withdrawal requests', 'eu2673-withdrawal-button' ), __( 'Requests', 'eu2673-withdrawal-button' ), 'manage_woocommerce', 'eu2673-withdrawal', [ $this, 'page_requests' ] );
+        add_submenu_page( 'eu2673-withdrawal', __( 'Settings', 'eu2673-withdrawal-button' ), __( 'Settings', 'eu2673-withdrawal-button' ), 'manage_woocommerce', 'eu2673-settings', [ $this, 'page_settings' ] );
+        add_submenu_page( 'eu2673-withdrawal', __( 'Help', 'eu2673-withdrawal-button' ), __( 'Help', 'eu2673-withdrawal-button' ), 'manage_woocommerce', 'eu2673-help', [ $this, 'page_help' ] );
     }
 
-    public function enqueue_assets( string $hook ): void {
-        if ( strpos( $hook, 'eu2673' ) === false ) return;
-        wp_enqueue_style( 'eu2673-admin', plugin_dir_url( EU2673_PLUGIN_FILE ) . 'admin/css/admin.css', [], EU2673_VERSION );
-        wp_enqueue_script( 'eu2673-admin', plugin_dir_url( EU2673_PLUGIN_FILE ) . 'admin/js/admin.js', [ 'jquery' ], EU2673_VERSION, true );
-        wp_localize_script( 'eu2673-admin', 'eu2673Admin', [
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'nonce'    => wp_create_nonce( 'eu2673_admin_nonce' ),
-        ] );
+    public function enqueue_assets( $hook ): void {
+        if ( strpos( (string) $hook, 'eu2673' ) === false ) return;
+        wp_enqueue_style( 'eu2673-admin', EU2673_PLUGIN_URL . 'admin/admin.css', [], EU2673_VERSION );
     }
 
-    // ── ADMIN NOTICE ─────────────────────────────────────────────────────────
+    /* ── Avisos ─────────────────────────────────────────────────────────── */
+
+    /** Sin página pública, quien compra sin cuenta no puede desistir durante todo el plazo. */
+    public function notice_withdrawal_page(): void {
+        if ( ! current_user_can( 'manage_woocommerce' ) || EU2673_Core::withdrawal_page_id() ) return;
+        ?>
+        <div class="notice notice-warning">
+            <p><strong><?php esc_html_e( 'Withdrawal Button: there is no public withdrawal page.', 'eu2673-withdrawal-button' ); ?></strong>
+            <?php esc_html_e( 'Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU).', 'eu2673-withdrawal-button' ); ?></p>
+            <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+                <input type="hidden" name="action" value="eu2673_create_page">
+                <?php wp_nonce_field( 'eu2673_create_page' ); ?>
+                <p><button type="submit" class="button button-primary"><?php esc_html_e( 'Create the withdrawal page', 'eu2673-withdrawal-button' ); ?></button></p>
+            </form>
+        </div>
+        <?php
+    }
+
+    public function handle_create_page(): void {
+        if ( ! current_user_can( 'manage_woocommerce' ) ) wp_die( esc_html__( 'You do not have permission to do this.', 'eu2673-withdrawal-button' ) );
+        check_admin_referer( 'eu2673_create_page' );
+        $id = EU2673_Core::create_withdrawal_page();
+        wp_safe_redirect( add_query_arg( [ 'page' => 'eu2673-settings', 'eu2673_msg' => $id ? 'page_created' : 'page_error' ], admin_url( 'admin.php' ) ) );
+        exit;
+    }
 
     public function show_admin_notice(): void {
-        // No mostrar si ya fue cerrado
-        if ( get_option( self::OPTION_NOTICE_CLOSED ) ) return;
-
-        // No mostrar en las primeras 24 horas
-        $install_date = (int) get_option( self::OPTION_INSTALL_DATE, time() );
-        $days_active  = (int) floor( ( time() - $install_date ) / DAY_IN_SECONDS );
-        if ( $days_active < 1 ) return;
-
-        // Solo en páginas relevantes
+        if ( ! current_user_can( 'manage_woocommerce' ) || get_option( self::OPTION_NOTICE_CLOSED ) ) return;
+        $days_active = (int) floor( ( time() - (int) get_option( self::OPTION_INSTALL_DATE, time() ) ) / DAY_IN_SECONDS );
+        if ( $days_active < 14 ) return;
         $screen = get_current_screen();
-        if ( ! $screen || ! in_array( $screen->base, [ 'dashboard', 'plugins', 'toplevel_page_eu2673-withdrawal' ] ) ) return;
-
-        $is_long_user = $days_active >= 30;
+        if ( ! $screen || ! in_array( $screen->id, [ 'dashboard', 'plugins', 'toplevel_page_eu2673-withdrawal' ], true ) ) return;
         ?>
-        <div class="notice eu2673-admin-notice" id="eu2673-notice" style="border-left:4px solid #2c3e7a;padding:16px 20px;display:flex;align-items:flex-start;gap:16px;background:#fff;">
-            <div style="font-size:28px;line-height:1;">&#8617;</div>
-            <div style="flex:1;">
-                <?php if ( $is_long_user ) : ?>
-                    <p style="margin:0 0 6px;font-weight:700;font-size:14px;color:#1a1a2e;">
-                        <?php esc_html_e( 'Unlock the full power of Withdrawal Button', 'eu2673-withdrawal-button' ); ?>
-                    </p>
-                    <p style="margin:0 0 10px;font-size:13px;color:#555;">
-                        <?php esc_html_e( 'You have been using the free version for over a month. The Pro version adds:', 'eu2673-withdrawal-button' ); ?>
-                        <strong><?php esc_html_e( 'official PDF with SHA-256 hash, Annex B form, legal email traceability and anti-fraud system.', 'eu2673-withdrawal-button' ); ?></strong>
-                        <?php esc_html_e( 'One-time payment of €39.', 'eu2673-withdrawal-button' ); ?>
-                    </p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                        <a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" class="button button-primary" style="background:#2c3e7a;border-color:#2c3e7a;">
-                            🚀 <?php esc_html_e( 'Upgrade to Pro — €39', 'eu2673-withdrawal-button' ); ?>
-                        </a>
-                        <a href="<?php echo esc_url( self::REVIEW_URL ); ?>" target="_blank" class="button button-secondary">
-                            ⭐ <?php esc_html_e( 'Leave a review', 'eu2673-withdrawal-button' ); ?>
-                        </a>
-                        <button type="button" id="eu2673-dismiss" class="button button-link" style="color:#999;">
-                            <?php esc_html_e( 'Dismiss', 'eu2673-withdrawal-button' ); ?>
-                        </button>
-                    </div>
-                <?php else : ?>
-                    <p style="margin:0 0 6px;font-weight:700;font-size:14px;color:#1a1a2e;">
-                        <?php esc_html_e( 'Thank you for using EU2673 Withdrawal Button!', 'eu2673-withdrawal-button' ); ?>
-                    </p>
-                    <p style="margin:0 0 10px;font-size:13px;color:#555;">
-                        <?php
-                        printf(
-                            esc_html__( 'You have been using the plugin for %d day(s). If it is helping your store comply with EU Directive 2023/2673, we would love a quick review — it helps other merchants find us!', 'eu2673-withdrawal-button' ),
-                            $days_active
-                        );
-                        ?>
-                    </p>
-                    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                        <a href="<?php echo esc_url( self::REVIEW_URL ); ?>" target="_blank" class="button button-primary" style="background:#2c3e7a;border-color:#2c3e7a;">
-                            ⭐ <?php esc_html_e( 'Leave a review on WordPress.org', 'eu2673-withdrawal-button' ); ?>
-                        </a>
-                        <a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" class="button button-secondary">
-                            🚀 <?php esc_html_e( 'Discover Pro features', 'eu2673-withdrawal-button' ); ?>
-                        </a>
-                        <button type="button" id="eu2673-dismiss" class="button button-link" style="color:#999;">
-                            <?php esc_html_e( 'Dismiss', 'eu2673-withdrawal-button' ); ?>
-                        </button>
-                    </div>
-                <?php endif; ?>
-            </div>
+        <div class="notice notice-info is-dismissible eu2673-review-notice">
+            <p><?php esc_html_e( 'Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it.', 'eu2673-withdrawal-button' ); ?></p>
+            <p><a href="<?php echo esc_url( self::REVIEW_URL ); ?>" target="_blank" rel="noopener" class="button button-primary"><?php esc_html_e( 'Leave a review on WordPress.org', 'eu2673-withdrawal-button' ); ?></a></p>
         </div>
         <script>
-        jQuery(function($){
-            $('#eu2673-dismiss').on('click', function(){
-                $('#eu2673-notice').fadeOut();
-                $.post(eu2673Admin.ajax_url, {
-                    action: 'eu2673_dismiss_notice',
-                    nonce:  eu2673Admin.nonce
-                });
-            });
-        });
+        document.addEventListener( 'click', function ( e ) {
+            if ( ! e.target.closest( '.eu2673-review-notice .notice-dismiss' ) ) return;
+            var fd = new FormData();
+            fd.append( 'action', 'eu2673_dismiss_notice' );
+            fd.append( 'nonce', <?php echo wp_json_encode( wp_create_nonce( 'eu2673_admin_nonce' ) ); ?> );
+            fetch( ajaxurl, { method: 'POST', body: fd, credentials: 'same-origin' } );
+        } );
         </script>
         <?php
     }
 
     public function dismiss_notice(): void {
         check_ajax_referer( 'eu2673_admin_nonce', 'nonce' );
+        if ( ! current_user_can( 'manage_woocommerce' ) ) wp_send_json_error();
         update_option( self::OPTION_NOTICE_CLOSED, 1 );
         wp_send_json_success();
     }
 
-    // ── PLUGIN ROW META ───────────────────────────────────────────────────────
-
     public function plugin_row_meta( array $links, string $file ): array {
         if ( plugin_basename( EU2673_PLUGIN_FILE ) !== $file ) return $links;
-        $links[] = '<a href="' . esc_url( self::REVIEW_URL ) . '" target="_blank">⭐ ' . esc_html__( 'Rate', 'eu2673-withdrawal-button' ) . '</a>';
-        $links[] = '<a href="' . esc_url( self::PRO_URL ) . '" target="_blank" style="color:#2c3e7a;font-weight:600;">🚀 ' . esc_html__( 'Upgrade to Pro', 'eu2673-withdrawal-button' ) . '</a>';
-        $links[] = '<a href="mailto:proyectos@adaptatuweb.com">📧 ' . esc_html__( 'Support', 'eu2673-withdrawal-button' ) . '</a>';
+        $links[] = '<a href="' . esc_url( self::REVIEW_URL ) . '" target="_blank" rel="noopener">' . esc_html__( 'Rate', 'eu2673-withdrawal-button' ) . '</a>';
+        $links[] = '<a href="' . esc_url( self::PRO_URL ) . '" target="_blank" rel="noopener">' . esc_html__( 'Upgrade to Pro', 'eu2673-withdrawal-button' ) . '</a>';
         return $links;
     }
 
-    // ── PÁGINAS ADMIN ─────────────────────────────────────────────────────────
-
-    public function page_requests(): void {
-        global $wpdb;
-        $table = $wpdb->prefix . 'eu2673_withdrawal_requests';
-        $status_filter = sanitize_text_field( $_GET['status'] ?? '' );
-        $where = $status_filter ? $wpdb->prepare( 'WHERE status = %s', $status_filter ) : '';
-        $requests = $wpdb->get_results( "SELECT * FROM {$table} {$where} ORDER BY created_at DESC LIMIT 100", ARRAY_A );
-        $counts = $wpdb->get_results( "SELECT status, COUNT(*) as total FROM {$table} GROUP BY status", ARRAY_A );
-        $by_status = [];
-        foreach ( $counts as $c ) $by_status[ $c['status'] ] = $c['total'];
-
-        $statuses = [
-            ''          => __( 'All', 'eu2673-withdrawal-button' ),
-            'pending'   => __( 'Pending', 'eu2673-withdrawal-button' ),
-            'approved'  => __( 'Approved', 'eu2673-withdrawal-button' ),
-            'rejected'  => __( 'Rejected', 'eu2673-withdrawal-button' ),
-            'completed' => __( 'Completed', 'eu2673-withdrawal-button' ),
-        ];
+    /** Bloque de la versión Pro: una sola descripción, coherente con lo que hace la Lite. */
+    private function pro_box(): void {
         ?>
-        <div class="wrap">
-            <h1><?php esc_html_e( 'Withdrawal requests', 'eu2673-withdrawal-button' ); ?></h1>
-
-            <?php /* Pro upsell banner */ ?>
-            <div style="background:linear-gradient(135deg,#1a1a2e,#2c3e7a);border-radius:8px;padding:16px 20px;margin:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-                <div style="color:#fff;">
-                    <strong style="font-size:14px;">🚀 <?php esc_html_e( 'Upgrade to Pro', 'eu2673-withdrawal-button' ); ?></strong>
-                    <span style="font-size:13px;opacity:.85;margin-left:12px;">
-                        <?php esc_html_e( 'PDF acknowledgement with SHA-256 · Official Annex B · Email traceability · Anti-fraud system', 'eu2673-withdrawal-button' ); ?>
-                    </span>
-                </div>
-                <a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank"
-                   style="background:#FFD24D;color:#1a1a2e;padding:8px 18px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap;">
-                    <?php esc_html_e( 'Get Pro — €39 one-time', 'eu2673-withdrawal-button' ); ?>
-                </a>
-            </div>
-
-            <?php /* Filtros */ ?>
-            <ul class="subsubsub" style="margin-bottom:12px;">
-                <?php foreach ( $statuses as $key => $label ) : ?>
-                <li>
-                    <a href="<?php echo esc_url( add_query_arg( 'status', $key ) ); ?>"
-                       <?php echo ( $status_filter === $key ) ? 'class="current" style="font-weight:700;"' : ''; ?>>
-                        <?php echo esc_html( $label ); ?>
-                        <?php if ( $key && isset( $by_status[ $key ] ) ) echo '<span class="count">(' . (int) $by_status[ $key ] . ')</span>'; ?>
-                    </a> |
-                </li>
-                <?php endforeach; ?>
-            </ul>
-
-            <?php /* Tabla */ ?>
-            <table class="wp-list-table widefat fixed striped">
-                <thead>
-                    <tr>
-                        <th><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></th>
-                        <th><?php esc_html_e( 'Customer', 'eu2673-withdrawal-button' ); ?></th>
-                        <th><?php esc_html_e( 'Reason', 'eu2673-withdrawal-button' ); ?></th>
-                        <th><?php esc_html_e( 'Status', 'eu2673-withdrawal-button' ); ?></th>
-                        <th><?php esc_html_e( 'Date', 'eu2673-withdrawal-button' ); ?></th>
-                        <th><?php esc_html_e( 'Actions', 'eu2673-withdrawal-button' ); ?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php if ( empty( $requests ) ) : ?>
-                    <tr><td colspan="6" style="text-align:center;color:#999;padding:24px;"><?php esc_html_e( 'No requests found.', 'eu2673-withdrawal-button' ); ?></td></tr>
-                <?php else : ?>
-                    <?php foreach ( $requests as $req ) : ?>
-                    <tr>
-                        <td><a href="<?php echo esc_url( admin_url( 'post.php?post=' . $req['id_order'] . '&action=edit' ) ); ?>">#<?php echo (int) $req['id_order']; ?></a></td>
-                        <td><?php echo esc_html( $req['customer_email'] ?? '—' ); ?></td>
-                        <td><?php echo esc_html( mb_substr( $req['reason'] ?? '—', 0, 60 ) ); ?></td>
-                        <td><span class="eu2673-status eu2673-status--<?php echo esc_attr( $req['status'] ); ?>"><?php echo esc_html( $req['status'] ); ?></span></td>
-                        <td><?php echo esc_html( date_i18n( get_option( 'date_format' ) . ' H:i', strtotime( $req['created_at'] ) ) ); ?></td>
-                        <td>
-                            <select class="eu2673-status-select" data-id="<?php echo (int) $req['id']; ?>" style="font-size:12px;">
-                                <?php foreach ( [ 'pending', 'approved', 'rejected', 'completed' ] as $s ) : ?>
-                                <option value="<?php echo esc_attr( $s ); ?>" <?php selected( $req['status'], $s ); ?>><?php echo esc_html( ucfirst( $s ) ); ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                </tbody>
-            </table>
-
-            <p style="margin-top:16px;font-size:12px;color:#999;">
-                <?php esc_html_e( 'Showing last 100 requests. Export and advanced filters available in Pro.', 'eu2673-withdrawal-button' ); ?>
-                <a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank"><?php esc_html_e( 'Upgrade to Pro →', 'eu2673-withdrawal-button' ); ?></a>
-            </p>
+        <div class="eu2673-pro-box">
+            <p><strong><?php esc_html_e( 'Withdrawal Button Pro', 'eu2673-withdrawal-button' ); ?></strong> —
+            <?php esc_html_e( 'PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync.', 'eu2673-withdrawal-button' ); ?></p>
+            <p><a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener" class="button"><?php esc_html_e( 'Get Pro — €39 one-time payment', 'eu2673-withdrawal-button' ); ?></a></p>
         </div>
         <?php
     }
 
-    public function page_settings(): void {
-        if ( isset( $_POST['eu2673_save'] ) && check_admin_referer( 'eu2673_settings' ) ) {
-            update_option( 'eu2673_days',                (int) ( $_POST['eu2673_days'] ?? 14 ) );
-            update_option( 'eu2673_button_text',         sanitize_text_field( $_POST['eu2673_button_text'] ?? '' ) );
-            update_option( 'eu2673_send_customer_email', (int) ( $_POST['eu2673_send_customer_email'] ?? 1 ) );
-            update_option( 'eu2673_send_admin_email',    (int) ( $_POST['eu2673_send_admin_email'] ?? 1 ) );
-            update_option( 'eu2673_admin_email',         sanitize_email( $_POST['eu2673_admin_email'] ?? '' ) );
-            update_option( 'eu2673_change_status',       (int) ( $_POST['eu2673_change_status'] ?? 0 ) );
-            update_option( 'eu2673_new_status',          sanitize_text_field( $_POST['eu2673_new_status'] ?? '' ) );
-            update_option( 'eu2673_require_reason',      (int) ( $_POST['eu2673_require_reason'] ?? 0 ) );
-            update_option( 'eu2673_show_on_confirm',     (int) ( $_POST['eu2673_show_on_confirm'] ?? 1 ) );
-            update_option( 'eu2673_start_from',          sanitize_text_field( $_POST['eu2673_start_from'] ?? 'order_date' ) );
-            update_option( 'eu2673_grace_days',          (int) ( $_POST['eu2673_grace_days'] ?? 0 ) );
-            echo '<div class="notice notice-success"><p>' . esc_html__( 'Settings saved.', 'eu2673-withdrawal-button' ) . '</p></div>';
+    /* ── Solicitudes ────────────────────────────────────────────────────── */
+
+    public function page_requests(): void {
+        global $wpdb;
+        $table  = $wpdb->prefix . 'withdrawal_requests';
+        $labels = EU2673_Frontend::status_labels();
+        // phpcs:disable WordPress.Security.NonceVerification.Recommended -- filtros de lectura
+        $filter = sanitize_key( wp_unslash( $_GET['status'] ?? '' ) );
+        $filter = in_array( $filter, self::STATUSES, true ) ? $filter : '';
+        $paged  = max( 1, absint( $_GET['paged'] ?? 1 ) );
+        $msg    = sanitize_key( wp_unslash( $_GET['eu2673_msg'] ?? '' ) );
+        $msg_id = absint( $_GET['request'] ?? 0 );
+        // phpcs:enable
+
+        // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+        $where  = $filter ? $wpdb->prepare( 'WHERE status = %s', $filter ) : '';
+        $total  = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} {$where}" );
+        $rows   = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$table} {$where} ORDER BY id DESC LIMIT %d OFFSET %d", self::PER_PAGE, ( $paged - 1 ) * self::PER_PAGE ) );
+        $counts = wp_list_pluck( $wpdb->get_results( "SELECT status, COUNT(*) AS total FROM {$table} GROUP BY status" ), 'total', 'status' );
+        // phpcs:enable
+        $base_url = admin_url( 'admin.php?page=eu2673-withdrawal' );
+        ?>
+        <div class="wrap eu2673-wrap">
+            <h1><?php esc_html_e( 'Withdrawal requests', 'eu2673-withdrawal-button' ); ?></h1>
+
+            <?php if ( $msg ) : ?>
+            <div class="notice notice-<?php echo 'error' === $msg ? 'error' : 'success'; ?>" role="status"><p>
+                <?php
+                if ( 'error' === $msg ) {
+                    esc_html_e( 'The request could not be updated.', 'eu2673-withdrawal-button' );
+                } else {
+                    /* translators: %d: request ID */
+                    printf( esc_html__( 'Request #%d updated.', 'eu2673-withdrawal-button' ), (int) $msg_id );
+                    if ( 'updated_sent' === $msg ) {
+                        echo ' ' . esc_html__( 'The customer has been notified by email.', 'eu2673-withdrawal-button' );
+                    } elseif ( 'updated_failed' === $msg ) {
+                        echo ' ' . esc_html__( 'The email to the customer could not be sent. Check your mail settings.', 'eu2673-withdrawal-button' );
+                    }
+                }
+                ?>
+            </p></div>
+            <?php endif; ?>
+
+            <ul class="subsubsub">
+                <li><a href="<?php echo esc_url( $base_url ); ?>" <?php echo '' === $filter ? 'class="current" aria-current="page"' : ''; ?>><?php esc_html_e( 'All', 'eu2673-withdrawal-button' ); ?> <span class="count">(<?php echo (int) array_sum( $counts ); ?>)</span></a> |</li>
+                <?php foreach ( $labels as $key => $label ) : ?>
+                <li><a href="<?php echo esc_url( add_query_arg( 'status', $key, $base_url ) ); ?>" <?php echo $filter === $key ? 'class="current" aria-current="page"' : ''; ?>><?php echo esc_html( $label ); ?> <span class="count">(<?php echo (int) ( $counts[ $key ] ?? 0 ); ?>)</span></a><?php echo 'completed' === $key ? '' : ' |'; ?></li>
+                <?php endforeach; ?>
+            </ul>
+
+            <table class="wp-list-table widefat fixed striped eu2673-requests">
+                <thead><tr>
+                    <th scope="col" class="eu2673-col-ref"><?php esc_html_e( 'Ref.', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col"><?php esc_html_e( 'Order', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col"><?php esc_html_e( 'Customer', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col"><?php esc_html_e( 'Reason', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col"><?php esc_html_e( 'Date', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col"><?php esc_html_e( 'Status', 'eu2673-withdrawal-button' ); ?></th>
+                    <th scope="col" class="eu2673-col-action"><?php esc_html_e( 'Change status', 'eu2673-withdrawal-button' ); ?></th>
+                </tr></thead>
+                <tbody>
+                <?php if ( ! $rows ) : ?>
+                    <tr><td colspan="7"><?php esc_html_e( 'No requests found.', 'eu2673-withdrawal-button' ); ?></td></tr>
+                <?php endif; ?>
+                <?php foreach ( $rows as $req ) :
+                    $order = wc_get_order( $req->order_id );
+                    $sel   = 'eu2673-status-' . (int) $req->id;
+                    $note  = 'eu2673-note-' . (int) $req->id;
+                    ?>
+                    <tr>
+                        <td>#<?php echo (int) $req->id; ?></td>
+                        <td><?php if ( $order ) : ?><a href="<?php echo esc_url( $order->get_edit_order_url() ); ?>">#<?php echo esc_html( $order->get_order_number() ); ?></a><?php else : ?>#<?php echo (int) $req->order_id; ?><?php endif; ?></td>
+                        <td><?php echo esc_html( $req->customer_name ); ?><br><a href="mailto:<?php echo esc_attr( $req->customer_email ); ?>"><?php echo esc_html( $req->customer_email ); ?></a></td>
+                        <td><?php echo $req->reason ? esc_html( $req->reason ) : '—'; ?></td>
+                        <td><?php echo esc_html( EU2673_Core::format_db_datetime( $req->created_at ) ); ?></td>
+                        <td><span class="eu2673-status eu2673-status--<?php echo esc_attr( $req->status ); ?>"><?php echo esc_html( $labels[ $req->status ] ?? $req->status ); ?></span></td>
+                        <td>
+                            <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="eu2673-status-form">
+                                <input type="hidden" name="action" value="eu2673_update_status">
+                                <input type="hidden" name="request_id" value="<?php echo (int) $req->id; ?>">
+                                <?php wp_nonce_field( 'eu2673_update_status_' . (int) $req->id ); ?>
+                                <label class="screen-reader-text" for="<?php echo esc_attr( $sel ); ?>"><?php /* translators: %d: request ID */ printf( esc_html__( 'New status for request #%d', 'eu2673-withdrawal-button' ), (int) $req->id ); ?></label>
+                                <select id="<?php echo esc_attr( $sel ); ?>" name="status">
+                                    <?php foreach ( $labels as $key => $label ) : ?>
+                                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $req->status, $key ); ?>><?php echo esc_html( $label ); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <label class="screen-reader-text" for="<?php echo esc_attr( $note ); ?>"><?php esc_html_e( 'Note for the customer (optional)', 'eu2673-withdrawal-button' ); ?></label>
+                                <input type="text" id="<?php echo esc_attr( $note ); ?>" name="admin_note" maxlength="500" placeholder="<?php esc_attr_e( 'Note for the customer (optional)', 'eu2673-withdrawal-button' ); ?>" value="<?php echo esc_attr( (string) $req->admin_notes ); ?>">
+                                <button type="submit" class="button"><?php esc_html_e( 'Update', 'eu2673-withdrawal-button' ); ?></button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php
+            $pages = (int) ceil( $total / self::PER_PAGE );
+            if ( $pages > 1 ) {
+                echo '<div class="tablenav"><div class="tablenav-pages">' . wp_kses_post( paginate_links( [
+                    'base'    => add_query_arg( 'paged', '%#%', $filter ? add_query_arg( 'status', $filter, $base_url ) : $base_url ),
+                    'format'  => '',
+                    'current' => $paged,
+                    'total'   => $pages,
+                ] ) ) . '</div></div>';
+            }
+            if ( '1' === (string) get_option( 'eu2673_send_status_email', '1' ) ) {
+                echo '<p class="description">' . esc_html__( 'When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note.', 'eu2673-withdrawal-button' ) . '</p>';
+            }
+            $this->pro_box();
+            ?>
+        </div>
+        <?php
+    }
+
+    public function handle_update_status(): void {
+        if ( ! current_user_can( 'manage_woocommerce' ) ) wp_die( esc_html__( 'You do not have permission to do this.', 'eu2673-withdrawal-button' ) );
+        $id = absint( $_POST['request_id'] ?? 0 );
+        check_admin_referer( 'eu2673_update_status_' . $id );
+        $status = sanitize_key( wp_unslash( $_POST['status'] ?? '' ) );
+        $note   = mb_substr( sanitize_textarea_field( wp_unslash( $_POST['admin_note'] ?? '' ) ), 0, 500 );
+        $back   = wp_get_referer() ?: admin_url( 'admin.php?page=eu2673-withdrawal' );
+        $back   = remove_query_arg( [ 'eu2673_msg', 'request' ], $back );
+
+        global $wpdb;
+        $table = $wpdb->prefix . 'withdrawal_requests';
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+        $request = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table} WHERE id = %d", $id ) );
+        if ( ! $request || ! in_array( $status, self::STATUSES, true ) ) {
+            wp_safe_redirect( add_query_arg( 'eu2673_msg', 'error', $back ) );
+            exit;
         }
 
-        $order_statuses = wc_get_order_statuses();
+        $changed = $request->status !== $status;
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+        $wpdb->update(
+            $table,
+            [ 'status' => $status, 'admin_notes' => $note, 'processed_at' => current_time( 'mysql' ) ],
+            [ 'id' => $id ],
+            [ '%s', '%s', '%s' ],
+            [ '%d' ]
+        );
+
+        $msg = 'updated';
+        if ( $changed ) {
+            $labels = EU2673_Frontend::status_labels();
+            $order  = wc_get_order( $request->order_id );
+            if ( $order ) {
+                /* translators: 1: request ID, 2: status name */
+                $order->add_order_note( sprintf( __( 'Withdrawal request #%1$d marked as %2$s.', 'eu2673-withdrawal-button' ), $id, $labels[ $status ] ) );
+            }
+            if ( 'pending' !== $status && '1' === (string) get_option( 'eu2673_send_status_email', '1' ) ) {
+                $sent = ( new EU2673_Emails() )->send_status_update_email( $id, $status );
+                $msg  = $sent ? 'updated_sent' : 'updated_failed';
+            }
+        }
+        wp_safe_redirect( add_query_arg( [ 'eu2673_msg' => $msg, 'request' => $id ], $back ) );
+        exit;
+    }
+
+    /* ── Ajustes ────────────────────────────────────────────────────────── */
+
+    private function checkbox_options(): array {
+        return [ 'eu2673_show_on_guest_orders', 'eu2673_require_reason', 'eu2673_footer_link', 'eu2673_email_link', 'eu2673_change_order_status', 'eu2673_send_admin_email', 'eu2673_send_status_email' ];
+    }
+
+    public function handle_save_settings(): void {
+        if ( ! current_user_can( 'manage_woocommerce' ) ) wp_die( esc_html__( 'You do not have permission to do this.', 'eu2673-withdrawal-button' ) );
+        check_admin_referer( 'eu2673_settings' );
+        // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- se sanea campo a campo
+        $post = wp_unslash( $_POST );
+        // phpcs:enable
+
+        update_option( 'eu2673_withdrawal_days', max( 14, min( 365, absint( $post['eu2673_withdrawal_days'] ?? 14 ) ) ) );
+        update_option( 'eu2673_grace_days', max( 0, min( 365, absint( $post['eu2673_grace_days'] ?? 0 ) ) ) );
+        update_option( 'eu2673_start_from', 'order_date' === ( $post['eu2673_start_from'] ?? '' ) ? 'order_date' : 'delivery_date' );
+        update_option( 'eu2673_button_text', sanitize_text_field( $post['eu2673_button_text'] ?? '' ) );
+        update_option( 'eu2673_email_subject_customer', sanitize_text_field( $post['eu2673_email_subject_customer'] ?? '' ) );
+        update_option( 'eu2673_email_subject_admin', sanitize_text_field( $post['eu2673_email_subject_admin'] ?? '' ) );
+        $admin_email = sanitize_email( $post['eu2673_admin_email'] ?? '' );
+        update_option( 'eu2673_admin_email', is_email( $admin_email ) ? $admin_email : get_option( 'admin_email' ) );
+        foreach ( $this->checkbox_options() as $key ) {
+            update_option( $key, empty( $post[ $key ] ) ? '0' : '1' );
+        }
+
+        $statuses   = array_keys( wc_get_order_statuses() );
+        $new_status = sanitize_text_field( $post['eu2673_new_order_status'] ?? 'wc-on-hold' );
+        update_option( 'eu2673_new_order_status', in_array( $new_status, $statuses, true ) && 'wc-refunded' !== $new_status ? $new_status : 'wc-on-hold' );
+        $excluded = array_map( 'sanitize_text_field', (array) ( $post['eu2673_exclude_statuses'] ?? [] ) );
+        update_option( 'eu2673_exclude_statuses', array_values( array_intersect( $excluded, $statuses ) ) );
+
+        $page_id = absint( $post['eu2673_withdrawal_page_id'] ?? 0 );
+        if ( $page_id && has_shortcode( (string) get_post_field( 'post_content', $page_id ), EU2673_Core::SHORTCODE ) ) {
+            update_option( 'eu2673_withdrawal_page_id', $page_id );
+        }
+
+        wp_safe_redirect( add_query_arg( [ 'page' => 'eu2673-settings', 'eu2673_msg' => 'saved' ], admin_url( 'admin.php' ) ) );
+        exit;
+    }
+
+    private function field_checkbox( $key, $label, $default = '1', $description = '' ): void {
+        $id = str_replace( '_', '-', $key );
         ?>
-        <div class="wrap">
+        <label for="<?php echo esc_attr( $id ); ?>"><input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $key ); ?>" value="1" <?php checked( '1', (string) get_option( $key, $default ) ); ?>> <?php echo esc_html( $label ); ?></label>
+        <?php if ( $description ) : ?><p class="description"><?php echo esc_html( $description ); ?></p><?php endif; ?>
+        <?php
+    }
+
+    public function page_settings(): void {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $msg            = sanitize_key( wp_unslash( $_GET['eu2673_msg'] ?? '' ) );
+        $order_statuses = wc_get_order_statuses();
+        $excluded       = (array) get_option( 'eu2673_exclude_statuses', [ 'wc-refunded', 'wc-cancelled', 'wc-failed' ] );
+        $page_id        = EU2673_Core::withdrawal_page_id();
+        ?>
+        <div class="wrap eu2673-wrap">
             <h1><?php esc_html_e( 'Withdrawal Button — Settings', 'eu2673-withdrawal-button' ); ?></h1>
-            <form method="post">
+            <?php if ( 'saved' === $msg ) : ?>
+                <div class="notice notice-success" role="status"><p><?php esc_html_e( 'Settings saved.', 'eu2673-withdrawal-button' ); ?></p></div>
+            <?php elseif ( 'page_created' === $msg ) : ?>
+                <div class="notice notice-success" role="status"><p><?php esc_html_e( 'The withdrawal page has been created.', 'eu2673-withdrawal-button' ); ?>
+                <?php if ( $page_id ) : ?><a href="<?php echo esc_url( get_permalink( $page_id ) ); ?>"><?php esc_html_e( 'View page', 'eu2673-withdrawal-button' ); ?></a><?php endif; ?></p></div>
+            <?php elseif ( 'page_error' === $msg ) : ?>
+                <div class="notice notice-error" role="alert"><p><?php esc_html_e( 'The withdrawal page could not be created.', 'eu2673-withdrawal-button' ); ?></p></div>
+            <?php endif; ?>
+
+            <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+                <input type="hidden" name="action" value="eu2673_save_settings">
                 <?php wp_nonce_field( 'eu2673_settings' ); ?>
-                <table class="form-table">
+
+                <h2><?php esc_html_e( 'Withdrawal period', 'eu2673-withdrawal-button' ); ?></h2>
+                <table class="form-table" role="presentation">
                     <tr>
-                        <th><?php esc_html_e( 'Withdrawal period (days)', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="number" name="eu2673_days" value="<?php echo (int) get_option( 'eu2673_days', 14 ); ?>" min="14" class="small-text">
-                        <p class="description"><?php esc_html_e( 'Legal minimum is 14 calendar days.', 'eu2673-withdrawal-button' ); ?></p></td>
+                        <th scope="row"><label for="eu2673-withdrawal-days"><?php esc_html_e( 'Withdrawal period (days)', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="number" id="eu2673-withdrawal-days" name="eu2673_withdrawal_days" value="<?php echo (int) get_option( 'eu2673_withdrawal_days', 14 ); ?>" min="14" max="365" class="small-text" aria-describedby="eu2673-withdrawal-days-desc">
+                        <p class="description" id="eu2673-withdrawal-days-desc"><?php esc_html_e( 'Legal minimum is 14 calendar days. You can offer more.', 'eu2673-withdrawal-button' ); ?></p></td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( 'Grace days (optional)', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="number" name="eu2673_grace_days" value="<?php echo (int) get_option( 'eu2673_grace_days', 0 ); ?>" min="0" class="small-text">
-                        <p class="description"><?php esc_html_e( 'Extra days on top of the legal deadline.', 'eu2673-withdrawal-button' ); ?></p></td>
+                        <th scope="row"><label for="eu2673-grace-days"><?php esc_html_e( 'Grace days (optional)', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="number" id="eu2673-grace-days" name="eu2673_grace_days" value="<?php echo (int) get_option( 'eu2673_grace_days', 0 ); ?>" min="0" max="365" class="small-text" aria-describedby="eu2673-grace-days-desc">
+                        <p class="description" id="eu2673-grace-days-desc"><?php esc_html_e( 'Extra days on top of the legal deadline.', 'eu2673-withdrawal-button' ); ?></p></td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( 'Start deadline from', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><select name="eu2673_start_from">
+                        <th scope="row"><label for="eu2673-start-from"><?php esc_html_e( 'Start deadline from', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><select id="eu2673-start-from" name="eu2673_start_from" aria-describedby="eu2673-start-from-desc">
+                            <option value="delivery_date" <?php selected( get_option( 'eu2673_start_from', 'order_date' ), 'delivery_date' ); ?>><?php esc_html_e( 'Delivery date (when order is completed)', 'eu2673-withdrawal-button' ); ?></option>
                             <option value="order_date" <?php selected( get_option( 'eu2673_start_from', 'order_date' ), 'order_date' ); ?>><?php esc_html_e( 'Order date', 'eu2673-withdrawal-button' ); ?></option>
-                            <option value="delivery_date" <?php selected( get_option( 'eu2673_start_from' ), 'delivery_date' ); ?>><?php esc_html_e( 'Delivery date (when order is completed)', 'eu2673-withdrawal-button' ); ?></option>
-                        </select></td>
+                        </select>
+                        <p class="description" id="eu2673-start-from-desc"><?php esc_html_e( 'For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content.', 'eu2673-withdrawal-button' ); ?></p></td>
                     </tr>
                     <tr>
-                        <th><?php esc_html_e( 'Button text', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="text" name="eu2673_button_text" value="<?php echo esc_attr( get_option( 'eu2673_button_text', '' ) ); ?>" class="regular-text">
-                        <p class="description"><?php esc_html_e( 'Leave empty to use the default text.', 'eu2673-withdrawal-button' ); ?></p></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Send email to customer', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="checkbox" name="eu2673_send_customer_email" value="1" <?php checked( get_option( 'eu2673_send_customer_email', 1 ) ); ?>></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Send notification to admin', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="checkbox" name="eu2673_send_admin_email" value="1" <?php checked( get_option( 'eu2673_send_admin_email', 1 ) ); ?>></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Admin email', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="email" name="eu2673_admin_email" value="<?php echo esc_attr( get_option( 'eu2673_admin_email', get_option( 'admin_email' ) ) ); ?>" class="regular-text"></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Require reason', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="checkbox" name="eu2673_require_reason" value="1" <?php checked( get_option( 'eu2673_require_reason', 0 ) ); ?>>
-                        <p class="description"><?php esc_html_e( 'Note: the law does not require consumers to provide a reason.', 'eu2673-withdrawal-button' ); ?></p></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Show on order confirmation page', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="checkbox" name="eu2673_show_on_confirm" value="1" <?php checked( get_option( 'eu2673_show_on_confirm', 1 ) ); ?>></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'Change order status automatically', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><input type="checkbox" name="eu2673_change_status" value="1" <?php checked( get_option( 'eu2673_change_status', 0 ) ); ?>></td>
-                    </tr>
-                    <tr>
-                        <th><?php esc_html_e( 'New order status', 'eu2673-withdrawal-button' ); ?></th>
-                        <td><select name="eu2673_new_status">
-                            <?php foreach ( $order_statuses as $key => $label ) : ?>
-                            <option value="<?php echo esc_attr( $key ); ?>" <?php selected( get_option( 'eu2673_new_status' ), $key ); ?>><?php echo esc_html( $label ); ?></option>
-                            <?php endforeach; ?>
-                        </select></td>
+                        <th scope="row"><?php esc_html_e( 'Do not show the button for orders with these statuses', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><fieldset><legend class="screen-reader-text"><?php esc_html_e( 'Do not show the button for orders with these statuses', 'eu2673-withdrawal-button' ); ?></legend>
+                        <?php foreach ( $order_statuses as $slug => $label ) :
+                            if ( in_array( $slug, [ 'wc-pending', 'wc-checkout-draft' ], true ) ) continue; ?>
+                            <label style="display:inline-block;margin:0 16px 6px 0;"><input type="checkbox" name="eu2673_exclude_statuses[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $excluded, true ) ); ?>> <?php echo esc_html( $label ); ?></label>
+                        <?php endforeach; ?>
+                        <p class="description"><?php esc_html_e( 'Do not exclude Completed: customers usually withdraw after receiving the order.', 'eu2673-withdrawal-button' ); ?></p></fieldset></td>
                     </tr>
                 </table>
 
-                <?php submit_button( __( 'Save settings', 'eu2673-withdrawal-button' ), 'primary', 'eu2673_save' ); ?>
-            </form>
+                <h2><?php esc_html_e( 'Where the button appears', 'eu2673-withdrawal-button' ); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><label for="eu2673-button-text"><?php esc_html_e( 'Button text', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="text" id="eu2673-button-text" name="eu2673_button_text" value="<?php echo esc_attr( get_option( 'eu2673_button_text', '' ) ); ?>" class="regular-text" placeholder="<?php echo esc_attr( __( 'Desistir del contrato aquí', 'eu2673-withdrawal-button' ) ); ?>" aria-describedby="eu2673-button-text-desc">
+                        <p class="description" id="eu2673-button-text-desc"><?php esc_html_e( 'Leave empty to use the wording of the Directive ("withdraw from contract here"), translated into the store language.', 'eu2673-withdrawal-button' ); ?></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="eu2673-withdrawal-page-id"><?php esc_html_e( 'Public withdrawal page', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td>
+                            <?php
+                            wp_dropdown_pages( [
+                                'name'              => 'eu2673_withdrawal_page_id',
+                                'id'                => 'eu2673-withdrawal-page-id',
+                                'selected'          => $page_id,
+                                'show_option_none'  => __( '— None —', 'eu2673-withdrawal-button' ),
+                                'option_none_value' => '0',
+                            ] );
+                            ?>
+                            <p class="description"><?php esc_html_e( 'Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email.', 'eu2673-withdrawal-button' ); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Links to the withdrawal page', 'eu2673-withdrawal-button' ); ?></th>
+                        <td>
+                            <?php $this->field_checkbox( 'eu2673_footer_link', __( 'Show a link at the bottom of every page', 'eu2673-withdrawal-button' ) ); ?><br>
+                            <?php $this->field_checkbox( 'eu2673_email_link', __( 'Add a link to the WooCommerce order emails sent to the customer', 'eu2673-withdrawal-button' ) ); ?>
+                            <p class="description"><?php esc_html_e( 'The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1)).', 'eu2673-withdrawal-button' ); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Order received page', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><?php $this->field_checkbox( 'eu2673_show_on_guest_orders', __( 'Show the button on the order received page', 'eu2673-withdrawal-button' ) ); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Reason', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><?php $this->field_checkbox( 'eu2673_require_reason', __( 'Show an optional reason field', 'eu2673-withdrawal-button' ), '0', __( 'The customer never has to give a reason; the field is always optional.', 'eu2673-withdrawal-button' ) ); ?></td>
+                    </tr>
+                </table>
 
-            <?php /* Pro upsell footer */ ?>
-            <div style="margin-top:32px;background:#f8f9ff;border:1px solid #e0e0e0;border-radius:8px;padding:20px 24px;">
-                <h3 style="margin:0 0 12px;color:#1a1a2e;">🚀 <?php esc_html_e( 'Need more? Upgrade to Pro', 'eu2673-withdrawal-button' ); ?></h3>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;">
-                    <?php
-                    $features = [
-                        '📄 ' . __( 'Official PDF acknowledgement attached to customer email', 'eu2673-withdrawal-button' ),
-                        '🔐 ' . __( 'SHA-256 hash for legal proof in case of disputes', 'eu2673-withdrawal-button' ),
-                        '📋 ' . __( 'Official Annex B form pre-filled in PDF', 'eu2673-withdrawal-button' ),
-                        '🛡️ ' . __( 'Anti-fraud system with risk alerts', 'eu2673-withdrawal-button' ),
-                        '🔄 ' . __( 'Reverse automation with order status sync', 'eu2673-withdrawal-button' ),
-                        '📊 ' . __( 'Legal email traceability with exact timestamps', 'eu2673-withdrawal-button' ),
-                    ];
-                    foreach ( $features as $f ) :
-                    ?>
-                    <div style="font-size:13px;color:#333;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #e0e0e0;">
-                        <?php echo esc_html( $f ); ?>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-                <a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" class="button button-primary" style="background:#2c3e7a;border-color:#2c3e7a;font-size:14px;padding:6px 20px;height:auto;">
-                    <?php esc_html_e( 'Get Pro — €39 one-time payment', 'eu2673-withdrawal-button' ); ?>
-                </a>
-                <span style="margin-left:12px;font-size:12px;color:#888;"><?php esc_html_e( 'Compatible with WooCommerce and PrestaShop.', 'eu2673-withdrawal-button' ); ?></span>
-            </div>
+                <h2><?php esc_html_e( 'Emails', 'eu2673-withdrawal-button' ); ?></h2>
+                <p><?php esc_html_e( 'The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4).', 'eu2673-withdrawal-button' ); ?></p>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><label for="eu2673-email-subject-customer"><?php esc_html_e( 'Customer email subject', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="text" id="eu2673-email-subject-customer" name="eu2673_email_subject_customer" value="<?php echo esc_attr( get_option( 'eu2673_email_subject_customer', '' ) ); ?>" class="regular-text" aria-describedby="eu2673-subject-desc">
+                        <p class="description" id="eu2673-subject-desc"><?php esc_html_e( 'Leave empty for the default text in the store language. You can use {order_id} and {customer_name}.', 'eu2673-withdrawal-button' ); ?></p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Status updates', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><?php $this->field_checkbox( 'eu2673_send_status_email', __( 'Email the customer when you change the status of a request', 'eu2673-withdrawal-button' ) ); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Store notification', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><?php $this->field_checkbox( 'eu2673_send_admin_email', __( 'Email the store when a customer withdraws', 'eu2673-withdrawal-button' ) ); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="eu2673-admin-email"><?php esc_html_e( 'Admin email', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="email" id="eu2673-admin-email" name="eu2673_admin_email" value="<?php echo esc_attr( get_option( 'eu2673_admin_email', get_option( 'admin_email' ) ) ); ?>" class="regular-text"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="eu2673-email-subject-admin"><?php esc_html_e( 'Store email subject', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><input type="text" id="eu2673-email-subject-admin" name="eu2673_email_subject_admin" value="<?php echo esc_attr( get_option( 'eu2673_email_subject_admin', '' ) ); ?>" class="regular-text" aria-describedby="eu2673-subject-desc"></td>
+                    </tr>
+                </table>
+
+                <h2><?php esc_html_e( 'Order status', 'eu2673-withdrawal-button' ); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Change order status automatically', 'eu2673-withdrawal-button' ); ?></th>
+                        <td><?php $this->field_checkbox( 'eu2673_change_order_status', __( 'Change the order status when the customer withdraws', 'eu2673-withdrawal-button' ), '0' ); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="eu2673-new-order-status"><?php esc_html_e( 'New order status', 'eu2673-withdrawal-button' ); ?></label></th>
+                        <td><select id="eu2673-new-order-status" name="eu2673_new_order_status" aria-describedby="eu2673-new-status-desc">
+                            <?php foreach ( $order_statuses as $slug => $label ) :
+                                if ( in_array( $slug, [ 'wc-refunded', 'wc-checkout-draft' ], true ) ) continue; ?>
+                            <option value="<?php echo esc_attr( $slug ); ?>" <?php selected( get_option( 'eu2673_new_order_status', 'wc-on-hold' ), $slug ); ?>><?php echo esc_html( $label ); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <p class="description" id="eu2673-new-status-desc"><?php esc_html_e( 'Refunds are never made automatically: refund the order in WooCommerce once you have checked it.', 'eu2673-withdrawal-button' ); ?></p></td>
+                    </tr>
+                </table>
+
+                <?php submit_button( __( 'Save settings', 'eu2673-withdrawal-button' ) ); ?>
+            </form>
+            <?php $this->pro_box(); ?>
         </div>
         <?php
     }
 
     public function page_help(): void {
-        ?>
-        <div class="wrap">
-            <h1><?php esc_html_e( 'Withdrawal Button — Help', 'eu2673-withdrawal-button' ); ?></h1>
-            <?php require_once dirname( __FILE__, 2 ) . '/admin/page-help.php'; ?>
-        </div>
-        <?php
+        require EU2673_PLUGIN_DIR . 'admin/page-help.php';
     }
 }

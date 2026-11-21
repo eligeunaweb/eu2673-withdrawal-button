@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - eu
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Atzera egiteko eskubidea erabili"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Laguntza"
+
+msgid "What the law requires"
+msgstr "Legeak zer eskatzen duen"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "2011/83/EB Zuzentarauaren 11 bis artikulua, (EB) 2023/2673 Zuzentarauak sartua, 2026ko ekainaren 19tik aurrera aplikatzen zaie lineako interfaze baten bidez egindako urrutiko kontratuei. Dendak atzera egiteko funtzio bat eskaini behar du, zeinak:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "«kontratuari uko egin hemen» esapidea edo baliokide argi bat izan behar duen, ondo ikusteko moduan egon eta atzera egiteko epe osoan erabilgarri egon behar duen;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "kontsumitzaileari aukera eman behar dion bere izena, kontratua eta berrespena bidaliko zaion helbide elektronikoa emateko edo berresteko;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "«berretsi atzera egitea» edo baliokidea dioen botoi baten bidez berrespena eskatu behar duen;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "jasotze-agiri bat bidali behar duen euskarri iraunkor batean, atzera egitearen edukiarekin, datarekin eta orduarekin."
+
+msgid "Where customers find the button"
+msgstr "Non aurkitzen duten bezeroek botoia"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "Nire kontua → eskaeraren xehetasunak, eta Nire atzera egiteak atala."
+
+msgid "The order received page, right after buying."
+msgstr "Jasotako eskaeraren orria, erosi eta berehala."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "Atzera egiteko orri publikoa, konturik gabeko bezeroentzat: eskaera-zenbakia eta helbide elektronikoa idazten dituzte."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Orri horretarako estekak dendaren behealdean eta WooCommerceren eskaera-mezuetan (aukerakoa)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "Botoia desagertu egiten da epea amaitzean, eskaerak egoera baztertu bat duenean edo eskaerako produktu guztiak baztertuta daudenean."
+
+msgid "What happens when the customer withdraws"
+msgstr "Zer gertatzen den bezeroak atzera egiten duenean"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "Leiho batek izena, eskaera eta helbide elektronikoa erakusten ditu, eta bezeroak berresten du."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "Eskaera gorde egiten da eta Atzera egitea → Eskaerak atalean agertzen da."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "Bezeroak jasotze-agiria jasotzen du; dendak jakinarazpen bat."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "Eskaera ez da automatikoki itzultzen. Berrikusi eta itzuli dirua WooCommercen."
+
+msgid "Managing requests"
+msgstr "Eskaerak kudeatzea"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Aldatu eskaera bakoitzaren egoera Atzera egitea → Eskaerak atalean. Egoera-mezuak aktibatuta badaude, bezeroak egoera berria eta zure oharra jasotzen ditu."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "Enpresariak jasotako ordainketak itzuli behar ditu atzerapen bidegaberik gabe eta, gehienez, atzera egitearen berri izan eta 14 egunera; ondasunen kasuan, itzulketa atxiki dezake ondasunak jaso arte edo kontsumitzaileak itzuli dituela frogatu arte (2011/83/EB Zuzentarauaren 13. art.)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Atzera egiteko eskubiderik gabeko produktuak"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "Produktu bakoitzean, Orokorra fitxan, «Atzera egiteko egoera»: markatu baztertu gisa 16. artikuluko salbuespen batek hartzen dituen produktuak, eta eduki digitala ordaintzean baimena behar duen gisa. Baimen-laukiak checkout klasikoan zein checkout blokean funtzionatzen du."
+
+msgid "Emails"
+msgstr "Mezu elektronikoak"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "Mezuak WooCommerce → Ezarpenak → Posta elektronikoa atalean konfiguratutako igorlearen izenarekin eta helbidearekin bidaltzen dira. Bidalketa fidagarria izateko, erabili SMTP plugin bat benetako posta-zerbitzari batekin."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Doako bertsioaren laguntza: WordPress.org-eko laguntza-foroa."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Atzera egitea"
+
+msgid "Withdrawal requests"
+msgstr "Atzera egiteko eskaerak"
+
+msgid "Requests"
+msgstr "Eskaerak"
+
+msgid "Settings"
+msgstr "Ezarpenak"
+
+msgid "Help"
+msgstr "Laguntza"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: ez dago atzera egiteko orri publikorik."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Konturik gabe erosi duten bezeroek orri bat behar dute epe osoan edozein unetan atzera egin ahal izateko (2011/83/EB Zuzentarauaren 11 bis.1 art.)."
+
+msgid "Create the withdrawal page"
+msgstr "Sortu atzera egiteko orria"
+
+msgid "You do not have permission to do this."
+msgstr "Ez duzu hori egiteko baimenik."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Withdrawal Button zure dendari laguntzen ari zaio? WordPress.org-en iritzi labur batek beste denda batzuei aurkitzen laguntzen die."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Utzi iritzia WordPress.org-en"
+
+msgid "Rate"
+msgstr "Baloratu"
+
+msgid "Upgrade to Pro"
+msgstr "Pasatu Pro-ra"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "PDF jasotze-agiria bezeroaren mezuari erantsita, eskaera bakoitzaren SHA-256 hasha, mezuen erregistroa ordu zehatzekin, iruzur-alertak eta eskaeraren egoerarekin sinkronizazioa."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Lortu Pro — 39 €-ko ordainketa bakarra"
+
+msgid "The request could not be updated."
+msgstr "Ezin izan da eskaera eguneratu."
+
+msgid "Request #%d updated."
+msgstr "%d. eskaera eguneratu da."
+
+msgid "The customer has been notified by email."
+msgstr "Bezeroari mezu elektronikoz jakinarazi zaio."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "Ezin izan zaio mezua bidali bezeroari. Berrikusi posta-ezarpenak."
+
+msgid "All"
+msgstr "Denak"
+
+msgid "Ref."
+msgstr "Erref."
+
+msgid "Order"
+msgstr "Eskaera"
+
+msgid "Customer"
+msgstr "Bezeroa"
+
+msgid "Reason"
+msgstr "Arrazoia"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Status"
+msgstr "Egoera"
+
+msgid "Change status"
+msgstr "Aldatu egoera"
+
+msgid "No requests found."
+msgstr "Ez da eskaerarik aurkitu."
+
+msgid "New status for request #%d"
+msgstr "%d. eskaeraren egoera berria"
+
+msgid "Note for the customer (optional)"
+msgstr "Oharra bezeroarentzat (aukerakoa)"
+
+msgid "Update"
+msgstr "Eguneratu"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "Egoera Onartua, Ukatua edo Osatua bihurtzen duzunean, bezeroak mezu bat jasotzen du egoera berriarekin eta zure oharrarekin."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "%1$d. atzera egiteko eskaera honela markatu da: %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Ezarpenak"
+
+msgid "Settings saved."
+msgstr "Ezarpenak gorde dira."
+
+msgid "The withdrawal page has been created."
+msgstr "Atzera egiteko orria sortu da."
+
+msgid "View page"
+msgstr "Ikusi orria"
+
+msgid "The withdrawal page could not be created."
+msgstr "Ezin izan da atzera egiteko orria sortu."
+
+msgid "Withdrawal period"
+msgstr "Atzera egiteko epea"
+
+msgid "Withdrawal period (days)"
+msgstr "Atzera egiteko epea (egunak)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "Legezko gutxienekoa 14 egun natural dira. Gehiago eskain ditzakezu."
+
+msgid "Grace days (optional)"
+msgstr "Adeitasun-egunak (aukerakoa)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Legezko epeari gehitutako egunak."
+
+msgid "Start deadline from"
+msgstr "Epea noiztik zenbatzen den"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Entrega-data (eskaera osatzen denean)"
+
+msgid "Order date"
+msgstr "Eskaeraren data"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "Ondasunetan, epea bezeroak jasotzen dituenean hasten da (2011/83/EB Zuzentarauaren 9.2.b art.): markatu eskaera Osatua gisa entregatzen denean. Ordura arte botoiak erabilgarri jarraitzen du. Erabili eskaeraren data zerbitzuak edo eduki digitala saltzen badituzu bakarrik."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "Ez erakutsi botoia egoera hauek dituzten eskaeretan"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "Ez baztertu Osatua: bezeroek eskaera jaso ondoren egin ohi dute atzera."
+
+msgid "Where the button appears"
+msgstr "Non agertzen den botoia"
+
+msgid "Button text"
+msgstr "Botoiaren testua"
+
+msgid "Desistir del contrato aquí"
+msgstr "Kontratuari uko egin hemen"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Utzi hutsik Zuzentarauaren esapidea («kontratuari uko egin hemen») dendaren hizkuntzan erabiltzeko."
+
+msgid "Public withdrawal page"
+msgstr "Atzera egiteko orri publikoa"
+
+msgid "— None —"
+msgstr "— Bat ere ez —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "[eu2673_withdrawal_form] shortcodea duen orria. Konturik gabe erosi duten bezeroek hemen egiten dute atzera eskaera-zenbakiarekin eta helbide elektronikoarekin."
+
+msgid "Links to the withdrawal page"
+msgstr "Atzera egiteko orrirako estekak"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Erakutsi esteka bat orri guztien behealdean"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Gehitu esteka bat bezeroari bidalitako WooCommerceren eskaera-mezuetan"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "Atzera egiteko funtzioak ondo ikusteko moduan eta epe osoan erabilgarri egon behar du (11 bis.1 art.)."
+
+msgid "Order received page"
+msgstr "Jasotako eskaeraren orria"
+
+msgid "Show the button on the order received page"
+msgstr "Erakutsi botoia jasotako eskaeraren orrian"
+
+msgid "Show an optional reason field"
+msgstr "Erakutsi arrazoirako eremu aukerakoa"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "Bezeroak ez du inoiz arrazoirik eman behar; eremua beti da aukerakoa."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "Jasotze-agiria beti bidaltzen zaio bezeroari, 11 bis.4 artikuluak eskatzen duen bezala."
+
+msgid "Customer email subject"
+msgstr "Bezeroari bidalitako mezuaren gaia"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Utzi hutsik dendaren hizkuntzako testu lehenetsia erabiltzeko. {order_id} eta {customer_name} erabil ditzakezu."
+
+msgid "Status updates"
+msgstr "Egoera-aldaketak"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "Bidali mezu bat bezeroari eskaera baten egoera aldatzen duzunean"
+
+msgid "Store notification"
+msgstr "Dendarentzako jakinarazpena"
+
+msgid "Email the store when a customer withdraws"
+msgstr "Bidali mezu bat dendari bezero batek atzera egiten duenean"
+
+msgid "Admin email"
+msgstr "Administratzailearen helbide elektronikoa"
+
+msgid "Store email subject"
+msgstr "Dendari bidalitako mezuaren gaia"
+
+msgid "Order status"
+msgstr "Eskaeraren egoera"
+
+msgid "Change order status automatically"
+msgstr "Aldatu eskaeraren egoera automatikoki"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "Aldatu eskaeraren egoera bezeroak atzera egiten duenean"
+
+msgid "New order status"
+msgstr "Eskaeraren egoera berria"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Itzulketak ez dira inoiz automatikoak: itzuli eskaeraren dirua WooCommercen berrikusi ondoren."
+
+msgid "Save settings"
+msgstr "Gorde ezarpenak"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Eskaera baliogabea (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Ez da eskaera aurkitu."
+
+msgid "No tienes permiso para esta acción."
+msgstr "Ez duzu ekintza hau egiteko baimenik."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "Dagoeneko egin duzu atzera eskaera honetan."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Eskaera honek ez du atzera egiteko aukerarik."
+
+msgid "Error desconocido."
+msgstr "Errore ezezaguna."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Bezeroak atzera egin du. Eskaeraren IDa: %1$d. Arrazoia: %2$s"
+
+msgid "Not provided"
+msgstr "Adierazi gabe"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Egoera automatikoki aldatu da atzera egiteko eskaera baten ondorioz."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "Zure atzera egiteko eskaera behar bezala erregistratu da. Laster jasoko duzu berrespena posta elektronikoz."
@@ -17,36 +363,68 @@ msgstr "Berariaz eskatzen dut eduki digitalerako berehalako sarbidea eta onartze
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "Eduki digitalari buruzko baldintzak onartu behar dituzu zure eskaera osatzeko."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Atzera egitearen berrespena - {order_id} eskaera"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Atzera egitea] {order_id} eskaera - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Lege-oinarria: 2011/83/EB Zuzentarauaren 11 bis artikulua, (EB) 2023/2673 Zuzentarauak txertatua"
+
+msgid "Desistimiento del contrato"
+msgstr "Kontratuari uko egitea"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Eskaera honi uko egin nahi badiozu, linean egin dezakezu:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button-ek WooCommerce aktibo egotea behar du."
 
-msgid "My withdrawals"
-msgstr "Nire atzerakadak"
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Atzera egitea onartua] {order_id} eskaera"
 
-msgid "You have no withdrawal requests registered."
-msgstr "Ez duzu atzera egiteko eskaera erregistraturik."
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Atzera egitea baztertua] {order_id} eskaera"
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Atzera egiteko epea: %d egun geratzen dira"
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Atzera egitea osatua] {order_id} eskaera"
 
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Atzera egitea] {order_id} eskaera"
 
-msgid "— Standard (subject to withdrawal right) —"
-msgstr "— Estandarra (atzera egiteko eskubidea aplikatzen da) —"
+msgid "Confirmar desistimiento"
+msgstr "Atzerapena berretsi"
 
-msgid "Excluded — Art. 16 exception (no withdrawal right)"
-msgstr "Baztertua — 16. art. salbuespena (atzera egiteko eskubiderik ez)"
+msgid "Cancelar"
+msgstr "Utzi"
 
-msgid "Digital content — requires consent at checkout (Art. 16m)"
-msgstr "Eduki digitala — adostasuna behar da ordaintzean (16m art.)"
+msgid "Cerrar"
+msgstr "Itxi"
 
-msgid "Withdrawal status"
-msgstr "Atzera egitearen egoera"
+msgid "Procesando..."
+msgstr "Prozesatzen..."
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Produktu honentzako atzera egiteko eskubidea nola aplikatzen den kontrolatzen du. \"Estandarra\" ezarpen orokorrak jarraitzen ditu. \"Baztertua\" botoia ezkutatzen du produktu hau duten eskaeretan. \"Eduki digitala\" nahitaezko laukitxoa erakusten du ordaintzean."
+msgid "Desistimiento ejercido"
+msgstr "Atzerapena gauzatua"
+
+msgid "Error de conexión."
+msgstr "Konexio errorea."
 
 msgid "Model withdrawal form (Annex I.B)"
 msgstr "Atzera egiteko eredu-formularioa (I.B eranskina)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "Atzera egiteko epea eskaera jasotzen duzunean hasten da."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "%s arte egin dezakezu atzera."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Atzera egitea behar bezala gauzatu da"
+
+msgid "Request ref."
+msgstr "Eskaeraren erref."
 
 msgid "EU Directive 2011/83/UE"
 msgstr "EBko 2011/83/EB Zuzentaraua"
@@ -69,37 +447,210 @@ msgstr "Kontsumitzaile(en) izena:"
 msgid "Address of consumer(s):"
 msgstr "Kontsumitzaile(en) helbidea:"
 
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Kontsumitzailearen edo kontsumitzaileen sinadura (formulario hau paperean aurkezten bada soilik):"
+
+msgid "Date:"
+msgstr "Data:"
+
 msgid "(*) Delete as appropriate."
 msgstr "(*) Ezabatu dagokiona."
 
 msgid "Print this form"
 msgstr "Inprimatu formulario hau"
 
+msgid "My withdrawal requests"
+msgstr "Atzera egiteko nire eskaerak"
+
+msgid "My withdrawals"
+msgstr "Nire atzerakadak"
+
+msgid "You have no withdrawal requests registered."
+msgstr "Ez duzu atzera egiteko eskaera erregistraturik."
+
+msgid "Pending"
+msgstr "Zain"
+
+msgid "Approved"
+msgstr "Onartua"
+
+msgid "Rejected"
+msgstr "Baztertua"
+
+msgid "Completed"
+msgstr "Osatua"
+
+msgid "We could not find an order with those details."
+msgstr "Ez dugu datu horiekin bat datorren eskaerarik aurkitu."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "Eskaera honen atzera egiteko epea amaitu da (14 egun natural)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Dagoeneko erabili duzu atzera egiteko eskubidea eskaera honetan."
+
+msgid "An error occurred. Please try again."
+msgstr "Errore bat gertatu da. Saiatu berriro."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Erabili atzera egiteko eskubidea"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Idatzi eskaera-zenbakia eta helbide elektronikoa atzera egin dezakezun egiaztatzeko."
+
+msgid "Order number"
+msgstr "Eskaera-zenbakia"
+
+msgid "Email address used to purchase"
+msgstr "Erosketan erabilitako helbide elektronikoa"
+
+msgid "Check my order"
+msgstr "Egiaztatu nire eskaera"
+
+msgid "Pedido #%s verificado."
+msgstr "%s. eskaera egiaztatu da."
+
+msgid "Total"
+msgstr "Guztira"
+
+msgid "Check a different order"
+msgstr "Egiaztatu beste eskaera bat"
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Estandarra (atzera egiteko eskubidea aplikatzen da) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Baztertua — 16. art. salbuespena (atzera egiteko eskubiderik ez)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Eduki digitala — adostasuna behar da ordaintzean (16m art.)"
+
+msgid "Withdrawal status"
+msgstr "Atzera egitearen egoera"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Produktu honi atzera egiteko eskubidea nola aplikatzen zaion zehazten du. «Estandarra»: pluginaren ezarpen orokorrak. «Baztertua» (16. artikuluko salbuespenak): eskaera bateko produktu guztiak baztertuta badaude, ez da atzera egiteko botoia erakusten eskaera horretan. «Eduki digitala»: ordaintzean nahitaezko baimen-laukia erakusten du."
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "Atzera egiteko eskaera berria"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "Atzera egiteko eskaera berri bat erregistratu da hemen: %s."
+
+msgid "Nº de solicitud"
+msgstr "Eskaera-zk."
+
+msgid "Pedido"
+msgstr "Eskaera"
+
+msgid "Cliente"
+msgstr "Bezeroa"
+
+msgid "Correo del cliente"
+msgstr "Bezeroaren posta"
+
+msgid "Teléfono"
+msgstr "Telefonoa"
+
+msgid "Importe del pedido"
+msgstr "Eskaeraren zenbatekoa"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "Eskaeraren data eta ordua"
+
+msgid "Motivo"
+msgstr "Arrazoia"
+
+msgid "No indicado"
+msgstr "Adierazi gabe"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Gogoratu: gehienez 14 egun naturaleko epean itzuli behar duzu dirua."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Ikusi eskaera WooCommercen"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Withdrawal Button Litek automatikoki sortua | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Atzera egiteko eskaera erregistratuta"
+
+msgid "Hola, %s:"
+msgstr "Kaixo, %s:"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "Atzera egiteko zure eskaera jaso dugu. Mezu hau zure hartu-agiria da, (EB) 2023/2673 Zuzentarauaren arabera."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "Eta orain zer?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "Gehienez 14 egun naturaleko epean itzuliko dizugu dirua, eskaera hau jasotzen denetik."
+
+msgid "Nombre"
+msgstr "Izena"
+
+msgid "Recibirás la confirmación en"
+msgstr "Berrespena hemen jasoko duzu:"
+
+msgid "Motivo indicado"
+msgstr "Adierazitako arrazoia"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Galderarik baduzu, erantzun mezu honi."
+
+msgid "Gracias por confiar en %s."
+msgstr "Eskerrik asko %s(e)n konfiantza izateagatik."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Mezu hau atzera egiteko zure eskaeraren hartu-agiria da."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "Atzera egiteko zure eskaera <strong>onartu</strong> da. Diru guztia gehienez <strong>14 egun naturaleko</strong> epean itzuliko dizugu."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "Atzera egiteko zure eskaera <strong>baztertu</strong> da. Galderarik baduzu, jarri gurekin harremanetan."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "Atzera egiteko zure eskaera <strong>osatu</strong> da. Dirua behar bezala itzuli da."
+
+msgid "Dear"
+msgstr "Kaixo"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "Atzera egiteko zure eskaeraren egoera eguneratu da."
+
+msgid "Request number"
+msgstr "Eskaera-zk."
+
+msgid "New status"
+msgstr "Egoera berria"
+
+msgid "Updated on"
+msgstr "Eguneratze-data"
+
+msgid "Admin note:"
+msgstr "Dendaren oharra:"
+
+msgid "Thank you for trusting %s."
+msgstr "Eskerrik asko %s(e)n konfiantza izateagatik."
+
+msgid "Automatic withdrawal request update."
+msgstr "Atzera egiteko zure eskaeraren eguneratze automatikoa."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Itxi atzerapenaren leihoa"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "EU 2023/2673 Zuzentarauaren arabera, kontratu honetatik 14 egun naturaleko epean atzera egiteko eskubidea duzu, justifikaziorik eman gabe."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "Kontratu honi uko egiteko eskubidea duzu, arrazoirik eman beharrik gabe."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Berrikusi zure datuak berretsi aurretik:"
+
+msgid "Motivo (opcional)"
+msgstr "Arrazoia (aukerakoa)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "Berrestean, harrera-agiria jasoko duzu posta elektronikoz eta gure taldeak gehienez 14 egun naturaleko epean tramitatu egingo du itzulketa."
 
-msgid "Cancelar"
-msgstr "Utzi"
-
-msgid "Confirmar desistimiento"
-msgstr "Atzerapena berretsi"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Atzerapena gauzatua"
-
-msgid "Cerrar"
-msgstr "Itxi"
-
-msgid "Error desconocido."
-msgstr "Errore ezezaguna."
-
-msgid "Error de conexión."
-msgstr "Konexio errorea."

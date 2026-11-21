@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - ar
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "ممارسة حق الانسحاب"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — المساعدة"
+
+msgid "What the law requires"
+msgstr "ما يشترطه القانون"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "تُطبَّق المادة 11 (أ) من التوجيه 2011/83/الاتحاد الأوروبي، المضافة بموجب التوجيه (الاتحاد الأوروبي) 2023/2673، اعتبارًا من 19 يونيو 2026 على العقود عن بُعد المبرمة عبر واجهة إلكترونية. يجب أن يوفّر المتجر وظيفة انسحاب:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "تحمل عبارة «الانسحاب من العقد هنا» أو صياغة مكافئة لا لبس فيها، وتُعرض بوضوح وتبقى متاحة طوال مدة الانسحاب؛"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "تتيح للمستهلك تقديم اسمه أو تأكيده، والعقد، والبريد الإلكتروني الذي سيُرسل إليه التأكيد؛"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "تطلب التأكيد عبر زر يحمل عبارة «تأكيد الانسحاب» أو ما يعادلها؛"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "ترسل إشعار استلام على وسيط دائم يتضمن محتوى الانسحاب وتاريخه ووقته."
+
+msgid "Where customers find the button"
+msgstr "أين يجد العملاء الزر"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "حسابي ← تفاصيل الطلب، وقسم طلبات الانسحاب الخاصة بي."
+
+msgid "The order received page, right after buying."
+msgstr "صفحة استلام الطلب، مباشرةً بعد الشراء."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "صفحة الانسحاب العامة للعملاء الذين لا يملكون حسابًا: يُدخلون رقم الطلب والبريد الإلكتروني."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "روابط إلى تلك الصفحة أسفل المتجر وفي رسائل الطلب من WooCommerce (اختياري)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "يختفي الزر عند انتهاء المدة، أو عندما تكون حالة الطلب مستبعدة، أو عندما تكون جميع منتجات الطلب مستبعدة."
+
+msgid "What happens when the customer withdraws"
+msgstr "ماذا يحدث عندما ينسحب العميل"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "تعرض نافذة الاسم والطلب والبريد الإلكتروني، ثم يؤكد العميل."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "يُحفظ الطلب ويظهر في الانسحاب ← الطلبات."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "يتلقى العميل إشعار الاستلام، ويتلقى المتجر تنبيهًا."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "لا يُسترد مبلغ الطلب تلقائيًا. راجِعه واسترد المبلغ في WooCommerce."
+
+msgid "Managing requests"
+msgstr "إدارة الطلبات"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "غيّر حالة كل طلب في الانسحاب ← الطلبات. إذا كانت رسائل الحالة مفعّلة، يتلقى العميل الحالة الجديدة وملاحظتك."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "يجب على التاجر رد المدفوعات المستلمة دون تأخير غير مبرر وفي موعد أقصاه 14 يومًا من إبلاغه بالانسحاب؛ وفي حالة السلع، يجوز له حجب المبلغ حتى يستلمها أو حتى يقدّم المستهلك ما يثبت إعادتها (المادة 13 من التوجيه 2011/83/الاتحاد الأوروبي)."
+
+msgid "Products without a right of withdrawal"
+msgstr "منتجات بلا حق انسحاب"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "في كل منتج، علامة التبويب عام، «حالة الانسحاب»: حدّد المنتجات المشمولة باستثناء من المادة 16 كمستبعدة، والمحتوى الرقمي كمستلزِم للموافقة عند الدفع. تعمل خانة الموافقة في صفحة الدفع الكلاسيكية وفي كتلة الدفع."
+
+msgid "Emails"
+msgstr "رسائل البريد الإلكتروني"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "تُرسَل الرسائل باسم المرسل وعنوانه المحددين في WooCommerce ← الإعدادات ← البريد الإلكتروني. لضمان التسليم، استخدم إضافة SMTP مع خادم بريد حقيقي."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "دعم النسخة المجانية: منتدى الدعم في WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "الانسحاب"
+
+msgid "Withdrawal requests"
+msgstr "طلبات الانسحاب"
+
+msgid "Requests"
+msgstr "الطلبات"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Help"
+msgstr "المساعدة"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: لا توجد صفحة انسحاب عامة."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "يحتاج العملاء الذين اشتروا دون حساب إلى صفحة يمكنهم الانسحاب منها في أي وقت خلال مدة الانسحاب (المادة 11 (أ)(1) من التوجيه 2011/83/الاتحاد الأوروبي)."
+
+msgid "Create the withdrawal page"
+msgstr "إنشاء صفحة الانسحاب"
+
+msgid "You do not have permission to do this."
+msgstr "ليست لديك صلاحية للقيام بذلك."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "هل يساعد Withdrawal Button متجرك؟ تقييم قصير على WordPress.org يساعد التجار الآخرين على العثور عليه."
+
+msgid "Leave a review on WordPress.org"
+msgstr "اترك تقييمًا على WordPress.org"
+
+msgid "Rate"
+msgstr "قيّم"
+
+msgid "Upgrade to Pro"
+msgstr "الترقية إلى Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "إشعار استلام بصيغة PDF مرفق برسالة العميل، وبصمة SHA-256 لكل طلب، وسجل رسائل بتوقيت دقيق، وتنبيهات لمكافحة الاحتيال، ومزامنة مع حالة الطلب."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "احصل على Pro — دفعة واحدة 39 €"
+
+msgid "The request could not be updated."
+msgstr "تعذّر تحديث الطلب."
+
+msgid "Request #%d updated."
+msgstr "تم تحديث الطلب رقم %d."
+
+msgid "The customer has been notified by email."
+msgstr "تم إبلاغ العميل بالبريد الإلكتروني."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "تعذّر إرسال الرسالة إلى العميل. تحقّق من إعدادات البريد."
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Ref."
+msgstr "المرجع"
+
+msgid "Order"
+msgstr "الطلب"
+
+msgid "Customer"
+msgstr "العميل"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Change status"
+msgstr "تغيير الحالة"
+
+msgid "No requests found."
+msgstr "لا توجد طلبات."
+
+msgid "New status for request #%d"
+msgstr "الحالة الجديدة للطلب رقم %d"
+
+msgid "Note for the customer (optional)"
+msgstr "ملاحظة للعميل (اختياري)"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "عند تغيير الحالة إلى مقبول أو مرفوض أو مكتمل، يتلقى العميل رسالة بالحالة الجديدة وملاحظتك."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "تم وضع علامة على طلب الانسحاب رقم %1$d بالحالة %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — الإعدادات"
+
+msgid "Settings saved."
+msgstr "تم حفظ الإعدادات."
+
+msgid "The withdrawal page has been created."
+msgstr "تم إنشاء صفحة الانسحاب."
+
+msgid "View page"
+msgstr "عرض الصفحة"
+
+msgid "The withdrawal page could not be created."
+msgstr "تعذّر إنشاء صفحة الانسحاب."
+
+msgid "Withdrawal period"
+msgstr "مدة الانسحاب"
+
+msgid "Withdrawal period (days)"
+msgstr "مدة الانسحاب (بالأيام)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "الحد الأدنى القانوني 14 يومًا تقويميًا. يمكنك منح مدة أطول."
+
+msgid "Grace days (optional)"
+msgstr "أيام إضافية (اختياري)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "أيام تُضاف إلى المدة القانونية."
+
+msgid "Start deadline from"
+msgstr "تبدأ المدة من"
+
+msgid "Delivery date (when order is completed)"
+msgstr "تاريخ التسليم (عند اكتمال الطلب)"
+
+msgid "Order date"
+msgstr "تاريخ الطلب"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "بالنسبة للسلع، تبدأ المدة عند استلام العميل لها (المادة 9(2)(ب) من التوجيه 2011/83/الاتحاد الأوروبي): ضع علامة مكتمل على الطلب عند تسليمه. وحتى ذلك الحين يبقى الزر متاحًا. استخدم تاريخ الطلب فقط إذا كنت تبيع خدمات أو محتوى رقميًا."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "عدم إظهار الزر للطلبات ذات هذه الحالات"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "لا تستبعد مكتمل: عادةً ما ينسحب العملاء بعد استلام الطلب."
+
+msgid "Where the button appears"
+msgstr "أين يظهر الزر"
+
+msgid "Button text"
+msgstr "نص الزر"
+
+msgid "Desistir del contrato aquí"
+msgstr "الانسحاب من العقد هنا"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "اتركه فارغًا لاستخدام عبارة التوجيه («الانسحاب من العقد هنا») مترجمةً إلى لغة المتجر."
+
+msgid "Public withdrawal page"
+msgstr "صفحة الانسحاب العامة"
+
+msgid "— None —"
+msgstr "— لا شيء —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "صفحة تحتوي على الرمز القصير [eu2673_withdrawal_form]. ينسحب منها العملاء الذين اشتروا دون حساب برقم الطلب والبريد الإلكتروني."
+
+msgid "Links to the withdrawal page"
+msgstr "روابط إلى صفحة الانسحاب"
+
+msgid "Show a link at the bottom of every page"
+msgstr "إظهار رابط أسفل كل صفحة"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "إضافة رابط إلى رسائل الطلب من WooCommerce المرسلة إلى العميل"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "يجب أن تُعرض وظيفة الانسحاب بوضوح وأن تبقى متاحة طوال مدة الانسحاب (المادة 11 (أ)(1))."
+
+msgid "Order received page"
+msgstr "صفحة استلام الطلب"
+
+msgid "Show the button on the order received page"
+msgstr "إظهار الزر في صفحة استلام الطلب"
+
+msgid "Show an optional reason field"
+msgstr "إظهار حقل اختياري للسبب"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "لا يُطلب من العميل أبدًا ذكر سبب؛ الحقل اختياري دائمًا."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "يُرسَل إشعار الاستلام دائمًا إلى العميل كما تشترط المادة 11 (أ)(4)."
+
+msgid "Customer email subject"
+msgstr "موضوع رسالة العميل"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "اتركه فارغًا للنص الافتراضي بلغة المتجر. يمكنك استخدام {order_id} و{customer_name}."
+
+msgid "Status updates"
+msgstr "تغييرات الحالة"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "إرسال رسالة إلى العميل عند تغيير حالة طلب"
+
+msgid "Store notification"
+msgstr "تنبيه المتجر"
+
+msgid "Email the store when a customer withdraws"
+msgstr "إرسال رسالة إلى المتجر عند انسحاب عميل"
+
+msgid "Admin email"
+msgstr "البريد الإلكتروني للمسؤول"
+
+msgid "Store email subject"
+msgstr "موضوع رسالة المتجر"
+
+msgid "Order status"
+msgstr "حالة الطلب"
+
+msgid "Change order status automatically"
+msgstr "تغيير حالة الطلب تلقائيًا"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "تغيير حالة الطلب عند انسحاب العميل"
+
+msgid "New order status"
+msgstr "الحالة الجديدة للطلب"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "لا يتم الاسترداد تلقائيًا أبدًا: استرد مبلغ الطلب في WooCommerce بعد مراجعته."
+
+msgid "Save settings"
+msgstr "حفظ الإعدادات"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "طلب غير صالح (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "لم يتم العثور على الطلب."
+
+msgid "No tienes permiso para esta acción."
+msgstr "ليس لديك صلاحية لهذا الإجراء."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "لقد مارست حق الانسحاب لهذا الطلب بالفعل."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "هذا الطلب غير مؤهل للانسحاب."
+
+msgid "Error desconocido."
+msgstr "خطأ غير معروف."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "مارس العميل حق الانسحاب. رقم الطلب: %1$d. السبب: %2$s"
+
+msgid "Not provided"
+msgstr "لم يُذكر"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "تم تغيير الحالة تلقائيًا بسبب طلب انسحاب."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "تم تسجيل طلب الانسحاب الخاص بك بنجاح. ستتلقى رسالة تأكيد بالبريد الإلكتروني قريبًا."
@@ -17,36 +363,68 @@ msgstr "أطلب صراحةً الوصول الفوري إلى المحتوى ا
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "يجب قبول شروط المحتوى الرقمي لإتمام طلبك."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "تأكيد الانسحاب - الطلب #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[انسحاب] الطلب #{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "الأساس القانوني: المادة 11 مكرر من التوجيه 2011/83/الاتحاد الأوروبي، المضافة بموجب التوجيه (الاتحاد الأوروبي) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "الانسحاب من العقد"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "إذا كنت ترغب في الانسحاب من هذا الطلب، يمكنك القيام بذلك عبر الإنترنت:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "يتطلب Withdrawal Button أن يكون WooCommerce نشطًا."
 
-msgid "My withdrawals"
-msgstr "طلبات الانسحاب الخاصة بي"
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[تمت الموافقة على الانسحاب] الطلب #{order_id}"
 
-msgid "You have no withdrawal requests registered."
-msgstr "ليس لديك طلبات انسحاب مسجلة."
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[تم رفض الانسحاب] الطلب #{order_id}"
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "الموعد النهائي للانسحاب: %d أيام متبقية"
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[اكتمل الانسحاب] الطلب #{order_id}"
 
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[انسحاب] الطلب #{order_id}"
 
-msgid "— Standard (subject to withdrawal right) —"
-msgstr "— قياسي (يخضع لحق الانسحاب) —"
+msgid "Confirmar desistimiento"
+msgstr "تأكيد الانسحاب"
 
-msgid "Excluded — Art. 16 exception (no withdrawal right)"
-msgstr "مستثنى — استثناء المادة 16 (لا يوجد حق انسحاب)"
+msgid "Cancelar"
+msgstr "إلغاء"
 
-msgid "Digital content — requires consent at checkout (Art. 16m)"
-msgstr "محتوى رقمي — يتطلب الموافقة عند الدفع (المادة 16م)"
+msgid "Cerrar"
+msgstr "إغلاق"
 
-msgid "Withdrawal status"
-msgstr "حالة الانسحاب"
+msgid "Procesando..."
+msgstr "جارٍ المعالجة..."
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "يتحكم في كيفية تطبيق حق الانسحاب على هذا المنتج. \"قياسي\" يتبع الإعدادات العامة. \"مستثنى\" يخفي الزر للطلبات التي تحتوي على هذا المنتج. \"محتوى رقمي\" يعرض مربع موافقة إلزامي عند الدفع."
+msgid "Desistimiento ejercido"
+msgstr "تم ممارسة الانسحاب"
+
+msgid "Error de conexión."
+msgstr "خطأ في الاتصال."
 
 msgid "Model withdrawal form (Annex I.B)"
 msgstr "نموذج الانسحاب (الملحق I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "تبدأ مدة الانسحاب عند استلامك الطلب."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "يمكنك الانسحاب حتى %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "تمت ممارسة حق الانسحاب بنجاح"
+
+msgid "Request ref."
+msgstr "مرجع الطلب"
 
 msgid "EU Directive 2011/83/UE"
 msgstr "توجيه الاتحاد الأوروبي 2011/83/UE"
@@ -69,8 +447,210 @@ msgstr "اسم المستهلك/المستهلكين:"
 msgid "Address of consumer(s):"
 msgstr "عنوان المستهلك/المستهلكين:"
 
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "توقيع المستهلك (المستهلكين) (فقط إذا قُدّم هذا النموذج على الورق):"
+
+msgid "Date:"
+msgstr "التاريخ:"
+
 msgid "(*) Delete as appropriate."
 msgstr "(*) احذف ما لا ينطبق."
 
 msgid "Print this form"
 msgstr "طباعة هذا النموذج"
+
+msgid "My withdrawal requests"
+msgstr "طلبات الانسحاب الخاصة بي"
+
+msgid "My withdrawals"
+msgstr "طلبات الانسحاب الخاصة بي"
+
+msgid "You have no withdrawal requests registered."
+msgstr "ليس لديك طلبات انسحاب مسجلة."
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Approved"
+msgstr "مقبول"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "We could not find an order with those details."
+msgstr "لم نعثر على طلب بهذه البيانات."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "انتهت مهلة الانسحاب لهذا الطلب (14 يومًا تقويميًا)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "لقد مارست حق الانسحاب لهذا الطلب بالفعل."
+
+msgid "An error occurred. Please try again."
+msgstr "حدث خطأ. يُرجى المحاولة مرة أخرى."
+
+msgid "Exercise your right of withdrawal"
+msgstr "مارس حقك في الانسحاب"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "أدخل رقم الطلب وعنوان بريدك الإلكتروني للتحقق من أهليتك."
+
+msgid "Order number"
+msgstr "رقم الطلب"
+
+msgid "Email address used to purchase"
+msgstr "البريد الإلكتروني المستخدم في الشراء"
+
+msgid "Check my order"
+msgstr "التحقق من طلبي"
+
+msgid "Pedido #%s verificado."
+msgstr "تم التحقق من الطلب رقم %s."
+
+msgid "Total"
+msgstr "الإجمالي"
+
+msgid "Check a different order"
+msgstr "التحقق من طلب آخر"
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— قياسي (يخضع لحق الانسحاب) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "مستثنى — استثناء المادة 16 (لا يوجد حق انسحاب)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "محتوى رقمي — يتطلب الموافقة عند الدفع (المادة 16م)"
+
+msgid "Withdrawal status"
+msgstr "حالة الانسحاب"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "يحدد كيفية تطبيق حق الانسحاب على هذا المنتج. «عادي» يتبع الإعدادات العامة للإضافة. «مستبعد» (استثناءات المادة 16): إذا كانت جميع منتجات الطلب مستبعدة، لا يظهر زر الانسحاب لذلك الطلب. «محتوى رقمي» يعرض خانة موافقة إلزامية عند الدفع."
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "طلب انسحاب جديد"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "تم تسجيل طلب انسحاب جديد في %s."
+
+msgid "Nº de solicitud"
+msgstr "رقم الطلب"
+
+msgid "Pedido"
+msgstr "الطلب"
+
+msgid "Cliente"
+msgstr "العميل"
+
+msgid "Correo del cliente"
+msgstr "البريد الإلكتروني للعميل"
+
+msgid "Teléfono"
+msgstr "الهاتف"
+
+msgid "Importe del pedido"
+msgstr "مبلغ الطلب"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "تاريخ ووقت الطلب"
+
+msgid "Motivo"
+msgstr "السبب"
+
+msgid "No indicado"
+msgstr "لم يُذكر"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "تذكير: يجب معالجة الاسترداد خلال 14 يومًا تقويميًا كحد أقصى."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "عرض الطلب في WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "تم إنشاؤه تلقائيًا بواسطة Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "تم تسجيل طلب الانسحاب"
+
+msgid "Hola, %s:"
+msgstr "مرحبًا %s،"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "لقد تلقينا طلب الانسحاب الخاص بك. هذه الرسالة هي إشعار الاستلام وفقًا للتوجيه (الاتحاد الأوروبي) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "ماذا بعد؟"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "سنعالج استرداد المبلغ خلال 14 يومًا تقويميًا كحد أقصى من تاريخ استلام هذا الطلب."
+
+msgid "Nombre"
+msgstr "الاسم"
+
+msgid "Recibirás la confirmación en"
+msgstr "ستتلقى التأكيد على"
+
+msgid "Motivo indicado"
+msgstr "السبب المذكور"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "إذا كانت لديك أي أسئلة، فقط قم بالرد على هذه الرسالة."
+
+msgid "Gracias por confiar en %s."
+msgstr "شكرًا لثقتك في %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "هذه الرسالة هي إشعار استلام طلب الانسحاب الخاص بك."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "تمت <strong>الموافقة</strong> على طلب الانسحاب الخاص بك. سنسترد المبلغ كاملًا خلال <strong>14 يومًا تقويميًا</strong> كحد أقصى."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "تم <strong>رفض</strong> طلب الانسحاب الخاص بك. إذا كانت لديك أي أسئلة، يُرجى التواصل معنا."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "<strong>اكتمل</strong> طلب الانسحاب الخاص بك. تمت معالجة الاسترداد بنجاح."
+
+msgid "Dear"
+msgstr "عزيزي/عزيزتي"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "تم تحديث حالة طلب الانسحاب الخاص بك."
+
+msgid "Request number"
+msgstr "رقم الطلب"
+
+msgid "New status"
+msgstr "الحالة الجديدة"
+
+msgid "Updated on"
+msgstr "تاريخ التحديث"
+
+msgid "Admin note:"
+msgstr "ملاحظة من المتجر:"
+
+msgid "Thank you for trusting %s."
+msgstr "شكرًا لثقتك في %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "تحديث تلقائي لطلب الانسحاب الخاص بك."
+
+msgid "Cerrar ventana de desistimiento"
+msgstr "إغلاق نافذة الانسحاب"
+
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "يحق لك الانسحاب من هذا العقد دون إبداء أي سبب."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "راجِع بياناتك قبل التأكيد:"
+
+msgid "Motivo (opcional)"
+msgstr "السبب (اختياري)"
+
+msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
+msgstr "عند التأكيد، ستتلقى رسالة إشعار بالاستلام عبر البريد الإلكتروني وسيعالج فريقنا استرداد المبلغ خلال 14 يومًا تقويميًا كحد أقصى."
+

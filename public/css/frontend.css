@@ -1,159 +1,83 @@
-/* Withdrawal Button Lite - Frontend Styles */
+/* EU2673 Withdrawal Button — estilos públicos */
 
-.wb-withdrawal-section {
-    background: #f8f9ff;
-    border: 1px solid #dde3f5;
-    border-left: 4px solid #2c3e7a;
-    border-radius: 0 8px 8px 0;
-    padding: 18px 22px;
-    margin: 24px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
+.wbdesist-section { margin: 16px 0; padding: 16px 0; }
+.wbdesist-btn.button, .eu2673-guest-submit,
+.wbdesist-btn {
+    background: #2c3e7a; color: #fff; border: 2px solid #2c3e7a; border-radius: 6px;
+    padding: 10px 20px; font-size: 15px; font-weight: 600; cursor: pointer; line-height: 1.4;
 }
+.wbdesist-btn:hover, .eu2673-guest-submit:hover { background: #1a2654; border-color: #1a2654; color: #fff; }
+.wbdesist-btn:focus-visible, .eu2673-guest-submit:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+.wbdesist-btn[disabled] { opacity: .65; cursor: default; }
+.wbdesist-note { margin: 8px 0 0; font-size: 13px; color: #555; }
 
-.wb-withdrawal-btn {
-    background: #2c3e7a !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 10px 20px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s ease, transform 0.1s ease;
-    text-decoration: none !important;
+.wbdesist-done { padding: 16px; background: #f0f7f4; border-left: 4px solid #1a6b4a; }
+.wbdesist-done p { margin: 0; font-size: 14px; color: #333; }
+.wbdesist-done .wbdesist-done-title { margin-bottom: 8px; font-weight: 600; color: #1a6b4a; }
+
+/* Ventana */
+.wbdesist-overlay {
+    position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,.6);
+    display: flex; align-items: center; justify-content: center; padding: 16px;
 }
-
-.wb-withdrawal-btn:hover {
-    background: #1a2654 !important;
-    transform: translateY(-1px);
+.wbdesist-overlay[hidden] { display: none; }
+.wbdesist-dialog {
+    background: #fff; color: #222; border-radius: 12px; width: 100%; max-width: 500px;
+    max-height: calc(100vh - 32px); overflow-y: auto; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.3);
 }
-
-.wb-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 99999;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    backdrop-filter: blur(3px);
-    animation: wbFadeIn 0.2s ease;
+.wbdesist-close {
+    position: absolute; top: 10px; right: 12px; background: none; border: 0; color: #fff;
+    font-size: 20px; line-height: 1; padding: 6px 8px; cursor: pointer;
 }
+.wbdesist-head { background: #2c3e7a; color: #fff; padding: 22px 48px 18px 24px; }
+.wbdesist-head h2 { margin: 0; font-size: 19px; color: #fff; }
+.wbdesist-head h2:focus { outline: none; }
+.wbdesist-body { padding: 18px 24px 8px; font-size: 14px; }
+.wbdesist-body p { margin: 0 0 10px; }
+.wbdesist-summary { margin: 0 0 14px; padding: 12px 14px; background: #f4f6fb; border-radius: 8px; }
+.wbdesist-summary dt { font-size: 12px; color: #555; margin: 0; }
+.wbdesist-summary dd { margin: 0 0 8px; font-weight: 600; word-break: break-word; }
+.wbdesist-summary dd:last-child { margin-bottom: 0; }
+.wbdesist-reason label { display: block; font-weight: 600; margin-bottom: 4px; }
+.wbdesist-reason textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 8px; }
+.wbdesist-refund { color: #555; font-size: 13px; }
+.wbdesist-msg { padding: 12px 14px; border-radius: 6px; margin: 10px 0; }
+.wbdesist-msg.is-ok { background: #e8f5e9; color: #1b5e20; }
+.wbdesist-msg.is-error { background: #ffebee; color: #b71c1c; }
+.wbdesist-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; padding: 8px 24px 20px; }
+.wbdesist-actions button { padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.wbdesist-cancel { background: #f0f0f0; color: #333; border: 1px solid #bbb; }
+.wbdesist-confirm { background: #2c3e7a; color: #fff; border: 2px solid #2c3e7a; }
+.wbdesist-actions button:focus-visible,
+.wbdesist-close:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
 
-@keyframes wbFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+/* Formulario modelo (anexo I.B) */
+.eu2673-annex-ib { margin-top: 20px; border: 1px solid #ddd; border-radius: 6px; }
+.eu2673-annex-ib summary { padding: 12px 16px; background: #f5f5f5; cursor: pointer; font-weight: 600; }
+.eu2673-annex-ref { font-size: 12px; color: #555; font-weight: 400; }
+.eu2673-annex-body { padding: 16px 20px 0; font-size: 14px; line-height: 1.6; }
+.eu2673-annex-note { font-size: 12px; color: #555; }
+.eu2673-annex-print { padding: 0 20px 16px; margin: 0; }
 
-.wb-modal {
-    background: #fff;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    animation: wbSlideUp 0.25s ease;
-    overflow: hidden;
-}
-
-@keyframes wbSlideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
-}
-
-.wb-modal-header {
-    background: #2c3e7a;
-    color: #fff;
-    padding: 24px 28px 20px;
-    text-align: center;
-}
-
-.wb-modal-header h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    border: none;
-}
-
-.wb-modal-body { padding: 22px 28px; }
-
-.wb-modal-info {
-    background: #f8f9ff;
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-bottom: 16px;
-}
-
-.wb-modal-info p {
-    margin: 0 0 8px;
-    font-size: 13px;
-    color: #555;
-    line-height: 1.5;
-}
-
-.wb-modal-info p:last-child { margin-bottom: 0; }
-
-.wb-message { padding: 12px 16px; border-radius: 6px; font-size: 14px; margin-top: 12px; }
-.wb-message.success { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
-.wb-message.error   { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
-
-.wb-modal-footer {
-    padding: 4px 28px 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.wb-btn { padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
-.wb-btn-secondary { background: #f0f0f0; color: #555; }
-.wb-btn-secondary:hover { background: #e0e0e0; }
-.wb-btn-primary { background: #2c3e7a; color: #fff; }
-.wb-btn-primary:hover { background: #1a2654; }
-.wb-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
-
-#wbdesist-overlay button:focus-visible {
-    outline: 3px solid #FFD24D !important;
-    outline-offset: 3px !important;
-}
+/* Formulario para compradores sin cuenta */
+.eu2673-guest-wrap { max-width: 520px; margin: 0 auto; }
+.eu2673-guest-box { background: #f8f9ff; border: 1px solid #dde; border-radius: 8px; padding: 24px 28px; }
+.eu2673-guest-box h2 { margin: 0 0 8px; font-size: 20px; }
+.eu2673-guest-field { margin-bottom: 16px; }
+.eu2673-guest-field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.eu2673-guest-field input { width: 100%; padding: 10px 12px; box-sizing: border-box; font-size: 15px; }
+.eu2673-guest-error { background: #ffebee; border-left: 4px solid #b71c1c; color: #b71c1c; padding: 12px 16px; margin-bottom: 16px; }
+.eu2673-guest-ok { background: #f0f7f4; border-left: 4px solid #1a6b4a; color: #1a6b4a; padding: 12px 16px; margin-bottom: 16px; font-weight: 600; }
+.eu2673-guest-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+.eu2673-guest-table th { text-align: left; font-weight: 400; color: #555; padding: 6px 8px 6px 0; width: 40%; }
+.eu2673-guest-table td { padding: 6px 0; font-weight: 600; }
 
 /* Mi cuenta */
-.wb-myaccount-withdrawals h2 { font-size: 18px; margin-bottom: 16px; }
-.wb-myaccount-empty { color: #666; font-size: 14px; padding: 20px 0; }
-.wb-myaccount-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.wb-myaccount-table th { background: #f8f9ff; padding: 10px 14px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #dde3f5; }
-.wb-myaccount-table td { padding: 12px 14px; border-bottom: 1px solid #eee; vertical-align: middle; }
-.wb-myaccount-table tr:last-child td { border-bottom: none; }
-.wb-myaccount-table a { color: #2c3e7a; font-weight: 600; text-decoration: none; }
+.wb-myaccount-status { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 13px; font-weight: 600; }
+.wb-myaccount-status--pending   { background: #fff3cd; color: #664d03; }
+.wb-myaccount-status--approved  { background: #d1e7dd; color: #0f5132; }
+.wb-myaccount-status--rejected  { background: #f8d7da; color: #842029; }
+.wb-myaccount-status--completed { background: #cff4fc; color: #055160; }
 
-.wb-myaccount-status { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
-.wb-myaccount-status--pending   { background: #fff8e1; color: #f39c12; }
-.wb-myaccount-status--approved  { background: #e8f5e9; color: #27ae60; }
-.wb-myaccount-status--rejected  { background: #ffebee; color: #e74c3c; }
-.wb-myaccount-status--completed { background: #e3f2fd; color: #2980b9; }
-
-@media (max-width: 480px) {
-    .wb-withdrawal-section { flex-direction: column; align-items: flex-start; }
-    .wb-withdrawal-btn { width: 100%; text-align: center; }
-    .wb-modal-footer { flex-direction: column-reverse; }
-    .wb-btn { width: 100%; text-align: center; }
-}
-
-@media (max-width: 600px) {
-    .wb-myaccount-table thead { display: none; }
-    .wb-myaccount-table td { display: block; padding: 8px 0; border-bottom: none; }
-    .wb-myaccount-table td::before { content: attr(data-title) ": "; font-weight: 600; color: #666; }
-    .wb-myaccount-table tr { display: block; border-bottom: 1px solid #eee; padding: 12px 0; }
-}
-
-/* Modal accessibility focus style */
-#wbdesist-overlay button:focus-visible {
-    outline: 3px solid #FFD24D !important;
-    outline-offset: 3px !important;
-}
+.eu2673-footer-link a { text-decoration: underline; }
+.wbdesist-confirm[aria-disabled="true"] { opacity: .7; cursor: progress; }

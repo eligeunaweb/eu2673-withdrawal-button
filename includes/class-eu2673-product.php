@@ -37,7 +37,7 @@ class EU2673_Product {
             'value'       => $value,
             'options'     => self::get_options(),
             'desc_tip'    => true,
-            'description' => __( 'Controls how the withdrawal right applies to this product. "Standard" follows the general plugin settings. "Excluded" hides the withdrawal button for orders containing this product. "Digital content" shows a mandatory consent checkbox at checkout.', 'eu2673-withdrawal-button' ),
+            'description' => __( 'Controls how the withdrawal right applies to this product. "Standard" follows the general plugin settings. "Excluded" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. "Digital content" shows a mandatory consent checkbox at checkout.', 'eu2673-withdrawal-button' ),
         ] );
         echo '</div>';
     }
@@ -50,7 +50,7 @@ class EU2673_Product {
             return;
         }
         $value = sanitize_text_field( wp_unslash( $_POST['_eu2673_withdrawal_status'] ?? '' ) );
-        update_post_meta( $product_id, '_eu2673_withdrawal_status', $value );
+        update_post_meta( $product_id, '_eu2673_withdrawal_status', in_array( $value, [ 'excluded', 'consent' ], true ) ? $value : '' );
     }
 
     /**
@@ -58,21 +58,5 @@ class EU2673_Product {
      */
     public static function get_product_status( int $product_id ): string {
         return get_post_meta( $product_id, '_eu2673_withdrawal_status', true ) ?: '';
-    }
-
-    /**
-     * Comprueba si un carrito/pedido tiene productos excluidos o que requieren consentimiento.
-     * Devuelve: '' | 'excluded' | 'consent'
-     */
-    public static function get_cart_withdrawal_status(): string {
-        if ( ! WC()->cart ) return '';
-        $status = '';
-        foreach ( WC()->cart->get_cart() as $item ) {
-            $product_id     = (int) ( $item['product_id'] ?? 0 );
-            $product_status = self::get_product_status( $product_id );
-            if ( $product_status === 'excluded' ) return 'excluded';
-            if ( $product_status === 'consent' )  $status = 'consent';
-        }
-        return $status;
     }
 }

@@ -2,10 +2,11 @@
 defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 $site_name = get_bloginfo( 'name' );
-$order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
+// $order_url llega desde EU2673_Emails::send_admin_email() (compatible con HPOS).
+$order_url = $order_url ?? $order->get_edit_order_url();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo esc_attr( get_bloginfo( 'language' ) ); ?>">
 <head>
 <meta charset="UTF-8">
 <style>
@@ -23,23 +24,33 @@ $order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
 </head>
 <body>
 <div class="container">
-  <div class="header"><h1>⚠ Nueva solicitud de desistimiento</h1></div>
+  <div class="header"><h1>⚠ <?php esc_html_e( 'Nueva solicitud de desistimiento', 'eu2673-withdrawal-button' ); ?></h1></div>
   <div class="body">
-    <p>Se ha registrado una nueva solicitud de desistimiento en <strong><?php echo esc_html( $site_name ); ?></strong>.</p>
+    <p><?php
+    printf(
+        /* translators: %s: store name */
+        esc_html__( 'Se ha registrado una nueva solicitud de desistimiento en %s.', 'eu2673-withdrawal-button' ),
+        '<strong>' . esc_html( $site_name ) . '</strong>'
+    ); ?></p>
     <table class="info-table">
-      <tr><td>Nº solicitud</td><td>#<?php echo esc_html( $request_id ); ?></td></tr>
-      <tr><td>Pedido</td><td>#<?php echo esc_html( $order->get_id() ); ?></td></tr>
-      <tr><td>Cliente</td><td><?php echo esc_html( $order->get_formatted_billing_full_name() ); ?></td></tr>
-      <tr><td>Email cliente</td><td><?php echo esc_html( $order->get_billing_email() ); ?></td></tr>
-      <tr><td>Teléfono</td><td><?php echo esc_html( $order->get_billing_phone() ?: '—' ); ?></td></tr>
-      <tr><td>Importe pedido</td><td><?php echo wp_kses_post( $order->get_formatted_order_total() ); ?></td></tr>
-      <tr><td>Fecha solicitud</td><td><?php echo esc_html( current_time( 'j \d\e F \d\e Y, H:i' ) ); ?></td></tr>
-      <tr><td>Motivo</td><td><?php echo esc_html( $reason ?: 'No indicado' ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Nº de solicitud', 'eu2673-withdrawal-button' ); ?></td><td>#<?php echo esc_html( $request_id ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Pedido', 'eu2673-withdrawal-button' ); ?></td><td>#<?php echo esc_html( $order->get_order_number() ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Cliente', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( $order->get_formatted_billing_full_name() ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Correo del cliente', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( $order->get_billing_email() ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Teléfono', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( $order->get_billing_phone() ?: '—' ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Importe del pedido', 'eu2673-withdrawal-button' ); ?></td><td><?php echo wp_kses_post( $order->get_formatted_order_total() ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Fecha y hora de la solicitud', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( EU2673_Core::format_datetime( $submitted_at ?? null ) ); ?></td></tr>
+      <tr><td><?php esc_html_e( 'Motivo', 'eu2673-withdrawal-button' ); ?></td><td><?php echo esc_html( $reason ?: __( 'No indicado', 'eu2673-withdrawal-button' ) ); ?></td></tr>
     </table>
-    <p><strong>Recuerda:</strong> debes procesar el reembolso en un máximo de <strong>14 días naturales</strong>.</p>
-    <table border="0" cellspacing="0" cellpadding="0" style="margin-top:16px;"><tr><td bgcolor="#1a1a2e" style="border-radius:6px;padding:12px 24px;"><a href="<?php echo esc_url( $order_url ); ?>" style="font-size:14px;font-family:Arial,sans-serif;color:#ffffff;text-decoration:none;font-weight:bold;display:inline-block;">Ver pedido en WooCommerce &rarr;</a></td></tr></table>
+    <p><?php esc_html_e( 'Recuerda: debes procesar el reembolso en un máximo de 14 días naturales.', 'eu2673-withdrawal-button' ); ?></p>
+    <table border="0" cellspacing="0" cellpadding="0" style="margin-top:16px;"><tr><td bgcolor="#1a1a2e" style="border-radius:6px;padding:12px 24px;"><a href="<?php echo esc_url( $order_url ); ?>" style="font-size:14px;font-family:Arial,sans-serif;color:#ffffff;text-decoration:none;font-weight:bold;display:inline-block;"><?php esc_html_e( 'Ver pedido en WooCommerce', 'eu2673-withdrawal-button' ); ?> &rarr;</a></td></tr></table>
   </div>
-  <div class="footer"><p>Generado automáticamente por Withdrawal Button Lite | <?php echo esc_html( $site_name ); ?></p></div>
+  <div class="footer"><p><?php
+    printf(
+        /* translators: %s: store name */
+        esc_html__( 'Generado automáticamente por Withdrawal Button Lite | %s', 'eu2673-withdrawal-button' ),
+        esc_html( $site_name )
+    ); ?></p></div>
 </div>
 </body>
 </html>

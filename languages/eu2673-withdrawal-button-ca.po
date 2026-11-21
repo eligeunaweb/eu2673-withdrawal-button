@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - ca
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Exercir el dret de desistiment"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Ajuda"
+
+msgid "What the law requires"
+msgstr "Què exigeix la llei"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "L’article 11 bis de la Directiva 2011/83/UE, introduït per la Directiva (UE) 2023/2673, s’aplica des del 19 de juny de 2026 als contractes a distància celebrats mitjançant una interfície en línia. La botiga ha d’oferir una funció de desistiment que:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "s’etiqueti amb l’expressió «desistir del contracte aquí» o una formulació inequívoca equivalent, es mostri de manera destacada i estigui disponible durant tot el termini de desistiment;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "permeti al consumidor proporcionar o confirmar el seu nom, el contracte i el correu electrònic on s’enviarà la confirmació;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "demani la confirmació amb un botó etiquetat «confirmar el desistiment» o equivalent;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "enviï un justificant de recepció en un suport durador amb el contingut, la data i l’hora del desistiment."
+
+msgid "Where customers find the button"
+msgstr "On troben el botó els clients"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "El meu compte → detall de la comanda, i la secció Els meus desistiments."
+
+msgid "The order received page, right after buying."
+msgstr "La pàgina de comanda rebuda, just després de comprar."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "La pàgina pública de desistiment, per a clients sense compte: hi introdueixen el número de comanda i el correu electrònic."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Enllaços a aquesta pàgina al peu de la botiga i als correus de comanda de WooCommerce (opcional)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "El botó desapareix quan acaba el termini, quan la comanda té un estat exclòs o quan tots els productes de la comanda estan marcats com a exclosos."
+
+msgid "What happens when the customer withdraws"
+msgstr "Què passa quan el client desisteix"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "Una finestra mostra el nom, la comanda i el correu electrònic, i el client confirma."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "La sol·licitud es desa i apareix a Desistiment → Sol·licituds."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "El client rep el justificant de recepció i la botiga rep un avís."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "La comanda no es reemborsa automàticament. Revisa-la i reemborsa-la a WooCommerce."
+
+msgid "Managing requests"
+msgstr "Gestió de sol·licituds"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Canvia l’estat de cada sol·licitud a Desistiment → Sol·licituds. Si els correus d’estat estan activats, el client rep el nou estat i la teva nota."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "El comerciant ha de reemborsar els pagaments rebuts sense demora indeguda i, com a màxim, en 14 dies des que se l’informa del desistiment; en el cas de béns, pot retenir el reemborsament fins que els hagi rebut o fins que el consumidor aporti prova d’haver-los retornat (art. 13 de la Directiva 2011/83/UE)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Productes sense dret de desistiment"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "A cada producte, pestanya General, «Estat de desistiment»: marca com a exclosos els productes coberts per una excepció de l’article 16 i el contingut digital com a subjecte a consentiment en el pagament. La casella de consentiment funciona tant al checkout clàssic com al bloc de checkout."
+
+msgid "Emails"
+msgstr "Correus"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "Els correus s’envien amb el nom i l’adreça de remitent configurats a WooCommerce → Configuració → Correus electrònics. Per a un lliurament fiable, fes servir un connector SMTP amb un servidor de correu real."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Suport de la versió gratuïta: el fòrum de suport de WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Desistiment"
+
+msgid "Withdrawal requests"
+msgstr "Sol·licituds de desistiment"
+
+msgid "Requests"
+msgstr "Sol·licituds"
+
+msgid "Settings"
+msgstr "Configuració"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: no hi ha cap pàgina pública de desistiment."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Els clients que van comprar sense compte necessiten una pàgina on puguin desistir en qualsevol moment del termini (art. 11 bis.1 de la Directiva 2011/83/UE)."
+
+msgid "Create the withdrawal page"
+msgstr "Crea la pàgina de desistiment"
+
+msgid "You do not have permission to do this."
+msgstr "No tens permís per fer això."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "T’ajuda Withdrawal Button? Una ressenya breu a WordPress.org ajuda altres botigues a trobar-lo."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Deixa una ressenya a WordPress.org"
+
+msgid "Rate"
+msgstr "Valora"
+
+msgid "Upgrade to Pro"
+msgstr "Passa a Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "Justificant de recepció en PDF adjunt al correu del client, hash SHA-256 de cada sol·licitud, registre de correus amb l’hora exacta, alertes antifrau i sincronització amb l’estat de la comanda."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Obtén Pro — pagament únic de 39 €"
+
+msgid "The request could not be updated."
+msgstr "No s’ha pogut actualitzar la sol·licitud."
+
+msgid "Request #%d updated."
+msgstr "S’ha actualitzat la sol·licitud núm. %d."
+
+msgid "The customer has been notified by email."
+msgstr "S’ha avisat el client per correu electrònic."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "No s’ha pogut enviar el correu al client. Revisa la configuració del correu."
+
+msgid "All"
+msgstr "Totes"
+
+msgid "Ref."
+msgstr "Ref."
+
+msgid "Order"
+msgstr "Comanda"
+
+msgid "Customer"
+msgstr "Client"
+
+msgid "Reason"
+msgstr "Motiu"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Status"
+msgstr "Estat"
+
+msgid "Change status"
+msgstr "Canvia l’estat"
+
+msgid "No requests found."
+msgstr "No hi ha sol·licituds."
+
+msgid "New status for request #%d"
+msgstr "Nou estat de la sol·licitud núm. %d"
+
+msgid "Note for the customer (optional)"
+msgstr "Nota per al client (opcional)"
+
+msgid "Update"
+msgstr "Actualitza"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "Quan canvies l’estat a Aprovada, Rebutjada o Completada, el client rep un correu amb el nou estat i la teva nota."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "Sol·licitud de desistiment núm. %1$d marcada com a %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Configuració"
+
+msgid "Settings saved."
+msgstr "S’ha desat la configuració."
+
+msgid "The withdrawal page has been created."
+msgstr "S’ha creat la pàgina de desistiment."
+
+msgid "View page"
+msgstr "Mostra la pàgina"
+
+msgid "The withdrawal page could not be created."
+msgstr "No s’ha pogut crear la pàgina de desistiment."
+
+msgid "Withdrawal period"
+msgstr "Termini de desistiment"
+
+msgid "Withdrawal period (days)"
+msgstr "Termini de desistiment (dies)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "El mínim legal són 14 dies naturals. En pots oferir més."
+
+msgid "Grace days (optional)"
+msgstr "Dies de cortesia (opcional)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Dies addicionals sobre el termini legal."
+
+msgid "Start deadline from"
+msgstr "El termini comença a comptar des de"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Data de lliurament (quan la comanda es completa)"
+
+msgid "Order date"
+msgstr "Data de la comanda"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "En els béns, el termini comença quan el client els rep (art. 9.2.b de la Directiva 2011/83/UE): marca la comanda com a Completada quan es lliuri. Fins aleshores el botó continua disponible. Fes servir la data de la comanda només si vens serveis o contingut digital."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "No mostris el botó en comandes amb aquests estats"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "No excloguis Completada: els clients solen desistir després de rebre la comanda."
+
+msgid "Where the button appears"
+msgstr "On apareix el botó"
+
+msgid "Button text"
+msgstr "Text del botó"
+
+msgid "Desistir del contrato aquí"
+msgstr "Desistir del contracte aquí"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Deixa-ho buit per fer servir l’expressió de la Directiva («desistir del contracte aquí»), traduïda a la llengua de la botiga."
+
+msgid "Public withdrawal page"
+msgstr "Pàgina pública de desistiment"
+
+msgid "— None —"
+msgstr "— Cap —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "Pàgina amb el codi curt [eu2673_withdrawal_form]. Els clients que van comprar sense compte hi desisteixen amb el número de comanda i el correu electrònic."
+
+msgid "Links to the withdrawal page"
+msgstr "Enllaços a la pàgina de desistiment"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Mostra un enllaç al final de totes les pàgines"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Afegeix un enllaç als correus de comanda de WooCommerce que rep el client"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "La funció de desistiment s’ha de mostrar de manera destacada i ha d’estar disponible durant tot el termini (art. 11 bis.1)."
+
+msgid "Order received page"
+msgstr "Pàgina de comanda rebuda"
+
+msgid "Show the button on the order received page"
+msgstr "Mostra el botó a la pàgina de comanda rebuda"
+
+msgid "Show an optional reason field"
+msgstr "Mostra un camp de motiu opcional"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "El client mai no ha de donar cap motiu; el camp sempre és opcional."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "El justificant de recepció s’envia sempre al client, tal com exigeix l’art. 11 bis.4."
+
+msgid "Customer email subject"
+msgstr "Assumpte del correu al client"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Deixa-ho buit per fer servir el text per defecte en la llengua de la botiga. Pots fer servir {order_id} i {customer_name}."
+
+msgid "Status updates"
+msgstr "Canvis d’estat"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "Envia un correu al client quan canviïs l’estat d’una sol·licitud"
+
+msgid "Store notification"
+msgstr "Avís a la botiga"
+
+msgid "Email the store when a customer withdraws"
+msgstr "Envia un correu a la botiga quan un client desisteix"
+
+msgid "Admin email"
+msgstr "Correu de l’administrador"
+
+msgid "Store email subject"
+msgstr "Assumpte del correu a la botiga"
+
+msgid "Order status"
+msgstr "Estat de la comanda"
+
+msgid "Change order status automatically"
+msgstr "Canvia l’estat de la comanda automàticament"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "Canvia l’estat de la comanda quan el client desisteix"
+
+msgid "New order status"
+msgstr "Nou estat de la comanda"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Els reemborsaments mai no són automàtics: reemborsa la comanda a WooCommerce quan l’hagis revisada."
+
+msgid "Save settings"
+msgstr "Desa la configuració"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Sol·licitud no vàlida (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "No s'ha trobat la comanda."
+
+msgid "No tienes permiso para esta acción."
+msgstr "No tens permís per a aquesta acció."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "Ja has exercit el desistiment per a aquesta comanda."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Aquesta comanda no admet desistiment."
+
+msgid "Error desconocido."
+msgstr "Error desconegut."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Desistiment exercit pel client. ID de la sol·licitud: %1$d. Motiu: %2$s"
+
+msgid "Not provided"
+msgstr "No indicat"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Estat canviat automàticament per una sol·licitud de desistiment."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "La vostra sol·licitud de desistiment s'ha registrat correctament. Rebreu un correu electrònic de confirmació en breu."
@@ -17,36 +363,68 @@ msgstr "Sol·licito expressament l'accés immediat al contingut digital i recone
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "Heu d'acceptar les condicions sobre contingut digital per completar la vostra comanda."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Confirmació de desistiment - Comanda núm. {order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Desistiment] Comanda núm. {order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Base legal: article 11 bis de la Directiva 2011/83/UE, introduït per la Directiva (UE) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Desistiment del contracte"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Si vols desistir d’aquesta comanda, ho pots fer en línia:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button requereix que WooCommerce estigui actiu."
 
-msgid "My withdrawals"
-msgstr "Els meus desistiments"
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Desistiment aprovat] Comanda núm. {order_id}"
 
-msgid "You have no withdrawal requests registered."
-msgstr "No teniu cap sol·licitud de desistiment registrada."
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Desistiment rebutjat] Comanda núm. {order_id}"
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Termini de desistiment: %d dies restants"
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Desistiment completat] Comanda núm. {order_id}"
 
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Desistiment] Comanda núm. {order_id}"
 
-msgid "— Standard (subject to withdrawal right) —"
-msgstr "— Estàndard (subjecte al dret de desistiment) —"
+msgid "Confirmar desistimiento"
+msgstr "Confirmar el desistiment"
 
-msgid "Excluded — Art. 16 exception (no withdrawal right)"
-msgstr "Exclòs — Excepció art. 16 (sense dret de desistiment)"
+msgid "Cancelar"
+msgstr "Cancel·lar"
 
-msgid "Digital content — requires consent at checkout (Art. 16m)"
-msgstr "Contingut digital — es requereix consentiment al checkout (art. 16m)"
+msgid "Cerrar"
+msgstr "Tancar"
 
-msgid "Withdrawal status"
-msgstr "Estat de desistiment"
+msgid "Procesando..."
+msgstr "S'està processant..."
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Controla com s'aplica el dret de desistiment a aquest producte. \"Estàndard\" segueix la configuració general. \"Exclòs\" amaga el botó per a les comandes amb aquest producte. \"Contingut digital\" mostra una casella obligatòria al checkout."
+msgid "Desistimiento ejercido"
+msgstr "Desistiment exercit"
+
+msgid "Error de conexión."
+msgstr "Error de connexió."
 
 msgid "Model withdrawal form (Annex I.B)"
 msgstr "Formulari model de desistiment (Annex I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "El termini de desistiment comença quan rebis la comanda."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "Pots desistir fins al %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Desistiment exercit correctament"
+
+msgid "Request ref."
+msgstr "Ref. de la sol·licitud"
 
 msgid "EU Directive 2011/83/UE"
 msgstr "Directiva UE 2011/83/UE"
@@ -69,37 +447,210 @@ msgstr "Nom del/s consumidor/s:"
 msgid "Address of consumer(s):"
 msgstr "Adreça del/s consumidor/s:"
 
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Signatura del consumidor o dels consumidors (només si aquest formulari es presenta en paper):"
+
+msgid "Date:"
+msgstr "Data:"
+
 msgid "(*) Delete as appropriate."
 msgstr "(*) Suprimiu el que no escaigui."
 
 msgid "Print this form"
 msgstr "Imprimiu aquest formulari"
 
+msgid "My withdrawal requests"
+msgstr "Les meves sol·licituds de desistiment"
+
+msgid "My withdrawals"
+msgstr "Els meus desistiments"
+
+msgid "You have no withdrawal requests registered."
+msgstr "No teniu cap sol·licitud de desistiment registrada."
+
+msgid "Pending"
+msgstr "Pendent"
+
+msgid "Approved"
+msgstr "Aprovada"
+
+msgid "Rejected"
+msgstr "Rebutjada"
+
+msgid "Completed"
+msgstr "Completada"
+
+msgid "We could not find an order with those details."
+msgstr "No hem trobat cap comanda amb aquestes dades."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "El termini de desistiment d'aquesta comanda ha vençut (14 dies naturals)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Ja has exercit el dret de desistiment per a aquesta comanda."
+
+msgid "An error occurred. Please try again."
+msgstr "S'ha produït un error. Torna-ho a provar."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Exerceix el teu dret de desistiment"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Introdueix el número de comanda i el correu electrònic per comprovar si pots desistir."
+
+msgid "Order number"
+msgstr "Número de comanda"
+
+msgid "Email address used to purchase"
+msgstr "Correu electrònic utilitzat en la compra"
+
+msgid "Check my order"
+msgstr "Comprovar la meva comanda"
+
+msgid "Pedido #%s verificado."
+msgstr "Comanda núm. %s verificada."
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Check a different order"
+msgstr "Comprovar una altra comanda"
+
+msgid "— Standard (subject to withdrawal right) —"
+msgstr "— Estàndard (subjecte al dret de desistiment) —"
+
+msgid "Excluded — Art. 16 exception (no withdrawal right)"
+msgstr "Exclòs — Excepció art. 16 (sense dret de desistiment)"
+
+msgid "Digital content — requires consent at checkout (Art. 16m)"
+msgstr "Contingut digital — es requereix consentiment al checkout (art. 16m)"
+
+msgid "Withdrawal status"
+msgstr "Estat de desistiment"
+
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Controla com s’aplica el dret de desistiment a aquest producte. «Estàndard» segueix la configuració general del connector. «Exclòs» (excepcions de l’art. 16): si tots els productes d’una comanda estan exclosos, no es mostra el botó de desistiment en aquella comanda. «Contingut digital» mostra una casella de consentiment obligatòria en el pagament."
+
+msgid "Nueva solicitud de desistimiento"
+msgstr "Nova sol·licitud de desistiment"
+
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "S'ha registrat una nova sol·licitud de desistiment a %s."
+
+msgid "Nº de solicitud"
+msgstr "Núm. de sol·licitud"
+
+msgid "Pedido"
+msgstr "Comanda"
+
+msgid "Cliente"
+msgstr "Client"
+
+msgid "Correo del cliente"
+msgstr "Correu del client"
+
+msgid "Teléfono"
+msgstr "Telèfon"
+
+msgid "Importe del pedido"
+msgstr "Import de la comanda"
+
+msgid "Fecha y hora de la solicitud"
+msgstr "Data i hora de la sol·licitud"
+
+msgid "Motivo"
+msgstr "Motiu"
+
+msgid "No indicado"
+msgstr "No indicat"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Recorda: has de processar el reemborsament en un màxim de 14 dies naturals."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Veure la comanda a WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Generat automàticament per Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Sol·licitud de desistiment registrada"
+
+msgid "Hola, %s:"
+msgstr "Hola, %s:"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "Hem rebut correctament la teva sol·licitud de desistiment. Aquest correu és el teu justificant de recepció d'acord amb la Directiva (UE) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "I ara què?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "Processarem el reemborsament en un termini màxim de 14 dies naturals des de la recepció d'aquesta sol·licitud."
+
+msgid "Nombre"
+msgstr "Nom"
+
+msgid "Recibirás la confirmación en"
+msgstr "Rebràs la confirmació a"
+
+msgid "Motivo indicado"
+msgstr "Motiu indicat"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Si tens cap pregunta, respon aquest correu."
+
+msgid "Gracias por confiar en %s."
+msgstr "Gràcies per confiar en %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Aquest correu és el justificant de recepció de la teva sol·licitud de desistiment."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "La teva sol·licitud de desistiment s'ha <strong>aprovat</strong>. Processarem el reemborsament íntegre en un termini màxim de <strong>14 dies naturals</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "La teva sol·licitud de desistiment s'ha <strong>rebutjat</strong>. Si tens cap pregunta, posa't en contacte amb nosaltres."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "La teva sol·licitud de desistiment s'ha <strong>completat</strong>. El reemborsament s'ha processat correctament."
+
+msgid "Dear"
+msgstr "Hola"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "L'estat de la teva sol·licitud de desistiment s'ha actualitzat."
+
+msgid "Request number"
+msgstr "Núm. de sol·licitud"
+
+msgid "New status"
+msgstr "Nou estat"
+
+msgid "Updated on"
+msgstr "Actualitzat el"
+
+msgid "Admin note:"
+msgstr "Nota de la botiga:"
+
+msgid "Thank you for trusting %s."
+msgstr "Gràcies per confiar en %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Actualització automàtica de la teva sol·licitud de desistiment."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Tancar la finestra de desistiment"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "D'acord amb la Directiva UE 2023/2673, teniu dret a desistir d'aquest contracte en un termini de 14 dies naturals sense necessitat de justificació."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "Tens dret a desistir d’aquest contracte sense haver d’indicar-ne el motiu."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Revisa les teves dades abans de confirmar:"
+
+msgid "Motivo (opcional)"
+msgstr "Motiu (opcional)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "En confirmar, rebreu un correu electrònic d'acusament de rebuda i el nostre equip processarà el reemborsament en un màxim de 14 dies naturals."
 
-msgid "Cancelar"
-msgstr "Cancel·lar"
-
-msgid "Confirmar desistimiento"
-msgstr "Confirmar el desistiment"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Desistiment exercit"
-
-msgid "Cerrar"
-msgstr "Tancar"
-
-msgid "Error desconocido."
-msgstr "Error desconegut."
-
-msgid "Error de conexión."
-msgstr "Error de connexió."

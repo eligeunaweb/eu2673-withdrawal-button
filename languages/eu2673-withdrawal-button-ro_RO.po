@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - ro_RO
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Exercitați dreptul de retragere"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Ajutor"
+
+msgid "What the law requires"
+msgstr "Ce cere legea"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "Articolul 11a din Directiva 2011/83/UE, introdus prin Directiva (UE) 2023/2673, se aplică de la 19 iunie 2026 contractelor la distanță încheiate prin intermediul unei interfețe online. Magazinul trebuie să ofere o funcție de retragere care:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "este etichetată cu mențiunea „retrageți-vă din contract aici” sau o formulare neechivocă echivalentă, este afișată vizibil și rămâne disponibilă pe toată perioada de retragere;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "permite consumatorului să furnizeze sau să confirme numele, contractul și adresa de e-mail la care va fi trimisă confirmarea;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "solicită confirmarea printr-un buton etichetat „confirmați retragerea” sau echivalent;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "trimite o confirmare de primire pe un suport durabil, cu conținutul, data și ora retragerii."
+
+msgid "Where customers find the button"
+msgstr "Unde găsesc clienții butonul"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "Contul meu → detaliile comenzii și secțiunea Retragerile mele."
+
+msgid "The order received page, right after buying."
+msgstr "Pagina de comandă primită, imediat după cumpărare."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "Pagina publică de retragere, pentru clienții fără cont: introduc numărul comenzii și adresa de e-mail."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Linkuri către această pagină în partea de jos a magazinului și în e-mailurile de comandă WooCommerce (opțional)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "Butonul dispare când expiră perioada, când comanda are un status exclus sau când toate produsele din comandă sunt marcate ca excluse."
+
+msgid "What happens when the customer withdraws"
+msgstr "Ce se întâmplă când clientul se retrage"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "O fereastră afișează numele, comanda și adresa de e-mail, iar clientul confirmă."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "Cererea este salvată și apare în Retragere → Cereri."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "Clientul primește confirmarea de primire; magazinul primește o notificare."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "Comanda nu este rambursată automat. Verificați-o și rambursați-o în WooCommerce."
+
+msgid "Managing requests"
+msgstr "Gestionarea cererilor"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Schimbați statusul fiecărei cereri în Retragere → Cereri. Dacă e-mailurile de status sunt activate, clientul primește noul status și nota dumneavoastră."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "Comerciantul trebuie să ramburseze plățile primite fără întârzieri nejustificate și cel târziu în 14 zile de la data la care este informat despre retragere; pentru bunuri, poate amâna rambursarea până când le primește înapoi sau până când consumatorul face dovada expedierii lor (art. 13 din Directiva 2011/83/UE)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Produse fără drept de retragere"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "În fiecare produs, fila General, „Statusul retragerii”: marcați ca excluse produsele care intră sub incidența unei excepții de la articolul 16, iar conținutul digital ca necesitând consimțământ la finalizarea comenzii. Caseta de consimțământ funcționează atât în checkout-ul clasic, cât și în blocul de checkout."
+
+msgid "Emails"
+msgstr "E-mailuri"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "E-mailurile sunt trimise cu numele și adresa expeditorului configurate în WooCommerce → Setări → E-mailuri. Pentru o livrare fiabilă, folosiți un plugin SMTP cu un server de e-mail real."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Asistență pentru versiunea gratuită: forumul de asistență WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Retragere"
+
+msgid "Withdrawal requests"
+msgstr "Cereri de retragere"
+
+msgid "Requests"
+msgstr "Cereri"
+
+msgid "Settings"
+msgstr "Setări"
+
+msgid "Help"
+msgstr "Ajutor"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: nu există o pagină publică de retragere."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Clienții care au cumpărat fără cont au nevoie de o pagină în care să se poată retrage oricând în perioada de retragere (art. 11a alin. (1) din Directiva 2011/83/UE)."
+
+msgid "Create the withdrawal page"
+msgstr "Creați pagina de retragere"
+
+msgid "You do not have permission to do this."
+msgstr "Nu aveți permisiunea să faceți acest lucru."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Withdrawal Button vă ajută magazinul? O scurtă recenzie pe WordPress.org îi ajută pe alți comercianți să-l găsească."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Lăsați o recenzie pe WordPress.org"
+
+msgid "Rate"
+msgstr "Evaluați"
+
+msgid "Upgrade to Pro"
+msgstr "Treceți la Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "Confirmare de primire în PDF atașată la e-mailul clientului, hash SHA-256 pentru fiecare cerere, jurnal de e-mailuri cu ora exactă, alerte antifraudă și sincronizare cu statusul comenzii."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Obțineți Pro — plată unică de 39 €"
+
+msgid "The request could not be updated."
+msgstr "Cererea nu a putut fi actualizată."
+
+msgid "Request #%d updated."
+msgstr "Cererea nr. %d a fost actualizată."
+
+msgid "The customer has been notified by email."
+msgstr "Clientul a fost anunțat prin e-mail."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "E-mailul către client nu a putut fi trimis. Verificați setările de e-mail."
+
+msgid "All"
+msgstr "Toate"
+
+msgid "Ref."
+msgstr "Ref."
+
+msgid "Order"
+msgstr "Comandă"
+
+msgid "Customer"
+msgstr "Client"
+
+msgid "Reason"
+msgstr "Motiv"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Status"
+msgstr "Stare"
+
+msgid "Change status"
+msgstr "Schimbați statusul"
+
+msgid "No requests found."
+msgstr "Nu s-au găsit cereri."
+
+msgid "New status for request #%d"
+msgstr "Status nou pentru cererea nr. %d"
+
+msgid "Note for the customer (optional)"
+msgstr "Notă pentru client (opțional)"
+
+msgid "Update"
+msgstr "Actualizați"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "Când schimbați statusul în Aprobată, Respinsă sau Finalizată, clientul primește un e-mail cu noul status și nota dumneavoastră."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "Cererea de retragere nr. %1$d a fost marcată ca %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Setări"
+
+msgid "Settings saved."
+msgstr "Setările au fost salvate."
+
+msgid "The withdrawal page has been created."
+msgstr "Pagina de retragere a fost creată."
+
+msgid "View page"
+msgstr "Vedeți pagina"
+
+msgid "The withdrawal page could not be created."
+msgstr "Pagina de retragere nu a putut fi creată."
+
+msgid "Withdrawal period"
+msgstr "Perioada de retragere"
+
+msgid "Withdrawal period (days)"
+msgstr "Perioada de retragere (zile)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "Minimul legal este de 14 zile calendaristice. Puteți oferi mai mult."
+
+msgid "Grace days (optional)"
+msgstr "Zile suplimentare (opțional)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Zile adăugate la termenul legal."
+
+msgid "Start deadline from"
+msgstr "Termenul începe de la"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Data livrării (când comanda este finalizată)"
+
+msgid "Order date"
+msgstr "Data comenzii"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "Pentru bunuri, perioada începe când clientul le primește [art. 9 alin. (2) lit. (b) din Directiva 2011/83/UE]: marcați comanda ca Finalizată la livrare. Până atunci butonul rămâne disponibil. Folosiți data comenzii doar dacă vindeți servicii sau conținut digital."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "Nu afișați butonul pentru comenzile cu aceste statusuri"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "Nu excludeți Finalizată: clienții se retrag de obicei după ce primesc comanda."
+
+msgid "Where the button appears"
+msgstr "Unde apare butonul"
+
+msgid "Button text"
+msgstr "Textul butonului"
+
+msgid "Desistir del contrato aquí"
+msgstr "Retrageți-vă din contract aici"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Lăsați gol pentru a folosi formularea din directivă („retrageți-vă din contract aici”), tradusă în limba magazinului."
+
+msgid "Public withdrawal page"
+msgstr "Pagina publică de retragere"
+
+msgid "— None —"
+msgstr "— Niciuna —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "Pagina cu shortcode-ul [eu2673_withdrawal_form]. Clienții care au cumpărat fără cont se retrag aici cu numărul comenzii și adresa de e-mail."
+
+msgid "Links to the withdrawal page"
+msgstr "Linkuri către pagina de retragere"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Afișați un link în partea de jos a fiecărei pagini"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Adăugați un link în e-mailurile de comandă WooCommerce trimise clientului"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "Funcția de retragere trebuie să fie afișată vizibil și disponibilă pe toată perioada de retragere [art. 11a alin. (1)]."
+
+msgid "Order received page"
+msgstr "Pagina de comandă primită"
+
+msgid "Show the button on the order received page"
+msgstr "Afișați butonul pe pagina de comandă primită"
+
+msgid "Show an optional reason field"
+msgstr "Afișați un câmp opțional pentru motiv"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "Clientul nu trebuie niciodată să indice un motiv; câmpul este întotdeauna opțional."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "Confirmarea de primire este trimisă întotdeauna clientului, conform art. 11a alin. (4)."
+
+msgid "Customer email subject"
+msgstr "Subiectul e-mailului către client"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Lăsați gol pentru textul implicit în limba magazinului. Puteți folosi {order_id} și {customer_name}."
+
+msgid "Status updates"
+msgstr "Schimbări de status"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "Trimiteți un e-mail clientului când schimbați statusul unei cereri"
+
+msgid "Store notification"
+msgstr "Notificare către magazin"
+
+msgid "Email the store when a customer withdraws"
+msgstr "Trimiteți un e-mail magazinului când un client se retrage"
+
+msgid "Admin email"
+msgstr "E-mailul administratorului"
+
+msgid "Store email subject"
+msgstr "Subiectul e-mailului către magazin"
+
+msgid "Order status"
+msgstr "Statusul comenzii"
+
+msgid "Change order status automatically"
+msgstr "Schimbați automat statusul comenzii"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "Schimbați statusul comenzii când clientul se retrage"
+
+msgid "New order status"
+msgstr "Statusul nou al comenzii"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Rambursările nu se fac niciodată automat: rambursați comanda în WooCommerce după ce ați verificat-o."
+
+msgid "Save settings"
+msgstr "Salvați setările"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Cerere invalidă (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Comanda nu a fost găsită."
+
+msgid "No tienes permiso para esta acción."
+msgstr "Nu aveți permisiunea pentru această acțiune."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "V-ați retras deja din această comandă."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Această comandă nu este eligibilă pentru retragere."
+
+msgid "Error desconocido."
+msgstr "Eroare necunoscută."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Retragere exercitată de client. ID cerere: %1$d. Motiv: %2$s"
+
+msgid "Not provided"
+msgstr "Nu a fost indicat"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Stare modificată automat din cauza unei cereri de retragere."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "Cererea dvs. de retragere a fost înregistrată corect. Veți primi în curând un e-mail de confirmare."
@@ -17,8 +363,104 @@ msgstr "Solicit în mod expres accesul imediat la conținutul digital și recuno
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "Trebuie să acceptați condițiile privind conținutul digital pentru a finaliza comanda."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Confirmarea retragerii - Comanda nr. {order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Retragere] Comanda nr. {order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Temei juridic: articolul 11a din Directiva 2011/83/UE, introdus prin Directiva (UE) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Retragerea din contract"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Dacă doriți să vă retrageți din această comandă, o puteți face online:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button necesită ca WooCommerce să fie activ."
+
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Retragere aprobată] Comanda nr. {order_id}"
+
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Retragere respinsă] Comanda nr. {order_id}"
+
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Retragere finalizată] Comanda nr. {order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Retragere] Comanda nr. {order_id}"
+
+msgid "Confirmar desistimiento"
+msgstr "Confirmați retragerea"
+
+msgid "Cancelar"
+msgstr "Anulați"
+
+msgid "Cerrar"
+msgstr "Închide"
+
+msgid "Procesando..."
+msgstr "Se procesează..."
+
+msgid "Desistimiento ejercido"
+msgstr "Retragere exercitată"
+
+msgid "Error de conexión."
+msgstr "Eroare de conexiune."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Formular model de retragere (Anexa I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "Perioada de retragere începe când primiți comanda."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "Vă puteți retrage până la %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Retragere exercitată cu succes"
+
+msgid "Request ref."
+msgstr "Ref. cerere"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "Directiva UE 2011/83/UE"
+
+msgid "To:"
+msgstr "Către:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Vă informez/vă informăm (*) prin prezenta cu privire la retragerea mea/noastră (*) din contractul referitor la vânzarea următoarelor bunuri (*)/prestarea următoarelor servicii (*)"
+
+msgid "Ordered on:"
+msgstr "Comandate la data (*)/primite la data (*):"
+
+msgid "Order number:"
+msgstr "Numărul comenzii:"
+
+msgid "Name of consumer(s):"
+msgstr "Numele consumatorului (consumatorilor):"
+
+msgid "Address of consumer(s):"
+msgstr "Adresa consumatorului (consumatorilor):"
+
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Semnătura consumatorului (consumatorilor) (doar în cazul în care acest formular este notificat pe hârtie):"
+
+msgid "Date:"
+msgstr "Data:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) A se elimina mențiunea inutilă, după caz."
+
+msgid "Print this form"
+msgstr "Tipăriți acest formular"
+
+msgid "My withdrawal requests"
+msgstr "Cererile mele de retragere"
 
 msgid "My withdrawals"
 msgstr "Retragerile mele"
@@ -26,9 +468,53 @@ msgstr "Retragerile mele"
 msgid "You have no withdrawal requests registered."
 msgstr "Nu aveți cereri de retragere înregistrate."
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Termen de retragere: %d zile rămase"
+msgid "Pending"
+msgstr "În așteptare"
 
+msgid "Approved"
+msgstr "Aprobată"
+
+msgid "Rejected"
+msgstr "Respinsă"
+
+msgid "Completed"
+msgstr "Finalizată"
+
+msgid "We could not find an order with those details."
+msgstr "Nu am găsit nicio comandă cu aceste date."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "Termenul de retragere pentru această comandă a expirat (14 zile calendaristice)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Ați exercitat deja dreptul de retragere pentru această comandă."
+
+msgid "An error occurred. Please try again."
+msgstr "A apărut o eroare. Încercați din nou."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Exercitați-vă dreptul de retragere"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Introduceți numărul comenzii și adresa de e-mail pentru a verifica dacă vă puteți retrage."
+
+msgid "Order number"
+msgstr "Numărul comenzii"
+
+msgid "Email address used to purchase"
+msgstr "Adresa de e-mail folosită la cumpărare"
+
+msgid "Check my order"
+msgstr "Verifică comanda mea"
+
+msgid "Pedido #%s verificado."
+msgstr "Comanda nr. %s a fost verificată."
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Check a different order"
+msgstr "Verifică altă comandă"
 
 msgid "— Standard (subject to withdrawal right) —"
 msgstr "— Standard (dreptul de retragere se aplică) —"
@@ -42,64 +528,129 @@ msgstr "Conținut digital — consimțământ necesar la finalizare (art. 16m)"
 msgid "Withdrawal status"
 msgstr "Stare retragere"
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Controlează cum se aplică dreptul de retragere pentru acest produs. \"Standard\" urmează setările generale. \"Exclus\" ascunde butonul pentru comenzile cu acest produs. \"Conținut digital\" afișează o casetă obligatorie la finalizare."
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Stabilește cum se aplică dreptul de retragere acestui produs. „Standard” urmează setările generale ale pluginului. „Exclus” (excepțiile de la art. 16): dacă toate produsele unei comenzi sunt excluse, butonul de retragere nu este afișat pentru acea comandă. „Conținut digital” afișează o casetă de consimțământ obligatorie la finalizarea comenzii."
 
-msgid "Model withdrawal form (Annex I.B)"
-msgstr "Formular model de retragere (Anexa I.B)"
+msgid "Nueva solicitud de desistimiento"
+msgstr "Cerere nouă de retragere"
 
-msgid "EU Directive 2011/83/UE"
-msgstr "Directiva UE 2011/83/UE"
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "A fost înregistrată o nouă cerere de retragere pe %s."
 
-msgid "To:"
-msgstr "Către:"
+msgid "Nº de solicitud"
+msgstr "Nr. cerere"
 
-msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
-msgstr "Prin prezenta eu/noi (*) vă notificăm retragerea mea/noastră (*) din contractul de vânzare a următoarelor bunuri (*)/pentru furnizarea următorului serviciu (*)"
+msgid "Pedido"
+msgstr "Comandă"
 
-msgid "Ordered on:"
-msgstr "Comandat la:"
+msgid "Cliente"
+msgstr "Client"
 
-msgid "Order number:"
-msgstr "Număr comandă:"
+msgid "Correo del cliente"
+msgstr "E-mailul clientului"
 
-msgid "Name of consumer(s):"
-msgstr "Numele consumatorului/consumatorilor:"
+msgid "Teléfono"
+msgstr "Telefon"
 
-msgid "Address of consumer(s):"
-msgstr "Adresa consumatorului/consumatorilor:"
+msgid "Importe del pedido"
+msgstr "Valoarea comenzii"
 
-msgid "(*) Delete as appropriate."
-msgstr "(*) Ștergeți mențiunea inutilă."
+msgid "Fecha y hora de la solicitud"
+msgstr "Data și ora cererii"
 
-msgid "Print this form"
-msgstr "Tipăriți acest formular"
+msgid "Motivo"
+msgstr "Motiv"
 
+msgid "No indicado"
+msgstr "Nu a fost indicat"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Rețineți: trebuie să efectuați rambursarea în cel mult 14 zile calendaristice."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Vezi comanda în WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Generat automat de Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Cerere de retragere înregistrată"
+
+msgid "Hola, %s:"
+msgstr "Bună ziua, %s,"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "Am primit cererea dvs. de retragere. Acest e-mail este confirmarea de primire conform Directivei (UE) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "Ce urmează?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "Vom efectua rambursarea în cel mult 14 zile calendaristice de la primirea acestei cereri."
+
+msgid "Nombre"
+msgstr "Nume"
+
+msgid "Recibirás la confirmación en"
+msgstr "Veți primi confirmarea la"
+
+msgid "Motivo indicado"
+msgstr "Motivul indicat"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Dacă aveți întrebări, răspundeți la acest e-mail."
+
+msgid "Gracias por confiar en %s."
+msgstr "Vă mulțumim pentru încrederea acordată %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Acest e-mail este confirmarea de primire a cererii dvs. de retragere."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "Cererea dvs. de retragere a fost <strong>aprobată</strong>. Vom rambursa suma integrală în cel mult <strong>14 zile calendaristice</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "Cererea dvs. de retragere a fost <strong>respinsă</strong>. Dacă aveți întrebări, contactați-ne."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "Cererea dvs. de retragere a fost <strong>finalizată</strong>. Rambursarea a fost efectuată."
+
+msgid "Dear"
+msgstr "Stimate/Stimată"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "Starea cererii dvs. de retragere a fost actualizată."
+
+msgid "Request number"
+msgstr "Nr. cerere"
+
+msgid "New status"
+msgstr "Stare nouă"
+
+msgid "Updated on"
+msgstr "Actualizat la"
+
+msgid "Admin note:"
+msgstr "Notă din partea magazinului:"
+
+msgid "Thank you for trusting %s."
+msgstr "Vă mulțumim pentru încrederea acordată %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Actualizare automată a cererii dvs. de retragere."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Închide fereastra de retragere"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "Conform Directivei UE 2023/2673, aveți dreptul de a vă retrage din acest contract în termen de 14 zile calendaristice fără a fi necesară nicio justificare."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "Aveți dreptul de a vă retrage din acest contract fără a indica motivul."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Verificați-vă datele înainte de a confirma:"
+
+msgid "Motivo (opcional)"
+msgstr "Motiv (opțional)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "La confirmare, veți primi un e-mail de confirmare și echipa noastră va procesa rambursarea în maximum 14 zile calendaristice."
 
-msgid "Cancelar"
-msgstr "Anulați"
-
-msgid "Confirmar desistimiento"
-msgstr "Confirmați retragerea"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Retragere exercitată"
-
-msgid "Cerrar"
-msgstr "Închide"
-
-msgid "Error desconocido."
-msgstr "Eroare necunoscută."
-
-msgid "Error de conexión."
-msgstr "Eroare de conexiune."

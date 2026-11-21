@@ -1,12 +1,358 @@
+# EU2673 Withdrawal Button - nl_NL
 msgid ""
 msgstr ""
-"Project-Id-Version: EU2673 Withdrawal Button\n"
+"Project-Id-Version: EU2673 Withdrawal Button 1.2.3\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Ejercer derecho de desistimiento"
-msgstr "Herroepingsrecht uitoefenen"
+msgid "Withdrawal Button — Help"
+msgstr "Withdrawal Button — Help"
+
+msgid "What the law requires"
+msgstr "Wat de wet vereist"
+
+msgid "Article 11a of Directive 2011/83/EU, added by Directive (EU) 2023/2673, applies from 19 June 2026 to distance contracts concluded through an online interface. The store must offer a withdrawal function that:"
+msgstr "Artikel 11 bis van Richtlijn 2011/83/EU, ingevoegd door Richtlijn (EU) 2023/2673, is vanaf 19 juni 2026 van toepassing op overeenkomsten op afstand die via een online-interface worden gesloten. De winkel moet een herroepingsfunctie bieden die:"
+
+msgid "is labelled \"withdraw from contract here\" or an equivalent unambiguous wording, and is prominently displayed and available throughout the withdrawal period;"
+msgstr "is aangeduid met de woorden „hier de overeenkomst herroepen” of een gelijkwaardige ondubbelzinnige formulering, duidelijk zichtbaar is en gedurende de hele herroepingstermijn beschikbaar blijft;"
+
+msgid "lets the consumer provide or confirm their name, the contract and the email where the confirmation will be sent;"
+msgstr "de consument in staat stelt zijn naam, de overeenkomst en het e-mailadres waarnaar de bevestiging wordt gestuurd op te geven of te bevestigen;"
+
+msgid "asks for confirmation with a button labelled \"confirm withdrawal\" or equivalent;"
+msgstr "om bevestiging vraagt met een knop die is aangeduid met „herroeping bevestigen” of een gelijkwaardige formulering;"
+
+msgid "sends an acknowledgement of receipt on a durable medium with the content, date and time of the withdrawal."
+msgstr "een ontvangstbevestiging op een duurzame gegevensdrager stuurt met de inhoud, datum en tijd van de herroeping."
+
+msgid "Where customers find the button"
+msgstr "Waar klanten de knop vinden"
+
+msgid "My account → order details, and the My withdrawals section."
+msgstr "Mijn account → bestelgegevens, en het onderdeel Mijn herroepingen."
+
+msgid "The order received page, right after buying."
+msgstr "De pagina Bestelling ontvangen, direct na de aankoop."
+
+msgid "The public withdrawal page, for customers without an account: they enter their order number and email."
+msgstr "De openbare herroepingspagina, voor klanten zonder account: zij vullen hun bestelnummer en e-mailadres in."
+
+msgid "Links to that page at the bottom of the store and in the WooCommerce order emails (optional)."
+msgstr "Links naar die pagina onderaan de winkel en in de bestelmails van WooCommerce (optioneel)."
+
+msgid "The button disappears when the period ends, when the order has an excluded status, or when every product in the order is marked as excluded."
+msgstr "De knop verdwijnt wanneer de termijn afloopt, wanneer de bestelling een uitgesloten status heeft of wanneer alle producten van de bestelling als uitgesloten zijn gemarkeerd."
+
+msgid "What happens when the customer withdraws"
+msgstr "Wat er gebeurt als de klant herroept"
+
+msgid "A window shows their name, order and email, and they confirm."
+msgstr "Een venster toont naam, bestelling en e-mailadres, en de klant bevestigt."
+
+msgid "The request is saved and appears in Withdrawal → Requests."
+msgstr "Het verzoek wordt opgeslagen en verschijnt onder Herroeping → Verzoeken."
+
+msgid "The customer receives the acknowledgement of receipt; the store receives a notification."
+msgstr "De klant ontvangt de ontvangstbevestiging; de winkel ontvangt een melding."
+
+msgid "The order is not refunded automatically. Check it and refund it in WooCommerce."
+msgstr "De bestelling wordt niet automatisch terugbetaald. Controleer haar en betaal haar terug in WooCommerce."
+
+msgid "Managing requests"
+msgstr "Verzoeken beheren"
+
+msgid "Change the status of each request in Withdrawal → Requests. If status emails are enabled, the customer receives the new status and your note."
+msgstr "Wijzig de status van elk verzoek onder Herroeping → Verzoeken. Als statusmails zijn ingeschakeld, ontvangt de klant de nieuwe status en uw notitie."
+
+msgid "The trader must refund the payments received without undue delay and no later than 14 days from the day it is informed of the withdrawal; for goods, it may withhold the refund until it has received them back or the consumer has supplied evidence of having sent them (Art. 13 of Directive 2011/83/EU)."
+msgstr "De handelaar moet de ontvangen betalingen zonder onredelijke vertraging en uiterlijk 14 dagen nadat hij van de herroeping op de hoogte is gesteld terugbetalen; bij goederen mag hij wachten tot hij ze heeft terugontvangen of tot de consument heeft aangetoond dat hij ze heeft teruggezonden (art. 13 van Richtlijn 2011/83/EU)."
+
+msgid "Products without a right of withdrawal"
+msgstr "Producten zonder herroepingsrecht"
+
+msgid "In each product, General tab, \"Withdrawal status\": mark products covered by an Article 16 exception as excluded, and digital content as requiring consent at checkout. The consent checkbox works in both the classic checkout and the checkout block."
+msgstr "In elk product, tabblad Algemeen, „Herroepingsstatus”: markeer producten waarvoor een uitzondering van artikel 16 geldt als uitgesloten, en digitale inhoud als toestemming vereist bij het afrekenen. Het toestemmingsvakje werkt in de klassieke checkout en in het checkout-blok."
+
+msgid "Emails"
+msgstr "E-mails"
+
+msgid "Emails are sent with the sender name and address configured in WooCommerce → Settings → Emails. For reliable delivery, use an SMTP plugin with a real mail server."
+msgstr "E-mails worden verzonden met de afzendernaam en het afzenderadres uit WooCommerce → Instellingen → E-mails. Gebruik voor betrouwbare bezorging een SMTP-plugin met een echte mailserver."
+
+msgid "Support for the free version: the WordPress.org support forum."
+msgstr "Ondersteuning voor de gratis versie: het ondersteuningsforum op WordPress.org."
+
+msgid "Withdrawal Button"
+msgstr "Withdrawal Button"
+
+msgid "Withdrawal"
+msgstr "Herroeping"
+
+msgid "Withdrawal requests"
+msgstr "Herroepingsverzoeken"
+
+msgid "Requests"
+msgstr "Verzoeken"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Withdrawal Button: there is no public withdrawal page."
+msgstr "Withdrawal Button: er is geen openbare herroepingspagina."
+
+msgid "Customers who bought without an account need a page where they can withdraw at any time during the withdrawal period (Art. 11a(1) of Directive 2011/83/EU)."
+msgstr "Klanten die zonder account hebben gekocht, hebben een pagina nodig waar ze op elk moment tijdens de herroepingstermijn kunnen herroepen (art. 11 bis, lid 1, van Richtlijn 2011/83/EU)."
+
+msgid "Create the withdrawal page"
+msgstr "Herroepingspagina aanmaken"
+
+msgid "You do not have permission to do this."
+msgstr "U hebt geen toestemming om dit te doen."
+
+msgid "Is Withdrawal Button helping your store? A short review on WordPress.org helps other merchants find it."
+msgstr "Helpt Withdrawal Button uw winkel? Een korte beoordeling op WordPress.org helpt andere handelaren het te vinden."
+
+msgid "Leave a review on WordPress.org"
+msgstr "Een beoordeling achterlaten op WordPress.org"
+
+msgid "Rate"
+msgstr "Beoordelen"
+
+msgid "Upgrade to Pro"
+msgstr "Upgraden naar Pro"
+
+msgid "Withdrawal Button Pro"
+msgstr "Withdrawal Button Pro"
+
+msgid "PDF acknowledgement attached to the customer email, SHA-256 hash of each request, email log with exact timestamps, anti-fraud alerts and order status sync."
+msgstr "PDF-ontvangstbevestiging als bijlage bij de klantmail, SHA-256-hash van elk verzoek, e-maillogboek met exacte tijden, fraudewaarschuwingen en synchronisatie met de bestelstatus."
+
+msgid "Get Pro — €39 one-time payment"
+msgstr "Pro aanschaffen — eenmalige betaling van € 39"
+
+msgid "The request could not be updated."
+msgstr "Het verzoek kon niet worden bijgewerkt."
+
+msgid "Request #%d updated."
+msgstr "Verzoek nr. %d bijgewerkt."
+
+msgid "The customer has been notified by email."
+msgstr "De klant is per e-mail op de hoogte gebracht."
+
+msgid "The email to the customer could not be sent. Check your mail settings."
+msgstr "De e-mail aan de klant kon niet worden verzonden. Controleer uw e-mailinstellingen."
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Ref."
+msgstr "Ref."
+
+msgid "Order"
+msgstr "Bestelling"
+
+msgid "Customer"
+msgstr "Klant"
+
+msgid "Reason"
+msgstr "Reden"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Change status"
+msgstr "Status wijzigen"
+
+msgid "No requests found."
+msgstr "Geen verzoeken gevonden."
+
+msgid "New status for request #%d"
+msgstr "Nieuwe status voor verzoek nr. %d"
+
+msgid "Note for the customer (optional)"
+msgstr "Notitie voor de klant (optioneel)"
+
+msgid "Update"
+msgstr "Bijwerken"
+
+msgid "When you change the status to Approved, Rejected or Completed, the customer receives an email with the new status and your note."
+msgstr "Wanneer u de status wijzigt in Goedgekeurd, Afgewezen of Afgerond, ontvangt de klant een e-mail met de nieuwe status en uw notitie."
+
+msgid "Withdrawal request #%1$d marked as %2$s."
+msgstr "Herroepingsverzoek nr. %1$d gemarkeerd als %2$s."
+
+msgid "Withdrawal Button — Settings"
+msgstr "Withdrawal Button — Instellingen"
+
+msgid "Settings saved."
+msgstr "Instellingen opgeslagen."
+
+msgid "The withdrawal page has been created."
+msgstr "De herroepingspagina is aangemaakt."
+
+msgid "View page"
+msgstr "Pagina bekijken"
+
+msgid "The withdrawal page could not be created."
+msgstr "De herroepingspagina kon niet worden aangemaakt."
+
+msgid "Withdrawal period"
+msgstr "Herroepingstermijn"
+
+msgid "Withdrawal period (days)"
+msgstr "Herroepingstermijn (dagen)"
+
+msgid "Legal minimum is 14 calendar days. You can offer more."
+msgstr "Het wettelijke minimum is 14 kalenderdagen. U kunt meer bieden."
+
+msgid "Grace days (optional)"
+msgstr "Extra dagen (optioneel)"
+
+msgid "Extra days on top of the legal deadline."
+msgstr "Extra dagen bovenop de wettelijke termijn."
+
+msgid "Start deadline from"
+msgstr "Termijn begint vanaf"
+
+msgid "Delivery date (when order is completed)"
+msgstr "Leverdatum (wanneer de bestelling is afgerond)"
+
+msgid "Order date"
+msgstr "Besteldatum"
+
+msgid "For goods, the period starts when the customer receives them (Art. 9(2)(b) of Directive 2011/83/EU): mark the order as Completed when it is delivered. Until then the button stays available. Use the order date only if you sell services or digital content."
+msgstr "Bij goederen begint de termijn wanneer de klant ze ontvangt (art. 9, lid 2, onder b, van Richtlijn 2011/83/EU): markeer de bestelling als Afgerond bij levering. Tot dan blijft de knop beschikbaar. Gebruik de besteldatum alleen als u diensten of digitale inhoud verkoopt."
+
+msgid "Do not show the button for orders with these statuses"
+msgstr "De knop niet tonen bij bestellingen met deze statussen"
+
+msgid "Do not exclude Completed: customers usually withdraw after receiving the order."
+msgstr "Sluit Afgerond niet uit: klanten herroepen meestal nadat ze de bestelling hebben ontvangen."
+
+msgid "Where the button appears"
+msgstr "Waar de knop verschijnt"
+
+msgid "Button text"
+msgstr "Tekst van de knop"
+
+msgid "Desistir del contrato aquí"
+msgstr "Hier de overeenkomst herroepen"
+
+msgid "Leave empty to use the wording of the Directive (\"withdraw from contract here\"), translated into the store language."
+msgstr "Leeg laten om de formulering van de richtlijn („hier de overeenkomst herroepen”) te gebruiken, vertaald in de taal van de winkel."
+
+msgid "Public withdrawal page"
+msgstr "Openbare herroepingspagina"
+
+msgid "— None —"
+msgstr "— Geen —"
+
+msgid "Page with the [eu2673_withdrawal_form] shortcode. Customers who bought without an account withdraw here with their order number and email."
+msgstr "Pagina met de shortcode [eu2673_withdrawal_form]. Klanten die zonder account hebben gekocht, herroepen hier met hun bestelnummer en e-mailadres."
+
+msgid "Links to the withdrawal page"
+msgstr "Links naar de herroepingspagina"
+
+msgid "Show a link at the bottom of every page"
+msgstr "Een link onderaan elke pagina tonen"
+
+msgid "Add a link to the WooCommerce order emails sent to the customer"
+msgstr "Een link toevoegen aan de bestelmails van WooCommerce aan de klant"
+
+msgid "The withdrawal function must be prominently displayed and available throughout the withdrawal period (Art. 11a(1))."
+msgstr "De herroepingsfunctie moet duidelijk zichtbaar en gedurende de hele herroepingstermijn beschikbaar zijn (art. 11 bis, lid 1)."
+
+msgid "Order received page"
+msgstr "Pagina Bestelling ontvangen"
+
+msgid "Show the button on the order received page"
+msgstr "De knop tonen op de pagina Bestelling ontvangen"
+
+msgid "Show an optional reason field"
+msgstr "Een optioneel veld voor de reden tonen"
+
+msgid "The customer never has to give a reason; the field is always optional."
+msgstr "De klant hoeft nooit een reden op te geven; het veld is altijd optioneel."
+
+msgid "The acknowledgement of receipt is always sent to the customer, as required by Art. 11a(4)."
+msgstr "De ontvangstbevestiging wordt altijd naar de klant gestuurd, zoals art. 11 bis, lid 4, vereist."
+
+msgid "Customer email subject"
+msgstr "Onderwerp van de klantmail"
+
+msgid "Leave empty for the default text in the store language. You can use {order_id} and {customer_name}."
+msgstr "Leeg laten voor de standaardtekst in de taal van de winkel. U kunt {order_id} en {customer_name} gebruiken."
+
+msgid "Status updates"
+msgstr "Statuswijzigingen"
+
+msgid "Email the customer when you change the status of a request"
+msgstr "De klant e-mailen wanneer u de status van een verzoek wijzigt"
+
+msgid "Store notification"
+msgstr "Melding aan de winkel"
+
+msgid "Email the store when a customer withdraws"
+msgstr "De winkel e-mailen wanneer een klant herroept"
+
+msgid "Admin email"
+msgstr "E-mailadres beheerder"
+
+msgid "Store email subject"
+msgstr "Onderwerp van de winkelmail"
+
+msgid "Order status"
+msgstr "Bestelstatus"
+
+msgid "Change order status automatically"
+msgstr "Bestelstatus automatisch wijzigen"
+
+msgid "Change the order status when the customer withdraws"
+msgstr "De bestelstatus wijzigen wanneer de klant herroept"
+
+msgid "New order status"
+msgstr "Nieuwe bestelstatus"
+
+msgid "Refunds are never made automatically: refund the order in WooCommerce once you have checked it."
+msgstr "Terugbetalingen gebeuren nooit automatisch: betaal de bestelling terug in WooCommerce nadat u haar hebt gecontroleerd."
+
+msgid "Save settings"
+msgstr "Instellingen opslaan"
+
+msgid "Solicitud no válida (nonce)."
+msgstr "Ongeldig verzoek (nonce)."
+
+msgid "Pedido no encontrado."
+msgstr "Bestelling niet gevonden."
+
+msgid "No tienes permiso para esta acción."
+msgstr "Je hebt geen toestemming voor deze actie."
+
+msgid "Ya has ejercido el desistimiento para este pedido."
+msgstr "Je hebt deze bestelling al herroepen."
+
+msgid "Este pedido no es elegible para desistimiento."
+msgstr "Deze bestelling komt niet in aanmerking voor herroeping."
+
+msgid "Error desconocido."
+msgstr "Onbekende fout."
+
+msgid "Withdrawal exercised by customer. Request ID: %1$d. Reason: %2$s"
+msgstr "Herroeping uitgeoefend door de klant. Aanvraag-ID: %1$d. Reden: %2$s"
+
+msgid "Not provided"
+msgstr "Niet opgegeven"
+
+msgid "Estado cambiado automáticamente por solicitud de desistimiento."
+msgstr "Status automatisch gewijzigd vanwege een herroepingsverzoek."
 
 msgid "Tu solicitud de desistimiento ha sido registrada correctamente. Recibirás un email de confirmación en breve."
 msgstr "Uw herroepingsverzoek is correct geregistreerd. U ontvangt binnenkort een bevestigingsmail."
@@ -17,8 +363,104 @@ msgstr "Ik verzoek uitdrukkelijk om onmiddellijke toegang tot de digitale inhoud
 msgid "Debes aceptar las condiciones sobre contenido digital para completar tu pedido."
 msgstr "U moet de voorwaarden voor digitale inhoud accepteren om uw bestelling te voltooien."
 
+msgid "Confirmación de desistimiento - Pedido #{order_id}"
+msgstr "Bevestiging van herroeping - Bestelling #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id} - {customer_name}"
+msgstr "[Herroeping] Bestelling #{order_id} - {customer_name}"
+
+msgid "Base legal: artículo 11 bis de la Directiva 2011/83/UE, introducido por la Directiva (UE) 2023/2673"
+msgstr "Rechtsgrond: artikel 11 bis van Richtlijn 2011/83/EU, ingevoegd bij Richtlijn (EU) 2023/2673"
+
+msgid "Desistimiento del contrato"
+msgstr "Herroeping van de overeenkomst"
+
+msgid "Si quieres desistir de este pedido, puedes hacerlo en línea:"
+msgstr "Als u deze bestelling wilt herroepen, kunt u dat online doen:"
+
 msgid "Withdrawal Button requires WooCommerce to be active."
 msgstr "Withdrawal Button vereist dat WooCommerce actief is."
+
+msgid "[Desistimiento aprobado] Pedido #{order_id}"
+msgstr "[Herroeping goedgekeurd] Bestelling #{order_id}"
+
+msgid "[Desistimiento rechazado] Pedido #{order_id}"
+msgstr "[Herroeping afgewezen] Bestelling #{order_id}"
+
+msgid "[Desistimiento completado] Pedido #{order_id}"
+msgstr "[Herroeping afgerond] Bestelling #{order_id}"
+
+msgid "[Desistimiento] Pedido #{order_id}"
+msgstr "[Herroeping] Bestelling #{order_id}"
+
+msgid "Confirmar desistimiento"
+msgstr "Herroeping bevestigen"
+
+msgid "Cancelar"
+msgstr "Annuleren"
+
+msgid "Cerrar"
+msgstr "Sluiten"
+
+msgid "Procesando..."
+msgstr "Bezig met verwerken..."
+
+msgid "Desistimiento ejercido"
+msgstr "Herroeping uitgeoefend"
+
+msgid "Error de conexión."
+msgstr "Verbindingsfout."
+
+msgid "Model withdrawal form (Annex I.B)"
+msgstr "Modelformulier voor herroeping (Bijlage I.B)"
+
+msgid "El plazo de desistimiento empieza cuando recibas el pedido."
+msgstr "De herroepingstermijn begint wanneer u de bestelling ontvangt."
+
+msgid "Puedes desistir hasta el %s."
+msgstr "U kunt herroepen tot en met %s."
+
+msgid "Withdrawal successfully exercised"
+msgstr "Herroeping met succes uitgeoefend"
+
+msgid "Request ref."
+msgstr "Ref. aanvraag"
+
+msgid "EU Directive 2011/83/UE"
+msgstr "EU-richtlijn 2011/83/EU"
+
+msgid "To:"
+msgstr "Aan:"
+
+msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
+msgstr "Ik/Wij (*) deel/delen (*) u hierbij mede dat ik/wij (*) onze overeenkomst betreffende de verkoop van de volgende goederen/levering van de volgende dienst (*) herroep/herroepen (*)"
+
+msgid "Ordered on:"
+msgstr "Besteld op (*)/ontvangen op (*):"
+
+msgid "Order number:"
+msgstr "Bestelnummer:"
+
+msgid "Name of consumer(s):"
+msgstr "Naam/namen consument(en):"
+
+msgid "Address of consumer(s):"
+msgstr "Adres consument(en):"
+
+msgid "Signature of consumer(s) (only if this form is notified on paper):"
+msgstr "Handtekening van consument(en) (alleen wanneer dit formulier op papier wordt ingediend):"
+
+msgid "Date:"
+msgstr "Datum:"
+
+msgid "(*) Delete as appropriate."
+msgstr "(*) Doorhalen wat niet van toepassing is."
+
+msgid "Print this form"
+msgstr "Dit formulier afdrukken"
+
+msgid "My withdrawal requests"
+msgstr "Mijn herroepingsverzoeken"
 
 msgid "My withdrawals"
 msgstr "Mijn herroepingen"
@@ -26,9 +468,53 @@ msgstr "Mijn herroepingen"
 msgid "You have no withdrawal requests registered."
 msgstr "U heeft geen geregistreerde herroepingsverzoeken."
 
-msgid "Withdrawal deadline: %d days remaining"
-msgstr "Herroepingstermijn: nog %d dagen"
+msgid "Pending"
+msgstr "In behandeling"
 
+msgid "Approved"
+msgstr "Goedgekeurd"
+
+msgid "Rejected"
+msgstr "Afgewezen"
+
+msgid "Completed"
+msgstr "Afgerond"
+
+msgid "We could not find an order with those details."
+msgstr "We hebben geen bestelling met deze gegevens gevonden."
+
+msgid "The withdrawal period for this order has expired (14 calendar days)."
+msgstr "De herroepingstermijn voor deze bestelling is verstreken (14 kalenderdagen)."
+
+msgid "You have already exercised the right of withdrawal for this order."
+msgstr "Je hebt het herroepingsrecht voor deze bestelling al uitgeoefend."
+
+msgid "An error occurred. Please try again."
+msgstr "Er is een fout opgetreden. Probeer het opnieuw."
+
+msgid "Exercise your right of withdrawal"
+msgstr "Oefen je herroepingsrecht uit"
+
+msgid "Enter your order number and email address to check your eligibility."
+msgstr "Vul je bestelnummer en e-mailadres in om te controleren of je kunt herroepen."
+
+msgid "Order number"
+msgstr "Bestelnummer"
+
+msgid "Email address used to purchase"
+msgstr "E-mailadres gebruikt bij de aankoop"
+
+msgid "Check my order"
+msgstr "Mijn bestelling controleren"
+
+msgid "Pedido #%s verificado."
+msgstr "Bestelling nr. %s gecontroleerd."
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Check a different order"
+msgstr "Een andere bestelling controleren"
 
 msgid "— Standard (subject to withdrawal right) —"
 msgstr "— Standaard (herroepingsrecht van toepassing) —"
@@ -42,64 +528,129 @@ msgstr "Digitale inhoud — toestemming vereist bij afrekenen (art. 16m)"
 msgid "Withdrawal status"
 msgstr "Herroepingsstatus"
 
-msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" hides the withdrawal button for orders containing this product. \"Digital content\" shows a mandatory consent checkbox at checkout."
-msgstr "Bepaalt hoe het herroepingsrecht van toepassing is op dit product. \"Standaard\" volgt de algemene instellingen. \"Uitgesloten\" verbergt de knop voor bestellingen met dit product. \"Digitale inhoud\" toont een verplicht selectievakje bij het afrekenen."
+msgid "Controls how the withdrawal right applies to this product. \"Standard\" follows the general plugin settings. \"Excluded\" (Art. 16 exceptions): if every product in an order is excluded, the withdrawal button is not shown for that order. \"Digital content\" shows a mandatory consent checkbox at checkout."
+msgstr "Bepaalt hoe het herroepingsrecht voor dit product geldt. „Standaard” volgt de algemene plugin-instellingen. „Uitgesloten” (uitzonderingen van art. 16): als alle producten van een bestelling zijn uitgesloten, wordt de herroepingsknop voor die bestelling niet getoond. „Digitale inhoud” toont bij het afrekenen een verplicht toestemmingsvakje."
 
-msgid "Model withdrawal form (Annex I.B)"
-msgstr "Modelformulier voor herroeping (Bijlage I.B)"
+msgid "Nueva solicitud de desistimiento"
+msgstr "Nieuw herroepingsverzoek"
 
-msgid "EU Directive 2011/83/UE"
-msgstr "EU-richtlijn 2011/83/EU"
+msgid "Se ha registrado una nueva solicitud de desistimiento en %s."
+msgstr "Er is een nieuw herroepingsverzoek geregistreerd op %s."
 
-msgid "To:"
-msgstr "Aan:"
+msgid "Nº de solicitud"
+msgstr "Aanvraagnummer"
 
-msgid "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*)"
-msgstr "Hierbij deel ik/delen wij (*) u mede dat ik/wij (*) onze overeenkomst betreffende de verkoop van de volgende goederen (*)/levering van de volgende dienst (*) herroep/herroepen"
+msgid "Pedido"
+msgstr "Bestelling"
 
-msgid "Ordered on:"
-msgstr "Besteld op:"
+msgid "Cliente"
+msgstr "Klant"
 
-msgid "Order number:"
-msgstr "Bestelnummer:"
+msgid "Correo del cliente"
+msgstr "E-mail van de klant"
 
-msgid "Name of consumer(s):"
-msgstr "Naam van de consument(en):"
+msgid "Teléfono"
+msgstr "Telefoon"
 
-msgid "Address of consumer(s):"
-msgstr "Adres van de consument(en):"
+msgid "Importe del pedido"
+msgstr "Bedrag van de bestelling"
 
-msgid "(*) Delete as appropriate."
-msgstr "(*) Doorhalen wat niet van toepassing is."
+msgid "Fecha y hora de la solicitud"
+msgstr "Datum en tijd van het verzoek"
 
-msgid "Print this form"
-msgstr "Dit formulier afdrukken"
+msgid "Motivo"
+msgstr "Reden"
 
+msgid "No indicado"
+msgstr "Niet opgegeven"
+
+msgid "Recuerda: debes procesar el reembolso en un máximo de 14 días naturales."
+msgstr "Let op: je moet de terugbetaling binnen uiterlijk 14 kalenderdagen verwerken."
+
+msgid "Ver pedido en WooCommerce"
+msgstr "Bestelling bekijken in WooCommerce"
+
+msgid "Generado automáticamente por Withdrawal Button Lite | %s"
+msgstr "Automatisch gegenereerd door Withdrawal Button Lite | %s"
+
+msgid "Solicitud de desistimiento registrada"
+msgstr "Herroepingsverzoek geregistreerd"
+
+msgid "Hola, %s:"
+msgstr "Beste %s,"
+
+msgid "Hemos recibido correctamente tu solicitud de desistimiento. Este correo es tu acuse de recibo conforme a la Directiva (UE) 2023/2673."
+msgstr "We hebben je herroepingsverzoek ontvangen. Deze e-mail is je ontvangstbevestiging volgens Richtlijn (EU) 2023/2673."
+
+msgid "¿Qué ocurre ahora?"
+msgstr "Wat gebeurt er nu?"
+
+msgid "Procesaremos el reembolso en un plazo máximo de 14 días naturales desde la recepción de esta solicitud."
+msgstr "We betalen het bedrag terug binnen uiterlijk 14 kalenderdagen na ontvangst van dit verzoek."
+
+msgid "Nombre"
+msgstr "Naam"
+
+msgid "Recibirás la confirmación en"
+msgstr "U ontvangt de bevestiging op"
+
+msgid "Motivo indicado"
+msgstr "Opgegeven reden"
+
+msgid "Si tienes alguna pregunta, responde a este correo."
+msgstr "Heb je vragen? Beantwoord dan deze e-mail."
+
+msgid "Gracias por confiar en %s."
+msgstr "Bedankt voor je vertrouwen in %s."
+
+msgid "Este correo es el acuse de recibo de tu solicitud de desistimiento."
+msgstr "Deze e-mail is de ontvangstbevestiging van je herroepingsverzoek."
+
+msgid "Your withdrawal request has been <strong>approved</strong>. We will process the full refund within a maximum of <strong>14 calendar days</strong>."
+msgstr "Je herroepingsverzoek is <strong>goedgekeurd</strong>. We betalen het volledige bedrag terug binnen uiterlijk <strong>14 kalenderdagen</strong>."
+
+msgid "Your withdrawal request has been <strong>rejected</strong>. If you have any questions, please contact us."
+msgstr "Je herroepingsverzoek is <strong>afgewezen</strong>. Neem bij vragen contact met ons op."
+
+msgid "Your withdrawal request has been <strong>completed</strong>. The refund has been processed correctly."
+msgstr "Je herroepingsverzoek is <strong>afgerond</strong>. De terugbetaling is uitgevoerd."
+
+msgid "Dear"
+msgstr "Beste"
+
+msgid "The status of your withdrawal request has been updated."
+msgstr "De status van je herroepingsverzoek is bijgewerkt."
+
+msgid "Request number"
+msgstr "Aanvraagnummer"
+
+msgid "New status"
+msgstr "Nieuwe status"
+
+msgid "Updated on"
+msgstr "Bijgewerkt op"
+
+msgid "Admin note:"
+msgstr "Opmerking van de winkel:"
+
+msgid "Thank you for trusting %s."
+msgstr "Bedankt voor je vertrouwen in %s."
+
+msgid "Automatic withdrawal request update."
+msgstr "Automatische update van je herroepingsverzoek."
 
 msgid "Cerrar ventana de desistimiento"
 msgstr "Herroepingsvenster sluiten"
 
-msgid "Según la Directiva UE 2023/2673, tienes derecho a desistir de este contrato en un plazo de 14 días naturales sin necesidad de justificación alguna."
-msgstr "Conform EU-richtlijn 2023/2673 heeft u het recht om dit contract binnen 14 kalenderdagen te herroepen zonder opgave van redenen."
+msgid "Tienes derecho a desistir de este contrato sin necesidad de indicar el motivo."
+msgstr "U hebt het recht deze overeenkomst zonder opgave van redenen te herroepen."
+
+msgid "Revisa tus datos antes de confirmar:"
+msgstr "Controleer uw gegevens voordat u bevestigt:"
+
+msgid "Motivo (opcional)"
+msgstr "Reden (optioneel)"
 
 msgid "Al confirmar, recibirás un email de acuse de recibo y nuestro equipo procesará el reembolso en un máximo de 14 días naturales."
 msgstr "Na bevestiging ontvangt u een bevestigings-e-mail en zal ons team de terugbetaling binnen maximaal 14 kalenderdagen verwerken."
 
-msgid "Cancelar"
-msgstr "Annuleren"
-
-msgid "Confirmar desistimiento"
-msgstr "Herroeping bevestigen"
-
-
-msgid "Desistimiento ejercido"
-msgstr "Herroeping uitgeoefend"
-
-msgid "Cerrar"
-msgstr "Sluiten"
-
-msgid "Error desconocido."
-msgstr "Onbekende fout."
-
-msgid "Error de conexión."
-msgstr "Verbindingsfout."
